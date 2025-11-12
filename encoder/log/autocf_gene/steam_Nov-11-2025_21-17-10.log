@@ -1,0 +1,21 @@
+2025-11-11 21:17:10,543 - {'optimizer': {'name': 'adam', 'lr': 0.001, 'weight_decay': 0}, 'train': {'epoch': 3000, 'batch_size': 4096, 'save_model': True, 'loss': 'pairwise', 'log_loss': False, 'test_step': 3, 'reproducible': True, 'seed': 2023, 'patience': 5, 'trainer': 'autocf_trainer'}, 'test': {'metrics': ['recall', 'ndcg'], 'k': [5, 10, 20], 'batch_size': 1024}, 'data': {'type': 'general_cf', 'name': 'steam', 'user_num': 23310, 'item_num': 5237}, 'model': {'name': 'autocf_gene', 'embedding_size': 32, 'keep_rate': 0.2, 'gt_layer': 1, 'head_num': 4, 'seed_num': 100, 'mask_depth': 2, 'fix_steps': 10, 'gcn_layer': 2, 'reg_weight': 1e-06, 'ssl_reg': 1, 'mask_ratio': 0.05, 'recon_weight': 0.1, 're_temperature': 0.5, 'amazon': {'gcn_layer': 2, 'reg_weight': 1e-06, 'ssl_reg': 1, 'mask_ratio': 0.2, 'recon_weight': 1.0, 're_temperature': 0.5}, 'yelp': {'gcn_layer': 2, 'reg_weight': 1e-08, 'ssl_reg': 1, 'mask_ratio': 0.2, 'recon_weight': 0.1, 're_temperature': 0.1}, 'steam': {'gcn_layer': 2, 'reg_weight': 1e-06, 'ssl_reg': 0.5, 'mask_ratio': 0.2, 'recon_weight': 1.0, 're_temperature': 0.2}}}
+2025-11-11 21:18:26,697 - Epoch   0 Validation set [recall@5: 0.0348 recall@10: 0.0539 recall@20: 0.0907 ] [ndcg@5: 0.0388 ndcg@10: 0.0441 ndcg@20: 0.0563 ] 
+2025-11-11 21:22:12,584 - Epoch   3 Validation set [recall@5: 0.0359 recall@10: 0.0569 recall@20: 0.0925 ] [ndcg@5: 0.0422 ndcg@10: 0.0481 ndcg@20: 0.0599 ] 
+2025-11-11 21:25:41,487 - Epoch   6 Validation set [recall@5: 0.0375 recall@10: 0.0620 recall@20: 0.1005 ] [ndcg@5: 0.0446 ndcg@10: 0.0519 ndcg@20: 0.0644 ] 
+2025-11-11 21:29:15,576 - Epoch   9 Validation set [recall@5: 0.0401 recall@10: 0.0668 recall@20: 0.1112 ] [ndcg@5: 0.0473 ndcg@10: 0.0556 ndcg@20: 0.0703 ] 
+2025-11-11 21:33:05,226 - Epoch  12 Validation set [recall@5: 0.0430 recall@10: 0.0731 recall@20: 0.1194 ] [ndcg@5: 0.0505 ndcg@10: 0.0599 ndcg@20: 0.0754 ] 
+2025-11-11 21:36:52,680 - Epoch  15 Validation set [recall@5: 0.0469 recall@10: 0.0774 recall@20: 0.1274 ] [ndcg@5: 0.0539 ndcg@10: 0.0636 ndcg@20: 0.0804 ] 
+2025-11-11 21:40:32,626 - Epoch  18 Validation set [recall@5: 0.0502 recall@10: 0.0831 recall@20: 0.1339 ] [ndcg@5: 0.0570 ndcg@10: 0.0674 ndcg@20: 0.0846 ] 
+2025-11-11 21:44:17,058 - Epoch  21 Validation set [recall@5: 0.0520 recall@10: 0.0873 recall@20: 0.1405 ] [ndcg@5: 0.0585 ndcg@10: 0.0700 ndcg@20: 0.0879 ] 
+2025-11-11 21:47:52,103 - Epoch  24 Validation set [recall@5: 0.0533 recall@10: 0.0890 recall@20: 0.1415 ] [ndcg@5: 0.0596 ndcg@10: 0.0712 ndcg@20: 0.0890 ] 
+2025-11-11 21:51:11,027 - Epoch  27 Validation set [recall@5: 0.0547 recall@10: 0.0897 recall@20: 0.1421 ] [ndcg@5: 0.0607 ndcg@10: 0.0720 ndcg@20: 0.0897 ] 
+2025-11-11 21:52:53,000 - Epoch  30 Validation set [recall@5: 0.0544 recall@10: 0.0908 recall@20: 0.1428 ] [ndcg@5: 0.0605 ndcg@10: 0.0724 ndcg@20: 0.0900 ] 
+2025-11-11 21:54:07,050 - Epoch  33 Validation set [recall@5: 0.0544 recall@10: 0.0902 recall@20: 0.1426 ] [ndcg@5: 0.0605 ndcg@10: 0.0722 ndcg@20: 0.0899 ] 
+2025-11-11 21:55:20,962 - Epoch  36 Validation set [recall@5: 0.0540 recall@10: 0.0894 recall@20: 0.1402 ] [ndcg@5: 0.0597 ndcg@10: 0.0714 ndcg@20: 0.0885 ] 
+2025-11-11 21:56:34,562 - Epoch  39 Validation set [recall@5: 0.0541 recall@10: 0.0885 recall@20: 0.1402 ] [ndcg@5: 0.0596 ndcg@10: 0.0707 ndcg@20: 0.0882 ] 
+2025-11-11 21:57:47,764 - Epoch  42 Validation set [recall@5: 0.0537 recall@10: 0.0885 recall@20: 0.1394 ] [ndcg@5: 0.0592 ndcg@10: 0.0707 ndcg@20: 0.0878 ] 
+2025-11-11 21:59:01,467 - Epoch  45 Validation set [recall@5: 0.0533 recall@10: 0.0881 recall@20: 0.1389 ] [ndcg@5: 0.0588 ndcg@10: 0.0704 ndcg@20: 0.0876 ] 
+2025-11-11 21:59:05,015 - [recall@5: 0.0544 recall@10: 0.0908 recall@20: 0.1428 ] [ndcg@5: 0.0605 ndcg@10: 0.0724 ndcg@20: 0.0900 ] 
+2025-11-11 21:59:08,521 - [recall@5: 0.0539 recall@10: 0.0899 recall@20: 0.1414 ] [ndcg@5: 0.0590 ndcg@10: 0.0712 ndcg@20: 0.0887 ] 
+2025-11-11 21:59:08,531 - Save model parameters to ./encoder/checkpoint/autocf_gene/autocf_gene-steam-2023.pth
+2025-11-11 21:59:08,532 - Best Epoch 30. Final test result: {'recall': array([0.05394126, 0.08989297, 0.14135894]), 'ndcg': array([0.05900632, 0.07121172, 0.08870238])}.
