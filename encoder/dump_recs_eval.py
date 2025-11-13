@@ -92,11 +92,12 @@ def main():
     model_full = args.model if args.paradigm == "baseline" else f"{args.model}_{args.paradigm}"
 
     # baseline config + YAML modelconf (so hyper params like kd_weight exist)
-    configs['data']['name'] = dataset
     configs['model']['name'] = model_full
     configs['device'] = 'cuda' if torch.cuda.is_available() else 'cpu'
     # load the modelconf YAML to populate hyper_config etc.
     _load_modelconf(model_full, dataset)
+    # Override dataset name AFTER loading model config (YAML may have default dataset)
+    configs['data']['name'] = dataset
     # make sure test ks exist
     configs['test']['k'] = [5, 10, 20]
     configs['test']['metrics'] = ['recall', 'ndcg']
