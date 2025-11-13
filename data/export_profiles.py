@@ -1,5 +1,5 @@
 """
-Export user and item profiles (Amazon or other supported dataset) to CSVs,
+Export user and item profiles (Amazon, Steam, Yelp, or other supported dataset) to CSVs,
 including raw IDs via mapper files.
 
 Assumed constant paths:
@@ -14,8 +14,13 @@ Outputs:
   data/exports/{dataset}_item_profiles.csv
 
 Columns:
-  Users: user_id_int, reviewer_id_raw, profile_text
-  Items: item_id_int, asin_raw, profile_text
+  Users: user_id_int, user_id_raw, profile_text
+  Items: item_id_int, item_id_raw, profile_text
+
+Dataset-specific ID fields:
+  Amazon: reviewerID (users), asin (items)
+  Steam: username (users), product_id (items)
+  Yelp: user_id (users), business_id (items)
 """
 
 import argparse
@@ -23,7 +28,7 @@ import csv
 import json
 import pickle
 from pathlib import Path
-from typing import Any, Dict, Tuple
+from typing import Any, Dict
 
 
 BASE_DATA_DIR = Path("data")
@@ -90,11 +95,11 @@ def export_user_profiles(usr_prf_path: Path, user_mapper: Dict[str, str], out_cs
     n = 0
     with open(out_csv, "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
-        w.writerow(["user_id_int", "reviewer_id_raw", "profile_text"])
+        w.writerow(["user_id_int", "user_id_raw", "profile_text"])
         usr_prf = _load_pickle(usr_prf_path)
         for u_int, text in _iter_profiles(usr_prf):
-            reviewer_id = user_mapper.get(str(u_int), "")
-            w.writerow([u_int, reviewer_id, text])
+            user_id = user_mapper.get(str(u_int), "")
+            w.writerow([u_int, user_id, text])
             n += 1
     return n
 
@@ -104,11 +109,11 @@ def export_item_profiles(itm_prf_path: Path, item_mapper: Dict[str, str], out_cs
     n = 0
     with open(out_csv, "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
-        w.writerow(["item_id_int", "asin_raw", "profile_text"])
+        w.writerow(["item_id_int", "item_id_raw", "profile_text"])
         itm_prf = _load_pickle(itm_prf_path)
         for i_int, text in _iter_profiles(itm_prf):
-            asin = item_mapper.get(str(i_int), "")
-            w.writerow([i_int, asin, text])
+            item_id = item_mapper.get(str(i_int), "")
+            w.writerow([i_int, item_id, text])
             n += 1
     return n
 
@@ -130,8 +135,20 @@ def main():
     user_mapper_path = MAPPER_DIR / f"{dataset}_user.json"
     item_mapper_path = MAPPER_DIR / f"{dataset}_item.json"
 
-    user_mapper = _load_mapper_json(user_mapper_path, key_field="uid", val_field="reviewerID")
-    item_mapper = _load_mapper_json(item_mapper_path, key_field="iid", val_field="asin")
+    if dataset == "steam":
+        user_val_field = "username"
+        item_val_field = "product_id"
+    elif dataset == "amazon":
+        user_val_field = "reviewerID"
+        item_val_field = "asin"
+    elif dataset == "yelp":
+        user_val_field = "user_id"
+        item_val_field = "business_id"
+    else:
+        raise ValueError(f"Unsupported dataset for export: {dataset}")
+
+    user_mapper = _load_mapper_json(user_mapper_path, key_field="uid", val_field=user_val_field)
+    item_mapper = _load_mapper_json(item_mapper_path, key_field="iid", val_field=item_val_field)
 
     out_users = EXPORT_DIR / f"{dataset}_user_profiles.csv"
     out_items = EXPORT_DIR / f"{dataset}_item_profiles.csv"
