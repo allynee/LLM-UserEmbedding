@@ -12,6 +12,7 @@ from models.bulid_model import build_model
 from config.configurator import configs
 from .utils import DisabledSummaryWriter, log_exceptions
 
+import wandb 
 
 def init_seed():
     if 'reproducible' in configs['train']:
@@ -69,6 +70,12 @@ class Trainer(object):
 
     @log_exceptions
     def train(self, model):
+        wandb.init(
+            project="RLMRec",
+            name=f"{configs['model']['name']}_{configs['data']['name']}",
+            config=configs
+        )
+
         now_patience = 0
         best_epoch = 0
         best_recall = -1e9
@@ -76,10 +83,19 @@ class Trainer(object):
         train_config = configs['train']
         for epoch_idx in range(train_config['epoch']):
             # train
-            self.train_epoch(model, epoch_idx)
+            # self.train_epoch(model, epoch_idx)
+            train_loss = self.train_epoch(model, epoch_idx)
             # evaluate
             if epoch_idx % train_config['test_step'] == 0:
                 eval_result = self.evaluate(model, epoch_idx)
+
+                wandb.log({
+                    "epoch": epoch_idx,
+                    "train_loss": train_loss,
+                    "recall@k": eval_result['recall'][-1],
+                    "ndcg@k": eval_result['ndcg'][-1],
+                })
+
 
                 if eval_result['recall'][-1] > best_recall:
                     now_patience = 0
