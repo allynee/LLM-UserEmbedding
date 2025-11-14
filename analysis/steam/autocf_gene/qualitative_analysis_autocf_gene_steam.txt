@@ -1,0 +1,777 @@
+Qualitative Analysis: autocf_gene on steam
+====================================================================================================
+
+
+
+####################################################################################################
+####################################################################################################
+SEGMENT: BAD
+####################################################################################################
+####################################################################################################
+
+
+>>> Sample 1/2 from Bad segment <<<
+
+====================================================================================================
+USER ID: 8062
+Segment: Bad
+Number of train interactions: 24
+Recall@20: 0.0000
+NDCG@20: 0.0000
+====================================================================================================
+
+USER ID (RAW):            ron
+
+USER PROFILE:            
+Based on the games the user has played and their reviews, this user is likely to enjoy intense, challenging games with strategic gameplay and atmospheric settings. They appreciate games with strong sound design, retro aesthetics, and unique gameplay mechanics. The user also enjoys racing games, particularly those that offer realistic physics and multiplayer functionality. They appreciate games that offer complexity, customization, and a good amount of difficulty. They also enjoy games with a dark and surreal narrative, as well as games that pay tribute to nostalgic elements. Overall, this user enjoys immersive and unconventional gaming experiences.
+
+USER REASONING:          
+The user has played games like PlanetSide 2, Hotline Miami 2, and Dark Souls III, which are known for their intense and challenging gameplay. They have also shown an interest in games with retro aesthetics and unique mechanics, as seen in their reviews of Hotline Miami 2 and Punch Club. Their enjoyment of racing games is evident from their review of WRC 6 FIA World Rally Championship. They also appreciate games with a dark and surreal narrative, as indicated by their review of 'the static speaks my name'. Their positive feedback on Sacred 2 Gold suggests that they appreciate immersive and unconventional gaming experiences.
+
+----------------------------------------------------------------------------------------------------
+HISTORICAL INTERACTIONS (TRAIN): 24 items
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 58 (Raw: 239030)
+    Users who enjoy indie games with political and simulation elements, as well as those who appreciate atmospheric and story-rich experiences, would enjoy Papers, Please. The game challenges players to m...
+
+[2] Item ID: 63 (Raw: 12120)
+    Users who enjoy open world, action-packed games with a great soundtrack and a mature storyline would enjoy Grand Theft Auto: San Andreas. The game allows players to experience a classic third-person s...
+
+[3] Item ID: 111 (Raw: 440)
+    Users who enjoy multiplayer, first-person shooters with a comedic and cartoonish style, as well as a variety of gameplay modes and unlockable items, would enjoy Team Fortress 2. The game appeals to bo...
+
+[4] Item ID: 143 (Raw: 360170)
+    Users who enjoy multiplayer survival games with co-op features, crafting, and base building elements would enjoy How to Survive 2. It is suitable for players who like action, adventure, and RPG genres...
+
+[5] Item ID: 503 (Raw: 2620)
+    Fans of classic first-person shooters and World War II-themed games would enjoy Call of Duty. It offers an immersive campaign mode with engaging storytelling and atmospheric battles. The game allows p...
+
+[6] Item ID: 611 (Raw: 274170)
+    Hotline Miami 2: Wrong Number is a fast-paced, difficult top-down shooter with a great soundtrack and retro pixel graphics. It appeals to hardcore gamers who enjoy challenging gameplay and can appreci...
+
+[7] Item ID: 772 (Raw: 282070)
+    This War of Mine is a game that would appeal to gamers who enjoy challenging survival experiences, atmospheric storytelling, and emotionally impactful gameplay. It is particularly suited for players w...
+
+[8] Item ID: 949 (Raw: 218230)
+    Players who enjoy intense, team-based, and strategic warfare games set in a futuristic, open-world, and massively multiplayer environment would enjoy PlanetSide 2. It attracts both newbies and veteran...
+
+[9] Item ID: 1024 (Raw: 374320)
+    Dark Souls III is a challenging action RPG game with a dark fantasy setting, atmospheric lore, and a high level of difficulty. It appeals to players who enjoy exploration, character customization, and...
+
+[10] Item ID: 1089 (Raw: 259680)
+    Tales of Maj'Eyal is a challenging and addictive roguelike game that appeals to players who enjoy difficult gameplay, achievement collecting, and unlocking races and classes. It offers a deep gameplay...
+
+... and 14 more train items
+
+----------------------------------------------------------------------------------------------------
+PREDICTED ITEMS (TOP-20 RECOMMENDATIONS)
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 62 (Raw: 252490) | Score: 4.4159 | ✗ MISS
+    Users who enjoy survival games with crafting, multiplayer interaction, and a challenging gameplay experience would enjoy Rust. The game offers a satisfying progression system, starting with limited re...
+
+[2] Item ID: 957 (Raw: 211820) | Score: 4.1231 | ✗ MISS
+    Starbound is an action-adventure game that combines elements of sandbox, survival, and RPG genres. It is suitable for players who enjoy open-world exploration, building, crafting, and pixel graphics. ...
+
+[3] Item ID: 59 (Raw: 49520) | Score: 3.3983 | ✗ MISS
+    Borderlands 2 is a first-person action RPG game with a humorous and stylized open-world setting. This game is enjoyable for users who enjoy cooperative gameplay, loot collection, and comedic elements....
+
+[4] Item ID: 101 (Raw: 377160) | Score: 3.2136 | ✗ MISS
+    Fans of open world, post-apocalyptic settings, and action RPGs would enjoy Fallout 4. The game offers a vast world with immersive environment art and exploration. However, some players found the RPG e...
+
+[5] Item ID: 597 (Raw: 221100) | Score: 2.9875 | ✗ MISS
+    Fans of post-apocalyptic survival games with a focus on multiplayer interactions would enjoy DayZ. The game offers an open-world sandbox experience with atmospheric environments and challenging gamepl...
+
+[6] Item ID: 616 (Raw: 391540) | Score: 2.9813 | ✗ MISS
+    Users who enjoy unique gameplay mechanics, compelling storytelling, and vibrant characters would enjoy Undertale. It appeals to those who appreciate turn-based bullet hell combat, player choices that ...
+
+[7] Item ID: 832 (Raw: 4000) | Score: 2.8917 | ✗ MISS
+    Garry's Mod is a sandbox simulation game published by Valve. It is a popular choice for users who enjoy creative gameplay and modding. The game provides endless possibilities for building, creating, a...
+
+[8] Item ID: 107 (Raw: 620) | Score: 2.8616 | ✗ MISS
+    Portal 2 is a highly enjoyable game that would be appreciated by puzzle game enthusiasts, fans of the original Portal, and those who enjoy cooperative gameplay. It offers an expanded puzzle experience...
+
+[9] Item ID: 1092 (Raw: 271590) | Score: 2.8521 | ✗ MISS
+    Grand Theft Auto V is a game that would appeal to a wide range of users, including those who enjoy open world action and adventure games. It offers a variety of genres such as action, adventure, racin...
+
+[10] Item ID: 2 (Raw: 227940) | Score: 2.7867 | ✗ MISS
+    Users who enjoy World War II-themed games, multiplayer first-person shooters, and tactical strategy games would likely enjoy Heroes & Generals. However, those who dislike pay-to-win mechanics and slow...
+
+----------------------------------------------------------------------------------------------------
+GROUND TRUTH (TEST ITEMS): 6 items
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 173 (Raw: 274560) | ✗ NOT PREDICTED
+    Users who enjoy old school shooters with RPG elements, replayability, and a less intense bullet hell experience would enjoy Revolution Ace. It is suitable for beginner to mid-level bullet hell players...
+
+[2] Item ID: 1093 (Raw: 304930) | ✗ NOT PREDICTED
+    Unturned is a free-to-play multiplayer survival game with a post-apocalyptic setting. It is enjoyed by players who are looking for a simplistic gameplay experience, enjoy playing with friends, and hav...
+
+[3] Item ID: 1420 (Raw: 326410) | ✗ NOT PREDICTED
+    Users who enjoy naval adventures, trading, exploration, and multiplayer experiences would enjoy Windward. Additionally, players who appreciate strategic combat and procedural generation in an open wor...
+
+[4] Item ID: 1702 (Raw: 236430) | ✗ NOT PREDICTED
+    Fans of the Dark Souls series and gamers who enjoy challenging action RPGs with a dark fantasy setting will enjoy Dark Souls II. The game is known for its difficult gameplay, lack of hand-holding, and...
+
+[5] Item ID: 2515 (Raw: 427270) | ✗ NOT PREDICTED
+    Users who enjoy multiplayer tower defense games with a mix of action and strategy, and are willing to spend money on in-game purchases for material advantage would enjoy Orcs Must Die! Unchained. Howe...
+
+[6] Item ID: 4326 (Raw: 324310) | ✗ NOT PREDICTED
+    Users who enjoy simulation and driving games, especially those interested in bus driving, would likely enjoy Bus Simulator 16. It provides attention to details and allows players to immerse themselves...
+
+====================================================================================================
+
+
+>>> Sample 2/2 from Bad segment <<<
+
+====================================================================================================
+USER ID: 19239
+Segment: Bad
+Number of train interactions: 21
+Recall@20: 0.0000
+NDCG@20: 0.0000
+====================================================================================================
+
+USER ID (RAW):            Rosa
+
+USER PROFILE:            
+Based on the games the user has played and their reviews, it can be inferred that this user enjoys a variety of game genres. They appreciate competitive multiplayer games like Duck Game and Rivals of Aether, action-oriented story-rich games like Mafia II, survival horror games like Five Nights at Freddy's, strategy and management games like This Is the Police, open-world survival games like Project Zomboid, rhythm games like Crypt of the NecroDancer, action rogue-like games like The Binding of Isaac: Rebirth, free-to-play MMORPGs like Trove, and the Civilization series. The user's reviews generally show a positive reception to the games they have played, with some criticism for certain aspects of certain games.
+
+USER REASONING:          
+The user has played a diverse range of games across various genres, which indicates a willingness to explore different types of gameplay experiences. They have shown appreciation for elements such as competitive multiplayer, immersive storytelling, challenging gameplay mechanics, atmospheric aesthetics, and addictive gameplay. The positive reviews suggest they have found enjoyment in most of the games they have played, but they have also provided constructive criticism for certain aspects. Overall, this user is likely to enjoy games that offer a mix of competitive multiplayer, immersive storytelling, unique gameplay mechanics, and atmospheric aesthetics.
+
+----------------------------------------------------------------------------------------------------
+HISTORICAL INTERACTIONS (TRAIN): 21 items
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 62 (Raw: 252490)
+    Users who enjoy survival games with crafting, multiplayer interaction, and a challenging gameplay experience would enjoy Rust. The game offers a satisfying progression system, starting with limited re...
+
+[2] Item ID: 107 (Raw: 620)
+    Portal 2 is a highly enjoyable game that would be appreciated by puzzle game enthusiasts, fans of the original Portal, and those who enjoy cooperative gameplay. It offers an expanded puzzle experience...
+
+[3] Item ID: 120 (Raw: 346110)
+    Users who enjoy open world, survival, and sandbox games and are willing to invest time and effort in a game would enjoy ARK: Survival Evolved. They should also have a high tolerance for occasional cra...
+
+[4] Item ID: 125 (Raw: 50130)
+    Users who enjoy action-oriented, story-rich games set in an immersive and detailed open world with mafia/crime themes, and a strong emphasis on singleplayer gameplay would enjoy Mafia II. The game has...
+
+[5] Item ID: 390 (Raw: 108600)
+    Project Zomboid would be enjoyed by fans of open-world survival games, especially those who enjoy multiplayer experiences. It is also suited for players who are looking for a challenging and in-depth ...
+
+[6] Item ID: 632 (Raw: 312530)
+    The Duck Game is a fast-paced action indie game with pixel graphics and multiplayer features, which can be enjoyed by players who love competitive gameplay, local co-op, and casual gaming. The game's ...
+
+[7] Item ID: 839 (Raw: 304050)
+    Trove is a free-to-play MMORPG game that combines elements of action, adventure, casual, and RPG genres. It is highly addictive and appeals to players who enjoy social interactions, building, fights, ...
+
+[8] Item ID: 892 (Raw: 333930)
+    Users who enjoy fast-paced, team-based, and strategic shooters with fair gameplay, good graphics, and a casual playing experience would enjoy Dirty Bomb. The game is free-to-play and has a female prot...
+
+[9] Item ID: 895 (Raw: 424280)
+    Iron Snout is a fast-paced, free-to-play indie action game that would be enjoyed by users who are looking for a quick and entertaining time-waster. The game features cute and funny cartoon graphics, a...
+
+[10] Item ID: 1096 (Raw: 319510)
+    Fans of survival horror games, particularly those who enjoy suspenseful gameplay, jump scares, and a creepy atmosphere, would enjoy Five Nights at Freddy's. The game's difficulty level and resource ma...
+
+... and 11 more train items
+
+----------------------------------------------------------------------------------------------------
+PREDICTED ITEMS (TOP-20 RECOMMENDATIONS)
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 111 (Raw: 440) | Score: 5.2402 | ✗ MISS
+    Users who enjoy multiplayer, first-person shooters with a comedic and cartoonish style, as well as a variety of gameplay modes and unlockable items, would enjoy Team Fortress 2. The game appeals to bo...
+
+[2] Item ID: 616 (Raw: 391540) | Score: 4.4141 | ✗ MISS
+    Users who enjoy unique gameplay mechanics, compelling storytelling, and vibrant characters would enjoy Undertale. It appeals to those who appreciate turn-based bullet hell combat, player choices that ...
+
+[3] Item ID: 59 (Raw: 49520) | Score: 4.2332 | ✗ MISS
+    Borderlands 2 is a first-person action RPG game with a humorous and stylized open-world setting. This game is enjoyable for users who enjoy cooperative gameplay, loot collection, and comedic elements....
+
+[4] Item ID: 101 (Raw: 377160) | Score: 4.1445 | ✗ MISS
+    Fans of open world, post-apocalyptic settings, and action RPGs would enjoy Fallout 4. The game offers a vast world with immersive environment art and exploration. However, some players found the RPG e...
+
+[5] Item ID: 957 (Raw: 211820) | Score: 4.0787 | ✗ MISS
+    Starbound is an action-adventure game that combines elements of sandbox, survival, and RPG genres. It is suitable for players who enjoy open-world exploration, building, crafting, and pixel graphics. ...
+
+[6] Item ID: 941 (Raw: 319630) | Score: 3.3626 | ✗ MISS
+    Users who enjoy story-driven games, with emphasis on choice-making, atmospheric settings, and great soundtracks, would enjoy Life is Strange - Episode 1. It appeals to those who appreciate well-writte...
+
+[7] Item ID: 58 (Raw: 239030) | Score: 3.3068 | ✗ MISS
+    Users who enjoy indie games with political and simulation elements, as well as those who appreciate atmospheric and story-rich experiences, would enjoy Papers, Please. The game challenges players to m...
+
+[8] Item ID: 1036 (Raw: 113200) | Score: 3.2406 | ✗ MISS
+    The Binding of Isaac is a well-made, addictive and challenging dungeon-styled game that would appeal to gamers who enjoy rogue-like, indie, and RPG genres. The game offers a captivating storyline with...
+
+[9] Item ID: 615 (Raw: 212680) | Score: 3.2127 | ✗ MISS
+    Fans of challenging rogue-like games with a focus on strategy and space exploration would enjoy FTL: Faster Than Light. The game offers depth, replay value, and a great soundtrack. It requires knowled...
+
+[10] Item ID: 1037 (Raw: 220200) | Score: 3.2051 | ✗ MISS
+    Types of users who would enjoy Kerbal Space Program include space enthusiasts, those interested in science and education, players who enjoy simulation and sandbox games, and individuals who like chall...
+
+----------------------------------------------------------------------------------------------------
+GROUND TRUTH (TEST ITEMS): 1 items
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 1583 (Raw: 206440) | ✗ NOT PREDICTED
+    To the Moon is a short, story-rich adventure game with pixel graphics. It is heavily focused on narrative and character development, making it more like an interactive novel than a traditional game. P...
+
+====================================================================================================
+
+
+
+####################################################################################################
+####################################################################################################
+SEGMENT: MEDIUM
+####################################################################################################
+####################################################################################################
+
+
+>>> Sample 1/2 from Medium segment <<<
+
+====================================================================================================
+USER ID: 11898
+Segment: Medium
+Number of train interactions: 39
+Recall@20: 0.2000
+NDCG@20: 0.3590
+====================================================================================================
+
+USER ID (RAW):            Loud Ass Sistah
+
+USER PROFILE:            
+Based on the games the user has played and their reviews, this user is likely to enjoy fast-paced racing games, action RPGs, cooperative multiplayer games, and first-person shooters. They appreciate games with challenging gameplay, immersive storytelling, and a sense of humor. The user may also have an interest in the Star Wars franchise and enjoy games with a competitive multiplayer focus.
+
+USER REASONING:          
+The user has enjoyed games like Super Laser Racer and Zombie Panic! Source, which are fast-paced racing and survival horror games respectively. Their positive reviews of Magicka and Realm of the Mad God suggest an interest in cooperative multiplayer games. They praised Warhammer 40,000: Dawn of War II for its strategic gameplay and immersive atmosphere. The positive review of The Witcher 2: Assassins of Kings Enhanced Edition shows a preference for RPGs with dark fantasy settings. Finally, their review of Call of Duty: Ghosts indicates a liking for competitive first-person shooter games.
+
+----------------------------------------------------------------------------------------------------
+HISTORICAL INTERACTIONS (TRAIN): 39 items
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 26 (Raw: 55230)
+    Users who enjoy open world sandbox crime games with a sense of humor and a love for outlandish and funny gameplay elements will enjoy Saints Row: The Third. The game offers tight controls, great graph...
+
+[2] Item ID: 43 (Raw: 55100)
+    Users who enjoy short and atmospheric first-person shooter games with a focus on story and singleplayer experience would enjoy Homefront. It may also appeal to players who are interested in the theme ...
+
+[3] Item ID: 57 (Raw: 12220)
+    Fans of the Grand Theft Auto series, especially those who enjoyed GTA IV, would enjoy Grand Theft Auto: Episodes from Liberty City. It offers new musics, cars, and missions, although some missions may...
+
+[4] Item ID: 62 (Raw: 252490)
+    Users who enjoy survival games with crafting, multiplayer interaction, and a challenging gameplay experience would enjoy Rust. The game offers a satisfying progression system, starting with limited re...
+
+[5] Item ID: 93 (Raw: 209160)
+    Fans of fast-paced, competitive first-person shooter games with a multiplayer focus would enjoy Call of Duty: Ghosts. The addictive multiplayer experience and the hidden treasure of the Extinction sub...
+
+[6] Item ID: 97 (Raw: 340)
+    Fans of the Half-Life series and those interested in the development cycle of Half-Life 2 would enjoy Half-Life 2: Lost Coast. It is a short game that serves as a tech demo for the Source engine, show...
+
+[7] Item ID: 101 (Raw: 377160)
+    Fans of open world, post-apocalyptic settings, and action RPGs would enjoy Fallout 4. The game offers a vast world with immersive environment art and exploration. However, some players found the RPG e...
+
+[8] Item ID: 130 (Raw: 380)
+    Fans of the Half-Life franchise who enjoyed Half-Life 2 and wanted to continue the story and gameplay would enjoy Half-Life 2: Episode One. Players who appreciate first-person shooters with a sci-fi s...
+
+[9] Item ID: 165 (Raw: 32440)
+    LEGO Star Wars - The Complete Saga is a game that would appeal to Star Wars fans, especially those who are familiar with the LEGO series. It offers a nostalgic experience for players who have played t...
+
+[10] Item ID: 230 (Raw: 20920)
+    Fans of RPGs, especially those who enjoy dark fantasy settings and immersive storytelling, would enjoy The Witcher 2: Assassins of Kings Enhanced Edition. The game offers choices with nuanced morality...
+
+... and 29 more train items
+
+----------------------------------------------------------------------------------------------------
+PREDICTED ITEMS (TOP-20 RECOMMENDATIONS)
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 107 (Raw: 620) | Score: 6.0094 | ✓ HIT
+    Portal 2 is a highly enjoyable game that would be appreciated by puzzle game enthusiasts, fans of the original Portal, and those who enjoy cooperative gameplay. It offers an expanded puzzle experience...
+
+[2] Item ID: 59 (Raw: 49520) | Score: 5.6923 | ✓ HIT
+    Borderlands 2 is a first-person action RPG game with a humorous and stylized open-world setting. This game is enjoyable for users who enjoy cooperative gameplay, loot collection, and comedic elements....
+
+[3] Item ID: 50 (Raw: 220) | Score: 5.3169 | ✗ MISS
+    Fans of first-person shooter games, especially those who enjoy action-packed and immersive gameplay, atmospheric environments, and engaging stories, would greatly enjoy Half-Life 2. The game has recei...
+
+[4] Item ID: 558 (Raw: 630) | Score: 4.4477 | ✗ MISS
+    Fans of co-op, multiplayer, and top-down shooters would enjoy Alien Swarm. It offers online co-op gameplay with friends and has a multiplayer mode. The game is free to play and has elements of action,...
+
+[5] Item ID: 1308 (Raw: 8190) | Score: 4.4168 | ✗ MISS
+    Just Cause 2 is an open-world action-adventure game with an emphasis on exploration and destruction. It is recommended for players who enjoy mindless destruction, chaotic gameplay, and freedom to expe...
+
+[6] Item ID: 968 (Raw: 8980) | Score: 4.3564 | ✗ MISS
+    Borderlands is a humorous and addictive RPG shooter with a unique art style. Players who enjoy FPS games, co-op gameplay, and a rewarding looting system will find this game enjoyable. It offers challe...
+
+[7] Item ID: 684 (Raw: 240) | Score: 4.2948 | ✗ MISS
+    Counter-Strike: Source is a multiplayer action FPS game that is enjoyed by a diverse range of users. Players who enjoy tactical and competitive gameplay will find this game appealing. It is particular...
+
+[8] Item ID: 1039 (Raw: 200510) | Score: 4.2153 | ✗ MISS
+    Fans of strategy games, turn-based tactics, and sci-fi settings will enjoy XCOM: Enemy Unknown. The game offers engaging gameplay with a well-executed tech tree and scenarios that get progressively ch...
+
+[9] Item ID: 54 (Raw: 17410) | Score: 3.9294 | ✗ MISS
+    Mirror's Edge would be enjoyed by users who appreciate unique first-person action adventure games with parkour mechanics and a strong female protagonist. Players who enjoy games with immersive atmosph...
+
+[10] Item ID: 111 (Raw: 440) | Score: 3.8164 | ✗ MISS
+    Users who enjoy multiplayer, first-person shooters with a comedic and cartoonish style, as well as a variety of gameplay modes and unlockable items, would enjoy Team Fortress 2. The game appeals to bo...
+
+----------------------------------------------------------------------------------------------------
+GROUND TRUTH (TEST ITEMS): 10 items
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 59 (Raw: 49520) | ✓ PREDICTED
+    Borderlands 2 is a first-person action RPG game with a humorous and stylized open-world setting. This game is enjoyable for users who enjoy cooperative gameplay, loot collection, and comedic elements....
+
+[2] Item ID: 107 (Raw: 620) | ✓ PREDICTED
+    Portal 2 is a highly enjoyable game that would be appreciated by puzzle game enthusiasts, fans of the original Portal, and those who enjoy cooperative gameplay. It offers an expanded puzzle experience...
+
+[3] Item ID: 151 (Raw: 241540) | ✗ NOT PREDICTED
+    State of Decay is a highly addictive and clever zombie apocalypse simulation game, suitable for fans of the zombie genre. It offers an immersive 'end of the world' environment, meaningful missions, cr...
+
+[4] Item ID: 261 (Raw: 286040) | ✗ NOT PREDICTED
+    Fans of budget first-person shooters with a horror/sci-fi theme, and those who enjoy zombie-killing action and old-school shooters, would enjoy Dead Effect. The game offers a good variety of weapons a...
+
+[5] Item ID: 661 (Raw: 379720) | ✗ NOT PREDICTED
+    Fans of fast-paced, action-packed first-person shooters with a nostalgic desire for the classic DOOM games will greatly enjoy this game. The game offers solid gameplay, satisfying glory kills, and an ...
+
+[6] Item ID: 755 (Raw: 236110) | ✗ NOT PREDICTED
+    Dungeon Defenders II would be enjoyed by users who appreciate action-packed tower defense games with a mix of RPG and strategy elements. It appeals to players who prefer online multiplayer and co-op g...
+
+[7] Item ID: 1090 (Raw: 22230) | ✗ NOT PREDICTED
+    Rock of Ages is a comedic indie game that combines action, racing, and strategy genres. It is recommended for users who enjoy unique and quirky gameplay, humor, and historical references. The game off...
+
+[8] Item ID: 1102 (Raw: 250900) | ✗ NOT PREDICTED
+    Fans of action games, rogue-like games, and dungeon crawlers would enjoy The Binding of Isaac: Rebirth. The game offers intense gameplay with challenging difficulty, procedurally generated levels, and...
+
+[9] Item ID: 1747 (Raw: 22330) | ✗ NOT PREDICTED
+    Fans of open world RPGs, fantasy settings, and character customization would enjoy The Elder Scrolls IV: Oblivion. Its immersive storytelling, beautiful landscapes, and extensive quests make it a grea...
+
+[10] Item ID: 2115 (Raw: 20570) | ✗ NOT PREDICTED
+    Fans of the Warhammer 40K universe and strategy games would enjoy Warhammer® 40,000: Dawn of War® II Chaos Rising. The game offers a challenging campaign with interesting corruption mechanics, engagin...
+
+====================================================================================================
+
+
+>>> Sample 2/2 from Medium segment <<<
+
+====================================================================================================
+USER ID: 828
+Segment: Medium
+Number of train interactions: 92
+Recall@20: 0.0952
+NDCG@20: 0.2317
+====================================================================================================
+
+USER ID (RAW):            Vortex
+
+USER PROFILE:            
+Based on the user's interactions and reviews, this user is likely to enjoy immersive open-world MMORPGs, action-packed shooters with humor and gore elements, action-adventure games with stealth and hacking mechanics, multiplayer shooters with fast-paced gameplay, music-based puzzle games, city-building simulation strategy games, and RPGs with dynamic combat and class skills.
+
+USER REASONING:          
+The user gave positive reviews and expressed enjoyment for Black Desert Online, Shadow Warrior 2, Watch_Dogs 2, ORION: Prelude, Counter-Strike: Source, Musaic Box, Stonehearth, Dragon Nest, and Sid Meier's Civilization V. They mentioned addictive gameplay, realistic characters, enjoyable PvP and PvE, fun missions, good RPG-like systems, humor, gun variety, battling dinosaurs, cooperative play, tactical and competitive gameplay, roleplay servers, puzzles that require an ear for audio, managing resources, crafting, regular updates and bug fixes, involvement of the community, dynamic combat and unique class skills, building civilizations, engaging in warfare and diplomacy, experiencing different eras of history, great soundtracks, and replay value.
+
+----------------------------------------------------------------------------------------------------
+HISTORICAL INTERACTIONS (TRAIN): 92 items
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 2 (Raw: 227940)
+    Users who enjoy World War II-themed games, multiplayer first-person shooters, and tactical strategy games would likely enjoy Heroes & Generals. However, those who dislike pay-to-win mechanics and slow...
+
+[2] Item ID: 45 (Raw: 263060)
+    Blockstorm, an indie action game with FPS and multiplayer genres, would appeal to users who enjoy customizing characters, weapons, maps, and zombies. It offers great possibilities for character and we...
+
+[3] Item ID: 59 (Raw: 49520)
+    Borderlands 2 is a first-person action RPG game with a humorous and stylized open-world setting. This game is enjoyable for users who enjoy cooperative gameplay, loot collection, and comedic elements....
+
+[4] Item ID: 89 (Raw: 238090)
+    Users who enjoy stealth/sniper games set in a World War II setting with multiplayer and co-op capabilities are likely to enjoy Sniper Elite 3. The game offers improved HUD and customization options, c...
+
+[5] Item ID: 101 (Raw: 377160)
+    Fans of open world, post-apocalyptic settings, and action RPGs would enjoy Fallout 4. The game offers a vast world with immersive environment art and exploration. However, some players found the RPG e...
+
+[6] Item ID: 107 (Raw: 620)
+    Portal 2 is a highly enjoyable game that would be appreciated by puzzle game enthusiasts, fans of the original Portal, and those who enjoy cooperative gameplay. It offers an expanded puzzle experience...
+
+[7] Item ID: 128 (Raw: 8930)
+    Users who enjoy strategy games, turn-based games, historical games, and games with replay value would enjoy Sid Meier's Civilization V. It is recommended for those who like building civilizations, eng...
+
+[8] Item ID: 131 (Raw: 232090)
+    Fans of co-op action games with a love for zombies, gore, and intense gameplay would enjoy Killing Floor 2. The game has a great soundtrack, atmospheric visuals, and challenging difficulty. It is suit...
+
+[9] Item ID: 141 (Raw: 652980)
+    Casual gamers who enjoy free-to-play games and simulations with a funny and comedic theme would enjoy Loading Screen Simulator. It appeals to players who appreciate family-friendly content and are loo...
+
+[10] Item ID: 150 (Raw: 108710)
+    Alan Wake is a psychological horror game that would appeal to users who enjoy atmospheric, story-driven experiences. It offers fluid movement, suspenseful gameplay, and unique mechanics like using lig...
+
+... and 82 more train items
+
+----------------------------------------------------------------------------------------------------
+PREDICTED ITEMS (TOP-20 RECOMMENDATIONS)
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 62 (Raw: 252490) | Score: 8.8570 | ✓ HIT
+    Users who enjoy survival games with crafting, multiplayer interaction, and a challenging gameplay experience would enjoy Rust. The game offers a satisfying progression system, starting with limited re...
+
+[2] Item ID: 111 (Raw: 440) | Score: 8.6952 | ✓ HIT
+    Users who enjoy multiplayer, first-person shooters with a comedic and cartoonish style, as well as a variety of gameplay modes and unlockable items, would enjoy Team Fortress 2. The game appeals to bo...
+
+[3] Item ID: 957 (Raw: 211820) | Score: 6.2045 | ✗ MISS
+    Starbound is an action-adventure game that combines elements of sandbox, survival, and RPG genres. It is suitable for players who enjoy open-world exploration, building, crafting, and pixel graphics. ...
+
+[4] Item ID: 1017 (Raw: 107410) | Score: 5.5041 | ✗ MISS
+    Arma 3 is a military simulation game with action, strategy, and FPS elements, making it appealing to users who enjoy realistic combat experiences and large-scale multiplayer battles. The game's open w...
+
+[5] Item ID: 79 (Raw: 230410) | Score: 5.1922 | ✗ MISS
+    Warframe is a free-to-play, action-packed third-person shooter game set in a futuristic sci-fi universe where players assume the role of powerful space ninjas with unique abilities. The game features ...
+
+[6] Item ID: 120 (Raw: 346110) | Score: 5.1725 | ✗ MISS
+    Users who enjoy open world, survival, and sandbox games and are willing to invest time and effort in a game would enjoy ARK: Survival Evolved. They should also have a high tolerance for occasional cra...
+
+[7] Item ID: 172 (Raw: 48700) | Score: 4.6403 | ✗ MISS
+    Fans of strategy, RPG, medieval-themed games, and those who enjoy open-world sandbox experiences with complex gameplay and an immersive world would enjoy Mount & Blade: Warband.
+
+[8] Item ID: 129 (Raw: 239140) | Score: 4.6359 | ✗ MISS
+    Dying Light is a highly recommended game for those who enjoy action-filled zombie survival games with elements of parkour and RPG. The game appeals to players who appreciate challenging gameplay, sati...
+
+[9] Item ID: 577 (Raw: 224260) | Score: 4.4740 | ✗ MISS
+    No More Room in Hell is a realistic and challenging zombie survival game that would appeal to players who enjoy free-to-play indie games with a strong emphasis on teamwork and strategy. The game's rea...
+
+[10] Item ID: 836 (Raw: 208090) | Score: 4.3967 | ✗ MISS
+    Loadout is an action-packed, fast-paced and humorous third-person shooter game that would appeal to fans of free-to-play games, multiplayer shooters, and customization options. It caters to both casua...
+
+----------------------------------------------------------------------------------------------------
+GROUND TRUTH (TEST ITEMS): 21 items
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 62 (Raw: 252490) | ✓ PREDICTED
+    Users who enjoy survival games with crafting, multiplayer interaction, and a challenging gameplay experience would enjoy Rust. The game offers a satisfying progression system, starting with limited re...
+
+[2] Item ID: 91 (Raw: 268050) | ✗ NOT PREDICTED
+    Fans of horror and survival horror games, especially those who enjoyed Resident Evil 4 and Silent Hill, would likely enjoy The Evil Within. The game's atmospheric and creepy environment, strategic dec...
+
+[3] Item ID: 111 (Raw: 440) | ✓ PREDICTED
+    Users who enjoy multiplayer, first-person shooters with a comedic and cartoonish style, as well as a variety of gameplay modes and unlockable items, would enjoy Team Fortress 2. The game appeals to bo...
+
+[4] Item ID: 122 (Raw: 203140) | ✗ NOT PREDICTED
+    Fans of the Hitman franchise who enjoy stealth action games with impressive graphics and extensive gameplay options would enjoy Hitman: Absolution. This game offers a well-made storyline, realistic gr...
+
+[5] Item ID: 215 (Raw: 418460) | ✗ NOT PREDICTED
+    Players who enjoy realistic, team-based, and hardcore combat set in the Vietnam War era, with a focus on multiplayer gameplay, would enjoy Rising Storm 2: Vietnam. This game appeals to fans of the Red...
+
+[6] Item ID: 370 (Raw: 264140) | ✗ NOT PREDICTED
+    Types of users who would enjoy Pixel Piracy include: gamers who enjoy adventure, indie, RPG, and simulation genres, players who appreciate pixel graphics, open-world sandbox games, and rogue-like elem...
+
+[7] Item ID: 609 (Raw: 209650) | ✗ NOT PREDICTED
+    Fans of fast-paced, futuristic and action-packed first-person shooter games with a focus on multiplayer gameplay would enjoy Call of Duty: Advanced Warfare. It appeals to players who are interested in...
+
+[8] Item ID: 641 (Raw: 738060) | ✗ NOT PREDICTED
+    Fans of the FNAF franchise, particularly those who enjoy horror and simulation games, would enjoy Freddy Fazbear's Pizzeria Simulator. This game offers a creepy atmosphere combined with challenging ga...
+
+[9] Item ID: 941 (Raw: 319630) | ✗ NOT PREDICTED
+    Users who enjoy story-driven games, with emphasis on choice-making, atmospheric settings, and great soundtracks, would enjoy Life is Strange - Episode 1. It appeals to those who appreciate well-writte...
+
+[10] Item ID: 946 (Raw: 275850) | ✗ NOT PREDICTED
+    Fans of action and adventure games, space exploration, and open world sandboxes would enjoy No Man's Sky. This game appeals to players who enjoy patient exploration, complex crafting and base building...
+
+[11] Item ID: 1015 (Raw: 305620) | ✗ NOT PREDICTED
+    The Long Dark is a survival game that would appeal to players who enjoy immersive and challenging experiences in an open world, post-apocalyptic setting. It is well-suited for those who appreciate a r...
+
+[12] Item ID: 1138 (Raw: 99900) | ✗ NOT PREDICTED
+    Users who enjoy challenging, grindy MMORPG games with cute and creative designs would enjoy Spiral Knights. It is recommended for players who are looking for a time-waster rather than a full-time MMO....
+
+[13] Item ID: 1267 (Raw: 248570) | ✗ NOT PREDICTED
+    Toribash is a unique and challenging game that would appeal to users who enjoy strategic fighting games and have a love for martial arts. The game offers a steep learning curve, requiring dedication a...
+
+[14] Item ID: 1345 (Raw: 391460) | ✗ NOT PREDICTED
+    Fans of fast-paced, competitive FPS games like Call of Duty and Counter-Strike would enjoy WARMODE. It offers intense action, with accurate aim and quick reflexes being essential for success. The game...
+
+[15] Item ID: 1432 (Raw: 293500) | ✗ NOT PREDICTED
+    This game, Amazing World, would likely be enjoyed by players who are looking for a cute, family-friendly, and casual adventure. It appeals to those who enjoy multiplayer and open-world games. However,...
+
+[16] Item ID: 1583 (Raw: 206440) | ✗ NOT PREDICTED
+    To the Moon is a short, story-rich adventure game with pixel graphics. It is heavily focused on narrative and character development, making it more like an interactive novel than a traditional game. P...
+
+[17] Item ID: 2532 (Raw: 364470) | ✗ NOT PREDICTED
+    Fans of fantasy card games who enjoy strategic gameplay and deck building would enjoy The Elder Scrolls: Legends. It offers a free-to-play experience with optional in-game purchases for expansions and...
+
+[18] Item ID: 2553 (Raw: 264380) | ✗ NOT PREDICTED
+    Fans of visual novels with emotional and dramatic stories, particularly those who enjoy indie titles, would enjoy Narcissu 1st & 2nd. The game's focus on narrative and lack of traditional gameplay ele...
+
+[19] Item ID: 3786 (Raw: 264120) | ✗ NOT PREDICTED
+    Users who enjoy free to play racing games with a steep learning curve and are willing to overlook technical issues may enjoy Victory: The Age of Racing. However, those who prefer single-player experie...
+
+[20] Item ID: 4740 (Raw: 307130) | ✗ NOT PREDICTED
+    Users who enjoy action-adventure indie games with platformer and sandbox elements would likely enjoy Asteria. However, Australian players may find the game unplayable due to lag issues. The game has r...
+
+[21] Item ID: 5181 (Raw: 466220) | ✗ NOT PREDICTED
+    Users who enjoy early access games, pixel graphics, and retro-style games would enjoy Kingdom of Loot. Additionally, players who are patient and understanding of the bugs and issues that come with ear...
+
+====================================================================================================
+
+
+
+####################################################################################################
+####################################################################################################
+SEGMENT: GOOD
+####################################################################################################
+####################################################################################################
+
+
+>>> Sample 1/2 from Good segment <<<
+
+====================================================================================================
+USER ID: 1254
+Segment: Good
+Number of train interactions: 27
+Recall@20: 0.2727
+NDCG@20: 0.2387
+====================================================================================================
+
+USER ID (RAW):            Kurt Cobain
+
+USER PROFILE:            
+Based on the games the user has played and their reviews, this user is likely to enjoy multiplayer action games with competitive gameplay, cooperative action games with a focus on loot collection, comedic and cooperative adventure games, first-person shooter games with engaging stories and immersive gameplay, casual adventure games with co-op gameplay, stealth action games with open-world exploration, mindless shooting games with a cyberpunk backdrop, tactical multiplayer FPS games, and chaotic open-world exploration games with multiplayer experiences.
+
+USER REASONING:          
+The user has expressed interest in multiplayer action games with competitive gameplay and team-based battles. They also enjoy cooperative action games with loot collection and dark fantasy settings. The user has enjoyed comedic and cooperative adventure games with platformer elements and challenging puzzles. They have shown an appreciation for first-person shooter games with engaging stories and immersive gameplay. The user also enjoys casual adventure games with co-op gameplay, stealth action games with open-world exploration, mindless shooting games with a cyberpunk backdrop, tactical multiplayer FPS games, and chaotic open-world exploration games with multiplayer experiences.
+
+----------------------------------------------------------------------------------------------------
+HISTORICAL INTERACTIONS (TRAIN): 27 items
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 2 (Raw: 227940)
+    Users who enjoy World War II-themed games, multiplayer first-person shooters, and tactical strategy games would likely enjoy Heroes & Generals. However, those who dislike pay-to-win mechanics and slow...
+
+[2] Item ID: 50 (Raw: 220)
+    Fans of first-person shooter games, especially those who enjoy action-packed and immersive gameplay, atmospheric environments, and engaging stories, would greatly enjoy Half-Life 2. The game has recei...
+
+[3] Item ID: 97 (Raw: 340)
+    Fans of the Half-Life series and those interested in the development cycle of Half-Life 2 would enjoy Half-Life 2: Lost Coast. It is a short game that serves as a tech demo for the Source engine, show...
+
+[4] Item ID: 111 (Raw: 440)
+    Users who enjoy multiplayer, first-person shooters with a comedic and cartoonish style, as well as a variety of gameplay modes and unlockable items, would enjoy Team Fortress 2. The game appeals to bo...
+
+[5] Item ID: 185 (Raw: 318430)
+    This game would be enjoyed by users who enjoy challenging puzzle-platformers with pixel graphics and a dark sense of humor. It may not be suitable for players who get easily frustrated or prefer less ...
+
+[6] Item ID: 195 (Raw: 235540)
+    Fans of cooperative action games with a focus on first-person combat, dark fantasy settings, and loot collection would enjoy Warhammer: End Times - Vermintide. The game appeals to players who enjoyed ...
+
+[7] Item ID: 196 (Raw: 203750)
+    Fans of action-packed third-person shooters, cyberpunk and sci-fi settings, and immersive storylines will enjoy Binary Domain. The game combines elements from Blade Runner and Gears of War, offering f...
+
+[8] Item ID: 260 (Raw: 80)
+    Counter-Strike: Condition Zero would be enjoyed by users who are looking for a multiplayer first-person shooter game with a focus on both singleplayer and multiplayer modes. The game appeals to users ...
+
+[9] Item ID: 428 (Raw: 311340)
+    Fans of the Metal Gear universe, especially those familiar with the story and gameplay mechanics, will enjoy METAL GEAR SOLID V: GROUND ZEROES. It serves as a great introduction to the gameplay style ...
+
+[10] Item ID: 597 (Raw: 221100)
+    Fans of post-apocalyptic survival games with a focus on multiplayer interactions would enjoy DayZ. The game offers an open-world sandbox experience with atmospheric environments and challenging gamepl...
+
+... and 17 more train items
+
+----------------------------------------------------------------------------------------------------
+PREDICTED ITEMS (TOP-20 RECOMMENDATIONS)
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 59 (Raw: 49520) | Score: 7.0969 | ✗ MISS
+    Borderlands 2 is a first-person action RPG game with a humorous and stylized open-world setting. This game is enjoyable for users who enjoy cooperative gameplay, loot collection, and comedic elements....
+
+[2] Item ID: 107 (Raw: 620) | Score: 6.6913 | ✓ HIT
+    Portal 2 is a highly enjoyable game that would be appreciated by puzzle game enthusiasts, fans of the original Portal, and those who enjoy cooperative gameplay. It offers an expanded puzzle experience...
+
+[3] Item ID: 62 (Raw: 252490) | Score: 6.3719 | ✗ MISS
+    Users who enjoy survival games with crafting, multiplayer interaction, and a challenging gameplay experience would enjoy Rust. The game offers a satisfying progression system, starting with limited re...
+
+[4] Item ID: 26 (Raw: 55230) | Score: 4.7059 | ✗ MISS
+    Users who enjoy open world sandbox crime games with a sense of humor and a love for outlandish and funny gameplay elements will enjoy Saints Row: The Third. The game offers tight controls, great graph...
+
+[5] Item ID: 361 (Raw: 433850) | Score: 4.6664 | ✗ MISS
+    Fans of action, adventure, and open-world games who enjoy multiplayer experiences in a post-apocalyptic setting would likely enjoy H1Z1. This game appeals to players who appreciate survival mechanics,...
+
+[6] Item ID: 832 (Raw: 4000) | Score: 4.6635 | ✗ MISS
+    Garry's Mod is a sandbox simulation game published by Valve. It is a popular choice for users who enjoy creative gameplay and modding. The game provides endless possibilities for building, creating, a...
+
+[7] Item ID: 1036 (Raw: 113200) | Score: 4.3691 | ✗ MISS
+    The Binding of Isaac is a well-made, addictive and challenging dungeon-styled game that would appeal to gamers who enjoy rogue-like, indie, and RPG genres. The game offers a captivating storyline with...
+
+[8] Item ID: 227 (Raw: 104900) | Score: 4.3008 | ✗ MISS
+    ORION: Prelude is an action-packed, multiplayer shooter game set in a sci-fi open world. It is most enjoyed by users who like fast-paced gameplay, cooperative play with friends, and addictive gameplay...
+
+[9] Item ID: 101 (Raw: 377160) | Score: 4.2459 | ✗ MISS
+    Fans of open world, post-apocalyptic settings, and action RPGs would enjoy Fallout 4. The game offers a vast world with immersive environment art and exploration. However, some players found the RPG e...
+
+[10] Item ID: 1328 (Raw: 417860) | Score: 4.1561 | ✓ HIT
+    Users who enjoy narrative-driven games with a focus on choice and consequence, as well as those nostalgic for the early 2000s MSN era, would enjoy Emily is Away. The game allows players to experience ...
+
+----------------------------------------------------------------------------------------------------
+GROUND TRUTH (TEST ITEMS): 11 items
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 58 (Raw: 239030) | ✗ NOT PREDICTED
+    Users who enjoy indie games with political and simulation elements, as well as those who appreciate atmospheric and story-rich experiences, would enjoy Papers, Please. The game challenges players to m...
+
+[2] Item ID: 107 (Raw: 620) | ✓ PREDICTED
+    Portal 2 is a highly enjoyable game that would be appreciated by puzzle game enthusiasts, fans of the original Portal, and those who enjoy cooperative gameplay. It offers an expanded puzzle experience...
+
+[3] Item ID: 447 (Raw: 205950) | ✗ NOT PREDICTED
+    Users who enjoy stylish and unique action games with a great soundtrack, retro gaming enthusiasts, fans of Sega games, and those who appreciate colorful and stylized visuals would enjoy Jet Set Radio.
+
+[4] Item ID: 599 (Raw: 301520) | ✗ NOT PREDICTED
+    Robocraft is a multiplayer sandbox game that allows players to build and battle with their own creations. It appeals to users who enjoy creative building, customization, and strategic combat. The game...
+
+[5] Item ID: 836 (Raw: 208090) | ✓ PREDICTED
+    Loadout is an action-packed, fast-paced and humorous third-person shooter game that would appeal to fans of free-to-play games, multiplayer shooters, and customization options. It caters to both casua...
+
+[6] Item ID: 949 (Raw: 218230) | ✗ NOT PREDICTED
+    Players who enjoy intense, team-based, and strategic warfare games set in a futuristic, open-world, and massively multiplayer environment would enjoy PlanetSide 2. It attracts both newbies and veteran...
+
+[7] Item ID: 1007 (Raw: 257400) | ✗ NOT PREDICTED
+    Users who enjoy animation, modeling, and character customization would enjoy Fuse. It is a good software for developing games and characters, especially for those without 3D modeling skills. However, ...
+
+[8] Item ID: 1096 (Raw: 319510) | ✗ NOT PREDICTED
+    Fans of survival horror games, particularly those who enjoy suspenseful gameplay, jump scares, and a creepy atmosphere, would enjoy Five Nights at Freddy's. The game's difficulty level and resource ma...
+
+[9] Item ID: 1194 (Raw: 6910) | ✗ NOT PREDICTED
+    Fans of classic cyberpunk RPGs with deep storytelling, immersive atmosphere, and choices that have consequences would enjoy Deus Ex: Game of the Year Edition. It appeals to those who appreciate clunky...
+
+[10] Item ID: 1207 (Raw: 286080) | ✗ NOT PREDICTED
+    Fans of Portal who are looking for a free mod with time travel mechanics and a new take on puzzles would enjoy this game. However, users who prioritize stability and bug-free gameplay may not have a g...
+
+[11] Item ID: 1328 (Raw: 417860) | ✓ PREDICTED
+    Users who enjoy narrative-driven games with a focus on choice and consequence, as well as those nostalgic for the early 2000s MSN era, would enjoy Emily is Away. The game allows players to experience ...
+
+====================================================================================================
+
+
+>>> Sample 2/2 from Good segment <<<
+
+====================================================================================================
+USER ID: 273
+Segment: Good
+Number of train interactions: 25
+Recall@20: 0.2727
+NDCG@20: 0.3641
+====================================================================================================
+
+USER ID (RAW):            PCdudeserver
+
+USER PROFILE:            
+Based on the user's game interactions and reviews, this user is likely to enjoy story-rich, immersive, and comedic games with strong character development and customization options. They enjoy games with a focus on choice and consequences, as well as cooperative gameplay. However, they may not be interested in games with technical issues or limited choices and impact on the overall series.
+
+USER REASONING:          
+The user highly praises games like BioShock, Tales from the Borderlands, and Borderlands 2 for their captivating storylines, unique gameplay, and humor. They also expressed enjoyment for games like PAYDAY The Heist and Loadout for their co-op and multiplayer aspects. However, they have criticized games like Saints Row 2 and Saints Row: Gat out of Hell for their technical issues and missing content. They also expressed disappointment with The Walking Dead: Michonne - A Telltale Miniseries for its limited choices and impact. This suggests that the user values immersive gameplay, customization options, and meaningful choices in the games they play.
+
+----------------------------------------------------------------------------------------------------
+HISTORICAL INTERACTIONS (TRAIN): 25 items
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 9 (Raw: 9480)
+    Users who enjoy open-world action games with a comedic edge and a focus on character customization would enjoy Saints Row 2. However, the game's PC port is heavily criticized for being broken and poor...
+
+[2] Item ID: 16 (Raw: 207610)
+    Fans of immersive storytelling, emotional experiences, and interactive decision-making would enjoy The Walking Dead. It is a story-rich adventure game with a post-apocalyptic setting and a focus on ch...
+
+[3] Item ID: 20 (Raw: 330830)
+    Tales from the Borderlands is a comedic adventure game that would be enjoyed by fans of the Borderlands series and Telltale Games. It offers a hilarious and amazing story set in the wasteland of Pando...
+
+[4] Item ID: 26 (Raw: 55230)
+    Users who enjoy open world sandbox crime games with a sense of humor and a love for outlandish and funny gameplay elements will enjoy Saints Row: The Third. The game offers tight controls, great graph...
+
+[5] Item ID: 48 (Raw: 206420)
+    The game Saints Row IV would be enjoyed by users who appreciate open-world action-adventure games with a comedic and sandbox experience. It is suitable for players who value fun gameplay, well-written...
+
+[6] Item ID: 56 (Raw: 429570)
+    Fans of The Walking Dead franchise and Telltale games would enjoy The Walking Dead: Michonne - A Telltale Miniseries. It offers a haunting and morally questioning story with smooth gameplay and good c...
+
+[7] Item ID: 59 (Raw: 49520)
+    Borderlands 2 is a first-person action RPG game with a humorous and stylized open-world setting. This game is enjoyable for users who enjoy cooperative gameplay, loot collection, and comedic elements....
+
+[8] Item ID: 63 (Raw: 12120)
+    Users who enjoy open world, action-packed games with a great soundtrack and a mature storyline would enjoy Grand Theft Auto: San Andreas. The game allows players to experience a classic third-person s...
+
+[9] Item ID: 111 (Raw: 440)
+    Users who enjoy multiplayer, first-person shooters with a comedic and cartoonish style, as well as a variety of gameplay modes and unlockable items, would enjoy Team Fortress 2. The game appeals to bo...
+
+[10] Item ID: 133 (Raw: 307690)
+    Sleeping Dogs: Definitive Edition is a game that would appeal to fans of action, adventure, and racing genres. It is enjoyed by players who appreciate a great storyline, character development, and plo...
+
+... and 15 more train items
+
+----------------------------------------------------------------------------------------------------
+PREDICTED ITEMS (TOP-20 RECOMMENDATIONS)
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 107 (Raw: 620) | Score: 5.7227 | ✓ HIT
+    Portal 2 is a highly enjoyable game that would be appreciated by puzzle game enthusiasts, fans of the original Portal, and those who enjoy cooperative gameplay. It offers an expanded puzzle experience...
+
+[2] Item ID: 101 (Raw: 377160) | Score: 4.9359 | ✗ MISS
+    Fans of open world, post-apocalyptic settings, and action RPGs would enjoy Fallout 4. The game offers a vast world with immersive environment art and exploration. However, some players found the RPG e...
+
+[3] Item ID: 50 (Raw: 220) | Score: 4.9204 | ✓ HIT
+    Fans of first-person shooter games, especially those who enjoy action-packed and immersive gameplay, atmospheric environments, and engaging stories, would greatly enjoy Half-Life 2. The game has recei...
+
+[4] Item ID: 941 (Raw: 319630) | Score: 4.7458 | ✗ MISS
+    Users who enjoy story-driven games, with emphasis on choice-making, atmospheric settings, and great soundtracks, would enjoy Life is Strange - Episode 1. It appeals to those who appreciate well-writte...
+
+[5] Item ID: 665 (Raw: 220240) | Score: 3.9303 | ✗ MISS
+    Users who enjoy open-world, action-adventure games with a strong emphasis on shooting and exploration would enjoy Far Cry 3. It offers a meaty shooting experience with a wide variety of guns and upgra...
+
+[6] Item ID: 616 (Raw: 391540) | Score: 3.8606 | ✗ MISS
+    Users who enjoy unique gameplay mechanics, compelling storytelling, and vibrant characters would enjoy Undertale. It appeals to those who appreciate turn-based bullet hell combat, player choices that ...
+
+[7] Item ID: 757 (Raw: 213670) | Score: 3.7648 | ✗ MISS
+    Fans of the South Park TV series who enjoy RPG games with humor, parody, and references to the show would greatly enjoy South Park: The Stick of Truth. The game offers a well-written story, excellent ...
+
+[8] Item ID: 1328 (Raw: 417860) | Score: 3.6943 | ✗ MISS
+    Users who enjoy narrative-driven games with a focus on choice and consequence, as well as those nostalgic for the early 2000s MSN era, would enjoy Emily is Away. The game allows players to experience ...
+
+[9] Item ID: 1308 (Raw: 8190) | Score: 3.6852 | ✗ MISS
+    Just Cause 2 is an open-world action-adventure game with an emphasis on exploration and destruction. It is recommended for players who enjoy mindless destruction, chaotic gameplay, and freedom to expe...
+
+[10] Item ID: 122 (Raw: 203140) | Score: 3.6353 | ✗ MISS
+    Fans of the Hitman franchise who enjoy stealth action games with impressive graphics and extensive gameplay options would enjoy Hitman: Absolution. This game offers a well-made storyline, realistic gr...
+
+----------------------------------------------------------------------------------------------------
+GROUND TRUTH (TEST ITEMS): 11 items
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 2 (Raw: 227940) | ✗ NOT PREDICTED
+    Users who enjoy World War II-themed games, multiplayer first-person shooters, and tactical strategy games would likely enjoy Heroes & Generals. However, those who dislike pay-to-win mechanics and slow...
+
+[2] Item ID: 50 (Raw: 220) | ✓ PREDICTED
+    Fans of first-person shooter games, especially those who enjoy action-packed and immersive gameplay, atmospheric environments, and engaging stories, would greatly enjoy Half-Life 2. The game has recei...
+
+[3] Item ID: 98 (Raw: 360430) | ✗ NOT PREDICTED
+    Mafia III is an action-adventure game that would appeal to users who enjoy open-world crime games with a strong storyline and atmospheric setting. The game received positive feedback for its great mus...
+
+[4] Item ID: 107 (Raw: 620) | ✓ PREDICTED
+    Portal 2 is a highly enjoyable game that would be appreciated by puzzle game enthusiasts, fans of the original Portal, and those who enjoy cooperative gameplay. It offers an expanded puzzle experience...
+
+[5] Item ID: 227 (Raw: 104900) | ✗ NOT PREDICTED
+    ORION: Prelude is an action-packed, multiplayer shooter game set in a sci-fi open world. It is most enjoyed by users who like fast-paced gameplay, cooperative play with friends, and addictive gameplay...
+
+[6] Item ID: 428 (Raw: 311340) | ✗ NOT PREDICTED
+    Fans of the Metal Gear universe, especially those familiar with the story and gameplay mechanics, will enjoy METAL GEAR SOLID V: GROUND ZEROES. It serves as a great introduction to the gameplay style ...
+
+[7] Item ID: 611 (Raw: 274170) | ✗ NOT PREDICTED
+    Hotline Miami 2: Wrong Number is a fast-paced, difficult top-down shooter with a great soundtrack and retro pixel graphics. It appeals to hardcore gamers who enjoy challenging gameplay and can appreci...
+
+[8] Item ID: 819 (Raw: 300) | ✗ NOT PREDICTED
+    Day of Defeat: Source is a highly underrated multiplayer World War II first-person shooter that requires strategy and offers a more realistic experience compared to spray-and-pray games. It appeals to...
+
+[9] Item ID: 1096 (Raw: 319510) | ✗ NOT PREDICTED
+    Fans of survival horror games, particularly those who enjoy suspenseful gameplay, jump scares, and a creepy atmosphere, would enjoy Five Nights at Freddy's. The game's difficulty level and resource ma...
+
+[10] Item ID: 1430 (Raw: 359050) | ✗ NOT PREDICTED
+    This game would appeal to users who enjoy indie, simulation, and comedy games with pixel graphics. It is recommended for players who have a sense of humor and enjoy unconventional and humorous experie...
+
+[11] Item ID: 1644 (Raw: 12200) | ✓ PREDICTED
+    Users who enjoy open world action-adventure games with a dark humorous tone and a focus on school life would enjoy Bully: Scholarship Edition.
+
+====================================================================================================
+

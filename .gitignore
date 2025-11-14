@@ -1,3 +1,4 @@
 data/amazon
 data/steam
 data/yelp
+__pycache__/
