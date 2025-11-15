@@ -1,0 +1,447 @@
+Qualitative User Examples: autocf_gene on steam
+====================================================================================================
+
+
+
+####################################################################################################
+QUALITATIVE USER EXAMPLES BY SEGMENT
+####################################################################################################
+
+
+>>> Example 1/3 from Bad segment (front+back mean similarity = 0.8001) <<<
+
+====================================================================================================
+USER ID: 958
+Segment: Bad
+Number of train interactions: 78
+Recall@20: 0.0000
+NDCG@20: 0.0000
+Front-5 mean sim (user ↔ item): 0.8108
+Back-5 mean sim  (user ↔ item): 0.7894
+Front+Back mean  (user ↔ item): 0.8001
+====================================================================================================
+
+USER ID (RAW):            George Costanza
+
+USER PROFILE:            
+This user is likely to enjoy narrative-driven games with abstract and psychological themes, as well as immersive open world experiences and realistic simulations. They appreciate games with engaging storytelling, character customization, and atmospheric settings. They also enjoy games that offer choices with consequences and challenging gameplay. However, they may not enjoy games with repetitive gameplay, light-hearted entertainment, or lacking in strong storytelling. Overall, this user prefers thought-provoking and immersive experiences in a variety of genres.
+
+USER REASONING:          
+The user has positively reviewed games like The Beginner's Guide, Mass Effect, and Risen, which are narrative-driven games with abstract and psychological themes and immersive storytelling. They have also enjoyed Grand Theft Auto V and Watch_Dogs, which are open world action-adventure games with immersive open world settings and engaging multiplayer. The user has also expressed interest in realistic simulation games, as seen by their positive review of Euro Truck Simulator. These preferences indicate a desire for immersive experiences, engaging storytelling, and a variety of genres.
+
+----------------------------------------------------------------------------------------------------
+HISTORICAL INTERACTIONS (TRAIN): 78 items
+----------------------------------------------------------------------------------------------------
+
+Earliest 5 train items:
+
+[1] Item ID: 36 (Raw: 363970)
+    Clicker Heroes is a casual and addicting game that appeals to users who enjoy idle games and leveling up. Its simple yet deep gameplay, along with regular updates, keeps players engaged for long periods of time. The game requires a lot of clicking and time investment, making it suitable for users who are looking for a game that can provide a challenge and require dedication. Additionally, the game's humorous tone and fantasy theme add to its appeal. However, users should be aware of the potential health repercussions, such as developing carpal tunnel syndrome, due to excessive clicking.
+
+[2] Item ID: 62 (Raw: 252490)
+    Users who enjoy survival games with crafting, multiplayer interaction, and a challenging gameplay experience would enjoy Rust. The game offers a satisfying progression system, starting with limited resources and gradually allowing players to craft tools, clothes, and eventually weapons. The open world and PvP elements add to the survival aspect, requiring players to watch their backs and not trust other survivors. However, the game has performance issues and a toxic community, which may negatively impact the experience for some users.
+
+[3] Item ID: 91 (Raw: 268050)
+    Fans of horror and survival horror games, especially those who enjoyed Resident Evil 4 and Silent Hill, would likely enjoy The Evil Within. The game's atmospheric and creepy environment, strategic decision-making, and horrifying enemies provide an intense and immersive experience. The gory and graphic nature of the game may appeal to mature audiences. However, users who prioritize graphics and performance may be disappointed with the PC port's issues.
+
+[4] Item ID: 110 (Raw: 67370)
+    Fans of first-person shooters with a dark and atmospheric story, comic book graphics, and brutal, gory violence would enjoy The Darkness II. The game appeals to players who appreciate smooth gameplay mechanics, precise aiming, and the ability to use demon arms for combat. The inclusion of RPG advancement and the mix of traditional shooting with unique Darkness mechanics adds depth and variety to the gameplay. Additionally, players who enjoy immersive storytelling, detailed graphics, and memorable characters will find the game engaging. However, users who prefer longer gameplay experiences may be disappointed with the relatively short duration of the game.
+
+[5] Item ID: 111 (Raw: 440)
+    Users who enjoy multiplayer, first-person shooters with a comedic and cartoonish style, as well as a variety of gameplay modes and unlockable items, would enjoy Team Fortress 2. The game appeals to both casual players who enjoy community gamemodes and players who appreciate competitive gameplay. It also has a dedicated fanbase due to its regular updates and a large number of hats and cosmetic items for customization. However, users with older computers or those who are concerned about potential hackers may find the game less suitable.
+
+Latest 5 train items:
+
+[74] Item ID: 4342 (Raw: 292180)
+    Users who are aspiring pilots or interested in realistic flight simulation would enjoy X-Plane 10 Global - 64 Bit. However, users looking for a quick and casual game experience may not find it suitable. Some users have found the learning curve steep, especially without proper hardware setup. The DLC pricing and lack of basic features have been a source of dissatisfaction for some users. However, those who appreciate the realistic flight model and the ability to customize gameplay through mods have found the game enjoyable. Overall, X-Plane 10 Global - 64 Bit caters to a niche audience of flight simulation enthusiasts.
+
+[75] Item ID: 4373 (Raw: 394600)
+    Fans of action platform games, especially those who enjoy retro-style pixel graphics and a simpler level design, would enjoy Mighty Gunvolt. It appeals to those who are familiar with Mega Man games and appreciate tight controls, varied levels, and the option to choose from different characters. However, some users find the bosses to be too quick with their attacks, making it difficult to predict or dodge. The game is also considered relatively short, with each character taking about 30 minutes to complete. Overall, Mighty Gunvolt offers a fun and nostalgic experience for players seeking a shorter, more accessible action platformer.
+
+[76] Item ID: 4374 (Raw: 233210)
+    Users who enjoy action and simulation games, especially those interested in aviation and the Vietnam War, may enjoy Air Conflicts: Vietnam.
+
+[77] Item ID: 4375 (Raw: 381750)
+    RC Simulation 2.0 would be enjoyed by users who have an interest in RC simulation games and are looking for a fun and simple driving experience. The game brings back memories and offers a satisfying experience for players. However, it may not appeal to users looking for a serious simulation due to its rough physics, controls, and deficiencies in UI and sound. The low playerbase and lack of a social community for multiplayer may also be a drawback for some users.
+
+[78] Item ID: 4376 (Raw: 301300)
+    Chicken Invaders 4 is a fun and casual action game that is enjoyable for both solo players and those looking to play with friends. It has a cheesy and humorous theme with plenty of terrible puns and one-liners that add to the appeal. The gameplay involves shooting and killing chickens while collecting their cooked carcasses and using an egg cannon. The game is great for killing time and can evoke nostalgia for players who have fond memories of similar games from their childhood.
+
+... showing earliest and latest 5 items only
+
+----------------------------------------------------------------------------------------------------
+PREDICTED ITEMS (TOP-5 RECOMMENDATIONS)
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 101 (Raw: 377160) | Score: 5.3173 | ✗ MISS
+    Fans of open world, post-apocalyptic settings, and action RPGs would enjoy Fallout 4. The game offers a vast world with immersive environment art and exploration. However, some players found the RPG elements to be lacking compared to previous entries in the series. The settlement and weapon modding systems are criticized for their lack of depth and bugs. Despite these flaws, the game is still enjoyable for those who appreciate the shooter mechanics and the fun of exploring the Commonwealth through side quests
+
+[2] Item ID: 59 (Raw: 49520) | Score: 5.0027 | ✗ MISS
+    Borderlands 2 is a first-person action RPG game with a humorous and stylized open-world setting. This game is enjoyable for users who enjoy cooperative gameplay, loot collection, and comedic elements. Users who appreciate a leveling system with rewarding encounters and visual appearance will also enjoy this game. It is best played with friends to maximize the fun. However, users who prefer realistic graphics and meaningful gameplay may not find Borderlands 2 appealing. Performance issues have been reported on Windows 10, so users with this operating system should take note.
+
+[3] Item ID: 107 (Raw: 620) | Score: 4.5256 | ✗ MISS
+    Portal 2 is a highly enjoyable game that would be appreciated by puzzle game enthusiasts, fans of the original Portal, and those who enjoy cooperative gameplay. It offers an expanded puzzle experience with updated graphics and a puzzling co-op mode. The game has a strong following, with many users considering it one of the best games ever made. However, it may not appeal to those who found the original Portal groundbreaking or have difficulty with the game's difficulty level. Overall, Portal 2 is recommended for players who enjoy challenging puzzles, science fiction themes, and humorous storytelling.
+
+[4] Item ID: 665 (Raw: 220240) | Score: 3.9687 | ✗ MISS
+    Users who enjoy open-world, action-adventure games with a strong emphasis on shooting and exploration would enjoy Far Cry 3. It offers a meaty shooting experience with a wide variety of guns and upgrades, accompanied by impressive animations and graphics. The game features well-written and interesting characters, particularly the complex and terrifying villain, Vaas Montenegro. The single-player storyline is engaging and filled with both funny and intense moments. The open world is lush, vibrant, and rich in lore, encouraging exploration. However, the multiplayer and co-op modes are considered subpar, with the co-op mode lacking in writing and the multiplayer being average at best. Overall, Far Cry 3 provides hours of fun gameplay and rewards for exploration, making it a must-buy for fans of the genre.
+
+[5] Item ID: 26 (Raw: 55230) | Score: 3.6616 | ✗ MISS
+    Users who enjoy open world sandbox crime games with a sense of humor and a love for outlandish and funny gameplay elements will enjoy Saints Row: The Third. The game offers tight controls, great graphics, unique missions, and extensive customization options. It appeals to players who appreciate silliness, satire, and a comedic twist on the open world genre. Additionally, the game's soundtrack and use of music create an immersive experience. While the game is easy, players can switch to hardcore mode for a greater challenge. Users who prefer a more comical and over-the-top alternative to Grand Theft Auto will find this game to be a perfect choice.
+
+----------------------------------------------------------------------------------------------------
+GROUND TRUTH (TEST ITEMS): 25 items
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 51 (Raw: 31280) | ✗ NOT PREDICTED
+    Poker Night at the Inventory is a casual and sports video game that would appeal to users who enjoy playing poker, casual games, and have an interest in comedy, strategy, and sports. This game is specifically recommended for users who are fans of the characters featured in the game, as the banter and dialogue between them provide entertainment. Additionally, users who are interested in collecting special items for the Team Fortress 2 game would find value in playing this poker game.
+
+[2] Item ID: 127 (Raw: 6060) | ✗ NOT PREDICTED
+    Fans of the Star Wars franchise, especially those who enjoyed the original Battlefront games, will appreciate Star Wars: Battlefront 2 (Classic, 2005). The game's graphics may not be top-notch, but it is praised for its fantastic gameplay and nostalgic value. It appeals to players who have fond memories of playing it in their childhood and those who miss the game from their younger days. The addition of space combat and a galactic conquest mode enhances the experience for fans of the series. However, those who prefer more advanced graphics and realism may not find it as satisfying as newer titles in the franchise.
+
+[3] Item ID: 351 (Raw: 63380) | ✗ NOT PREDICTED
+    Sniper Elite V2 is a sniper action game that appeals to users who enjoy shooting games, multiplayer/co-op gameplay, and World War II settings. The game offers a satisfying sniping experience with tactical systems and realistic ballistics. Users appreciate the opportunity to shoot Nazis and Russians and enjoy the intense action and x-ray kill cams. Some users find it fun to play with friends, while others prefer the single-player campaign. However, some users find the game incomplete due to the abundance of DLCs and lack of sniper variety. Overall, users who enjoy sniping and World War II-themed shooting games would enjoy Sniper Elite V2.
+
+[4] Item ID: 615 (Raw: 212680) | ✗ NOT PREDICTED
+    Fans of challenging rogue-like games with a focus on strategy and space exploration would enjoy FTL: Faster Than Light. The game offers depth, replay value, and a great soundtrack. It requires knowledge about items and systems, as well as skill, to succeed. Although the presentation may not be the best, the game's unique tension between constructing a secure vessel and the intrusion of enemies adds to its appeal. Players who are willing to embrace the difficulty and enjoy countless hours of gameplay trying different strategies and encounters will find this game to be amazing.
+
+[5] Item ID: 636 (Raw: 35700) | ✗ NOT PREDICTED
+    Trine Enchanted Edition is a platformer puzzle game with action and adventure elements. It is recommended for users who enjoy cooperative gameplay, creative puzzle-solving, and beautiful graphics. The game can be played alone or with friends in both single-player and multiplayer modes. The variety of ways to solve puzzles and the charming storyline make it appealing to players who are not typically fans of puzzle or platformer games. The game offers a pleasant and enjoyable experience, particularly for those who appreciate fantasy settings and atmospheric soundtracks.
+
+[6] Item ID: 655 (Raw: 344760) | ✗ NOT PREDICTED
+    Reign Of Kings is a multiplayer survival game with action, adventure, RPG, and simulation elements, set in a medieval open world. It appeals to players who enjoy realistic gameplay, crafting, building, PvP, and cooperative gameplay. The game has potential for improvement and the developers are responsive to player feedback. However, there are some issues with hackers and unhelpful admins on public and community servers. Overall, players who enjoy immersive survival experiences with friends and are willing to tolerate some bugs and server problems would enjoy this game.
+
+[7] Item ID: 766 (Raw: 473690) | ✗ NOT PREDICTED
+    Absolver is an action-adventure game with an indie feel. It appeals to players who enjoy fluid combat systems but may not be suitable for those who prefer games with precise timing. The game offers both PvE and PvP gameplay, with PvE being fun but challenging due to the bots' perfect reflexes and timing. However, some players find the PvP matchmaking to be unbalanced, as they often get matched with either new players or much higher-level opponents. The game has received mixed feedback on its servers, with some players experiencing lag and crashes. Absolver has a dedicated developer team actively addressing bugs and communicating with the community.
+
+[8] Item ID: 767 (Raw: 10180) | ✗ NOT PREDICTED
+    Fans of action-packed first-person shooters with a preference for multiplayer and cooperative gameplay, as well as those who enjoy immersive storylines and atmospheric experiences, would enjoy Call of Duty: Modern Warfare 2. However, users should be aware that the game's multiplayer mode is plagued by hackers, so it is recommended to focus on the single-player campaign or cooperative play. Additionally, players who appreciate great soundtracks and vibrant visuals would find enjoyment in this game.
+
+[9] Item ID: 782 (Raw: 115110) | ✗ NOT PREDICTED
+    Users who enjoy unique and charming adventure puzzle games with a touch of comedy and a focus on exploration would enjoy Stacking. The game's original idea of using Matryoshka dolls as characters adds to its appeal. It offers multiple solutions to puzzles, making it engaging for puzzle enthusiasts. The game has a sad but well-executed story, accompanied by great graphics and music. It is not overly challenging but may require occasional help. Stacking also appeals to achievement hunters and is recommended for those who appreciate the work of Double Fine Productions.
+
+[10] Item ID: 887 (Raw: 221380) | ✗ NOT PREDICTED
+    Age of Empires II HD is a strategy game that appeals to a wide range of users, including those who have played the game in the past and want to relive the nostalgia, as well as those who are new to the genre and want to experience one of the best strategy games of all time. The game offers a mix of classic gameplay, historical setting, base building, resource management, and competitive multiplayer, making it suitable for both casual and hardcore gamers. The constant updates and additions, such as Steam features like achievements and workshop, also enhance the replay value of the game.
+
+[11] Item ID: 892 (Raw: 333930) | ✗ NOT PREDICTED
+    Users who enjoy fast-paced, team-based, and strategic shooters with fair gameplay, good graphics, and a casual playing experience would enjoy Dirty Bomb. The game is free-to-play and has a female protagonist. It is not pay-to-win and offers a variety of characters to unlock. However, it does have some optimization issues and lacks a competitive scene.
+
+[12] Item ID: 907 (Raw: 394360) | ✗ NOT PREDICTED
+    Hearts of Iron IV is a simulation and strategy game that would primarily appeal to history enthusiasts, fans of World War II settings, and players who enjoy grand strategy games. The game offers an immersive experience of orchestrating large-scale armed struggles, including economic details and mechanized warfare. While some users find the game to be slow, expensive, and limited, others appreciate its depth and complexity. The game also has a dedicated following, with players investing a significant amount of time into it. However, there are mixed opinions about the DLCs, with some users considering them not worth the investment. Overall, Hearts of Iron IV appeals to players who are willing to overlook its flaws for the sake of its immersive and engaging gameplay.
+
+[13] Item ID: 978 (Raw: 391270) | ✗ NOT PREDICTED
+    Users who enjoy psychological horror, atmospheric experiences, and short storytelling would likely enjoy Fingerbones. The game's disturbing story and setting, lack of jump scares, and emphasis on exploration through reading notes contribute to its appeal. It is recommended for those who appreciate free games with unique concepts and low system requirements. However, users who prefer visually impressive graphics, fast-paced gameplay, or longer experiences may not find Fingerbones satisfying.
+
+[14] Item ID: 1037 (Raw: 220200) | ✗ NOT PREDICTED
+    Types of users who would enjoy Kerbal Space Program include space enthusiasts, those interested in science and education, players who enjoy simulation and sandbox games, and individuals who like challenging and complex gameplay.
+
+[15] Item ID: 1126 (Raw: 206210) | ✗ NOT PREDICTED
+    Fans of action-packed first-person shooter games with a sense of humor, teamwork and character customization would enjoy Gotham City Impostors Free to Play. The game offers addictive gameplay, a wide variety of weapons and gears, and the ability to dress up as Batman or Joker. It has a competitive multiplayer mode and allows players to unlock content by playing rather than spending money. However, it may not be suitable for players with low-end computers or those who prefer games with a large player base.
+
+[16] Item ID: 1286 (Raw: 435530) | ✗ NOT PREDICTED
+    The Final Station is a pixel art side-scrolling game with elements of action, adventure, and survival. It appeals to users who enjoy narrative-driven games with atmospheric storytelling and dark themes. The game offers solid mechanics and simple gameplay, although some users find the shooting and resource management aspects to be lacking. Fans of pixel art games and post-apocalyptic settings would appreciate The Final Station, especially those who enjoy uncovering lore through exploration.
+
+[17] Item ID: 1314 (Raw: 405640) | ✗ NOT PREDICTED
+    Fans of indie games who enjoy puzzle-solving, psychological horror, and pixel graphics would enjoy Pony Island. The game is praised for its great soundtrack, dark atmosphere, and unique gameplay experience. Users recommend playing the game without spoiling it, as it offers a mind-bending and immersive experience. While the game has elements of horror, it does not rely on jump scares or loud noises. It appeals to players who appreciate oddities and games that challenge their thinking. Overall, Pony Island is highly recommended for those looking for a thought-provoking and atmospheric indie game.
+
+[18] Item ID: 1320 (Raw: 237310) | ✗ NOT PREDICTED
+    Elsword is a side-scrolling MMORPG with action, adventure, and casual elements that would appeal to players who enjoy anime-style visuals, combo systems, and dungeons. The game offers fun and epic skills along with good combat mechanics. However, some players have expressed concerns about the graphics and the need to replay dungeons multiple times. Elsword is recommended for players who are looking for a free-to-play MMO with beat 'em up gameplay, but it may not be suitable for those who dislike pay-to-win elements.
+
+[19] Item ID: 1336 (Raw: 313160) | ✗ NOT PREDICTED
+    Farming Simulator 15 is a simulation game that would appeal to users who enjoy modding, creating and watching their creations in-game. It is also suitable for users who prefer relaxing and low-stress gameplay. The game may not be as enjoyable for users who rely solely on the base content, as it can become boring fast without mods. Additionally, users who appreciate realistic graphics, detailed tools and vehicles, and the ability to customize their experience through mod support would find the game exciting. However, users who dislike repetitive tasks and low pay in games may not find Farming Simulator 15 enjoyable.
+
+[20] Item ID: 1455 (Raw: 24240) | ✗ NOT PREDICTED
+    PAYDAY™ The Heist is a co-op first-person shooter game that would appeal to users who enjoy heist, crime, and tactical gameplay. It is best enjoyed with friends and offers challenging and addictive gameplay. The game has good graphics and a great soundtrack. However, it may not appeal to users who prefer more variety, progression, and a more realistic AI. It has a small player base and is often on sale at a cheap price.
+
+[21] Item ID: 1642 (Raw: 214560) | ✗ NOT PREDICTED
+    Mark of the Ninja is a highly praised stealth action-adventure game with stunning visuals and high-quality gameplay. It is recommended for users who enjoy challenging 2D platformer games and have an interest in the ninja theme. The game offers a well-paced story, interesting gameplay mechanics, and a minimalist yet brilliant plot. Players can choose their own play style, whether it's a stealthy approach or a more aggressive one. It provides a high replay value with multiple unlockable outfits and gadgets, as well as different ways to complete missions. This game is suitable for fans of side-scrolling puzzle games, as well as users who enjoy a mix of action, strategy, and puzzle elements.
+
+[22] Item ID: 1680 (Raw: 13580) | ✗ NOT PREDICTED
+    This game would be enjoyed by users who prefer stealth-based action games with a strong storyline. It appeals to both fans of the Splinter Cell series and gamers who appreciate true stealth gameplay. However, it may not be suitable for those who dislike broken or buggy games, as there are reports of technical issues and crashes. The multiplayer mode is praised by some users, but others mention that it lacks player base. Overall, users who enjoy a challenging stealth experience with impactful choices and unexpected moments would find Tom Clancy's Splinter Cell Double Agent enjoyable.
+
+[23] Item ID: 2883 (Raw: 420440) | ✗ NOT PREDICTED
+    Users who enjoy turn-based naval simulation and strategy games, specifically those interested in the Atlantic War during World War II, would enjoy Atlantic Fleet. It offers a realistic and historically accurate tactical simulation. The game may appeal to those who appreciate deep gameplay and are looking for a lighter naval tactics game. However, users who prefer comprehensive strategic simulations may find the game lacking. Additionally, it is recommended for players who enjoy mobile ports and are interested in battleship-like gameplay with elements of chance.
+
+[24] Item ID: 3285 (Raw: 379980) | ✗ NOT PREDICTED
+    This game would appeal to users who enjoy casual and indie games with elements of adventure, RPG, and simulation. It also targets users who are interested in memes, anime, dating sims, visual novels, tanks, and historical themes. However, some users feel that the game lacks depth in terms of story and content, while others appreciate its accuracy in representing WWII tanks. The humor in the game is a highlight for many users, but the gameplay may not be engaging enough for everyone. Overall, this game is recommended for players who are looking for a light-hearted and comedic experience with a unique premise.
+
+[25] Item ID: 4211 (Raw: 410210) | ✗ NOT PREDICTED
+    Ampersand is a racing game with indie and psychological horror elements. It receives negative feedback from users mainly due to its poor controls, lack of tutorials, and clunky gameplay. Users recommend avoiding the game unless it is heavily discounted and suggest selling the trading cards that drop for profit. The game may appeal to racing game enthusiasts who are willing to overlook these flaws, but overall, there are better racing games available.
+
+====================================================================================================
+
+
+>>> Example 2/3 from Medium segment (front+back mean similarity = 0.7947) <<<
+
+====================================================================================================
+USER ID: 11490
+Segment: Medium
+Number of train interactions: 51
+Recall@20: 0.0833
+NDCG@20: 0.1239
+Front-5 mean sim (user ↔ item): 0.8071
+Back-5 mean sim  (user ↔ item): 0.7822
+Front+Back mean  (user ↔ item): 0.7947
+====================================================================================================
+
+USER ID (RAW):            Harry Pooter
+
+USER PROFILE:            
+This user is likely to enjoy atmospheric and immersive games with strong narratives, such as horror, sci-fi, and adventure genres. They appreciate games with dark and futuristic themes, as well as third-person shooter gameplay with a focus on survival. The user also enjoys cyberpunk, stealth, and RPG games with tough decisions and multiple approaches. They have a nostalgic fondness for older games, including those from the Star Wars and Half-Life series. Overall, this user prefers games with engaging gameplay mechanics, upgraded graphics, and unique storytelling experiences.
+
+USER REASONING:          
+Based on the user's played games and reviews, we can see that they have a preference for atmospheric and immersive games with strong narratives, such as horror, sci-fi, and adventure genres. They also enjoy games with dark and futuristic themes, as well as third-person shooter gameplay with a focus on survival. The user's positive reviews and appreciation for games like Dead Space and S.T.A.L.K.E.R.: Shadow of Chernobyl suggest a liking for challenging gameplay and a gripping story. They also enjoy cyberpunk, stealth, and RPG games with tough decisions and multiple approaches, as seen in their positive review of Deus Ex: Human Revolution - Director's Cut. The user has nostalgic fondness for older games, as seen in their positive review of Star Wars: Battlefront 2 (Classic, 2005) and Half-Life 2: Deathmatch. They appreciate the upgraded graphics and gameplay mechanics, as mentioned in their review of Hitman: Absolution and Batman: Arkham Asylum Game of the Year Edition. Overall, this user seeks engaging gameplay mechanics, upgraded graphics, and unique storytelling experiences in their games.
+
+----------------------------------------------------------------------------------------------------
+HISTORICAL INTERACTIONS (TRAIN): 51 items
+----------------------------------------------------------------------------------------------------
+
+Earliest 5 train items:
+
+[1] Item ID: 54 (Raw: 17410)
+    Mirror's Edge would be enjoyed by users who appreciate unique first-person action adventure games with parkour mechanics and a strong female protagonist. Players who enjoy games with immersive atmospheres, stylized visuals, and a futuristic cyberpunk setting will also find this game appealing. The game has received mixed reviews, with some players praising its solid movement system and captivating story, while others found it strange or average. Overall, users who enjoy challenging and visually stunning games with a focus on exploration and platforming mechanics will likely enjoy Mirror's Edge.
+
+[2] Item ID: 57 (Raw: 12220)
+    Fans of the Grand Theft Auto series, especially those who enjoyed GTA IV, would enjoy Grand Theft Auto: Episodes from Liberty City. It offers new musics, cars, and missions, although some missions may feel repetitive. The DLC pack provides additional content and a different perspective on the main game's storyline. It also appeals to players who want more GTA4. However, the Ballad of Gay Tony expansion has very difficult missions involving helicopters, which may frustrate some players. Overall, it is a good wrap-up to GTA V and worth playing if you have completed GTA IV.
+
+[3] Item ID: 59 (Raw: 49520)
+    Borderlands 2 is a first-person action RPG game with a humorous and stylized open-world setting. This game is enjoyable for users who enjoy cooperative gameplay, loot collection, and comedic elements. Users who appreciate a leveling system with rewarding encounters and visual appearance will also enjoy this game. It is best played with friends to maximize the fun. However, users who prefer realistic graphics and meaningful gameplay may not find Borderlands 2 appealing. Performance issues have been reported on Windows 10, so users with this operating system should take note.
+
+[4] Item ID: 87 (Raw: 35140)
+    Fans of Batman, action-adventure games, and superhero stories will enjoy Batman: Arkham Asylum Game of the Year Edition. The game received positive feedback for its competent writing, amazing fighting mechanics, and iconic characters. Users praised the smooth control mechanics and the immersive experience of being in the Batman universe. The graphics have aged well, and the gameplay design is loved. However, some users pointed out random glitches, unclear quests, and the linearity of the game. Overall, it is recommended for fans of close linear world games and die-hard Batman fans.
+
+[5] Item ID: 97 (Raw: 340)
+    Fans of the Half-Life series and those interested in the development cycle of Half-Life 2 would enjoy Half-Life 2: Lost Coast. It is a short game that serves as a tech demo for the Source engine, showcasing its graphical capabilities. The game offers exploreable environments, moveable objects, and alternate conversations. It is highly recommended for fans of the series and those who appreciate the atmosphere and setting of Half-Life games.
+
+Latest 5 train items:
+
+[47] Item ID: 1612 (Raw: 95400)
+    ibb & obb is a co-op puzzle-platformer game that would be enjoyed by players who appreciate challenging puzzles, cute visuals, and cooperative gameplay. It is suitable for both casual and hardcore gamers who enjoy games that require "outside the box" thinking and teamwork. The game offers a rewarding experience after successfully solving difficult puzzles or completing challenging platforming sections. However, some players have reported lag issues during online co-op play, which may affect the overall experience.
+
+[48] Item ID: 2157 (Raw: 33900)
+    Arma 2 is a military simulation game that blends action, simulation, and strategy genres. Users who enjoy complex and realistic gameplay, as well as those who are interested in military tactics and strategy, would enjoy this game. It is also appealing to players who appreciate moddable games and enjoy multiplayer experiences. However, users who primarily enjoy single-player experiences or are looking for a game with active servers may not find it as enjoyable.
+
+[49] Item ID: 2230 (Raw: 201790)
+    Orcs Must Die! 2 is a tower defense/action hybrid game that is highly recommended for players who enjoy hack n slash and tower defense genres. It is suitable for both solo play and co-op play with a friend. The game offers a great sense of humor, well-designed levels, and a variety of traps and weapons to use. It is also praised for being highly replayable and having good performance on low-end systems. Overall, Orcs Must Die! 2 is a must-play for fans of the tower defense genre and those looking for an enjoyable co-op experience.
+
+[50] Item ID: 2314 (Raw: 215470)
+    Primal Carnage is a multiplayer action shooter game that allows players to take on the role of either humans or dinosaurs. It is enjoyed by players who appreciate asymmetrical multiplayer gameplay, unique classes with different abilities, and the thrill of hunting or being hunted. The game is known for its fun and fast-paced gameplay, although there are occasional glitches and control issues. The multiplayer aspect and the variety of dinosaurs and weapons make it a popular choice among players who enjoy team-based combat and PvP battles. While some players have expressed frustration with the game's balance and lack of updates, others have praised its constant updates and new content. Overall, Primal Carnage appeals to players who enjoy intense multiplayer experiences and the opportunity to engage in epic battles between humans and dinosaurs.
+
+[51] Item ID: 2503 (Raw: 41000)
+    Serious Sam HD: The First Encounter is a fast-paced, action-packed FPS game that would appeal to users who enjoy challenging gameplay, retro-style graphics, and nostalgic experiences. The game offers a variety of weapons, online co-op multiplayer, and a humorous storyline. Users who appreciate classic shooters like Doom and Quake, as well as fans of the Serious Sam series, would enjoy this game. However, it may not be suitable for users who are new to the series and prefer more varied gameplay.
+
+... showing earliest and latest 5 items only
+
+----------------------------------------------------------------------------------------------------
+PREDICTED ITEMS (TOP-5 RECOMMENDATIONS)
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 50 (Raw: 220) | Score: 7.4126 | ✗ MISS
+    Fans of first-person shooter games, especially those who enjoy action-packed and immersive gameplay, atmospheric environments, and engaging stories, would greatly enjoy Half-Life 2. The game has received widespread acclaim for its exceptional storytelling, top-notch gameplay mechanics, and memorable characters. It has been hailed as a masterpiece and a must-play for gamers. Even those who typically don't enjoy shooters have found themselves captivated by Half-Life 2. Overall, this game appeals to a wide range of players and has stood the test of time as one of the best FPS games ever.
+
+[2] Item ID: 26 (Raw: 55230) | Score: 6.3808 | ✓ HIT
+    Users who enjoy open world sandbox crime games with a sense of humor and a love for outlandish and funny gameplay elements will enjoy Saints Row: The Third. The game offers tight controls, great graphics, unique missions, and extensive customization options. It appeals to players who appreciate silliness, satire, and a comedic twist on the open world genre. Additionally, the game's soundtrack and use of music create an immersive experience. While the game is easy, players can switch to hardcore mode for a greater challenge. Users who prefer a more comical and over-the-top alternative to Grand Theft Auto will find this game to be a perfect choice.
+
+[3] Item ID: 665 (Raw: 220240) | Score: 5.2720 | ✗ MISS
+    Users who enjoy open-world, action-adventure games with a strong emphasis on shooting and exploration would enjoy Far Cry 3. It offers a meaty shooting experience with a wide variety of guns and upgrades, accompanied by impressive animations and graphics. The game features well-written and interesting characters, particularly the complex and terrifying villain, Vaas Montenegro. The single-player storyline is engaging and filled with both funny and intense moments. The open world is lush, vibrant, and rich in lore, encouraging exploration. However, the multiplayer and co-op modes are considered subpar, with the co-op mode lacking in writing and the multiplayer being average at best. Overall, Far Cry 3 provides hours of fun gameplay and rewards for exploration, making it a must-buy for fans of the genre.
+
+[4] Item ID: 684 (Raw: 240) | Score: 5.2030 | ✗ MISS
+    Counter-Strike: Source is a multiplayer action FPS game that is enjoyed by a diverse range of users. Players who enjoy tactical and competitive gameplay will find this game appealing. It is particularly popular among those who are interested in military warfare and e-sports. The game also offers modding capabilities, allowing players to customize their experiences. It is recommended for players who prefer playing with friends or bots to avoid potential issues with online players. Counter-Strike: Source has a dedicated community that enjoys the variety of mods available, such as RPG and prison escape. Overall, this game is suitable for those who are looking for a long-lasting and versatile multiplayer experience.
+
+[5] Item ID: 674 (Raw: 7670) | Score: 5.0677 | ✗ MISS
+    Fans of atmospheric, story-rich, and horror-like FPS games would enjoy BioShock. It offers excellent sound and music, a great storyline, and satisfying combat. The game's steampunk-ish scenery and immersive world of Rapture add to the unique experience. However, some users mentioned minor issues like occasional audio cutting out and the inability to remove crosshairs. The game also incorporates player choices that can alter the story's conclusion, allowing for different endings. Overall, BioShock is highly praised for its captivating narrative and the way it challenges the player's perception of choice and free will.
+
+----------------------------------------------------------------------------------------------------
+GROUND TRUTH (TEST ITEMS): 12 items
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 2 (Raw: 227940) | ✗ NOT PREDICTED
+    Users who enjoy World War II-themed games, multiplayer first-person shooters, and tactical strategy games would likely enjoy Heroes & Generals. However, those who dislike pay-to-win mechanics and slow-paced gameplay may not find it appealing. The game has potential but is lacking in polish and has issues with moderation. Overall, it is recommended to try it out for its free-to-play nature and unique features.
+
+[2] Item ID: 26 (Raw: 55230) | ✓ PREDICTED
+    Users who enjoy open world sandbox crime games with a sense of humor and a love for outlandish and funny gameplay elements will enjoy Saints Row: The Third. The game offers tight controls, great graphics, unique missions, and extensive customization options. It appeals to players who appreciate silliness, satire, and a comedic twist on the open world genre. Additionally, the game's soundtrack and use of music create an immersive experience. While the game is easy, players can switch to hardcore mode for a greater challenge. Users who prefer a more comical and over-the-top alternative to Grand Theft Auto will find this game to be a perfect choice.
+
+[3] Item ID: 63 (Raw: 12120) | ✗ NOT PREDICTED
+    Users who enjoy open world, action-packed games with a great soundtrack and a mature storyline would enjoy Grand Theft Auto: San Andreas. The game allows players to experience a classic third-person shooter gameplay set in a sandbox environment. The game also offers multiplayer features and a moddable experience for those who enjoy customization and exploration.
+
+[4] Item ID: 345 (Raw: 108800) | ✗ NOT PREDICTED
+    Users who enjoy action-packed first-person shooter games with futuristic and sci-fi elements, engaging storylines, and impressive graphics would enjoy Crysis 2 - Maximum Edition.
+
+[5] Item ID: 469 (Raw: 22120) | ✗ NOT PREDICTED
+    Users who enjoy horror, adventure, and indie games, particularly those interested in atmospheric, psychological horror with strong storytelling and puzzle elements, would enjoy Penumbra: Black Plague Gold Edition. The game receives positive feedback for its well-designed puzzles, graphics that have aged well, and immersive gameplay that relies on hiding rather than fighting. Fans of the Penumbra series and those looking for a good introduction to the horror genre would also enjoy this game.
+
+[6] Item ID: 611 (Raw: 274170) | ✗ NOT PREDICTED
+    Hotline Miami 2: Wrong Number is a fast-paced, difficult top-down shooter with a great soundtrack and retro pixel graphics. It appeals to hardcore gamers who enjoy challenging gameplay and can appreciate the intense and violent atmosphere of the game. The level editor feature adds to the replayability of the game and the 1980s and 1990s settings will appeal to fans of retro gaming. However, some users feel that the game lacks the strategic elements of its predecessor and has a more trial and error approach. Overall, Hotline Miami 2: Wrong Number is recommended for gamers who enjoy adrenaline-fueled action and are fans of the first game in the series.
+
+[7] Item ID: 748 (Raw: 274900) | ✗ NOT PREDICTED
+    Murder Miners is a multiplayer sandbox shooter game with Minecraft-like visuals and gameplay. It appeals to players who enjoy fast-paced, competitive FPS games with an emphasis on teamwork. The game has a loyal community and is best enjoyed when playing with friends. Some users appreciate the low price point and consider it a good value for their money. However, there are mixed opinions about the game, with some users finding it disappointing due to similarities with the console version and lack of improvement. Overall, Murder Miners is recommended for players looking for a fun and addictive multiplayer shooter with a sandbox element.
+
+[8] Item ID: 959 (Raw: 207140) | ✗ NOT PREDICTED
+    SpeedRunners is a fast-paced, multiplayer racing game that combines the excitement of Mario Kart with the precision of Super Meat Boy. It is best enjoyed by users who enjoy competitive and challenging gameplay with friends. The game offers a unique and creative powerup system, well-designed maps, and lovable characters. While the game is simple and fun, it may also lead to frustrations and friendship tensions. Users who appreciate indie games and are looking for a racing game that stands out from the generic options will particularly enjoy SpeedRunners.
+
+[9] Item ID: 1090 (Raw: 22230) | ✗ NOT PREDICTED
+    Rock of Ages is a comedic indie game that combines action, racing, and strategy genres. It is recommended for users who enjoy unique and quirky gameplay, humor, and historical references. The game offers a fun experience with enjoyable graphics and soundtracks. However, some users found it repetitive and not enjoyable. Despite its weaknesses in the tower defense aspect, the game excels in the "Marble Madness" portions, providing exciting and entertaining gameplay. Overall, Rock of Ages appeals to users who appreciate humor, creativity, and unconventional gameplay.
+
+[10] Item ID: 1129 (Raw: 33930) | ✗ NOT PREDICTED
+    Arma 2: Operation Arrowhead is a military simulation game that appeals to users who enjoy realistic gameplay, playing with friends, and modding. It has clunky controls but offers a fun multiplayer experience. The game's realism can create emotional attachment to AI squad members. Users rate it higher than Arma 3 and appreciate its mod support, providing a variety of gameplay options. It is recommended for those who want a mix of serious war simulation and casual gameplay with friends.
+
+[11] Item ID: 1511 (Raw: 224540) | ✗ NOT PREDICTED
+    Types of users who would enjoy Ace of Spades: Battle Builder are those who enjoy multiplayer shooter games with a sandbox and building element. They should also be casual gamers who are looking for a fun and funny game with replay value. Additionally, users who enjoy open world games, first-person shooters, and class-based gameplay would also find this game enjoyable. However, users who prefer single-player campaigns or a strong active community may not enjoy this game.
+
+[12] Item ID: 3329 (Raw: 111100) | ✗ NOT PREDICTED
+    Snuggle Truck is a casual racing game that is enjoyable for players who like smooth gameplay, simple controls, and a fun and silly concept. It appeals to both adults and children, including emotionally sensitive types, as the cute animals flying out of the truck are drawn to look like stuffed critters, making it more hilarious than traumatic. The game offers a level editor for creating custom levels, which adds to its appeal. However, some users find the game boring after a while and suggest waiting for a discount before purchasing.
+
+====================================================================================================
+
+
+>>> Example 3/3 from Good segment (front+back mean similarity = 0.8350) <<<
+
+====================================================================================================
+USER ID: 5909
+Segment: Good
+Number of train interactions: 75
+Recall@20: 0.2727
+NDCG@20: 0.4261
+Front-5 mean sim (user ↔ item): 0.8345
+Back-5 mean sim  (user ↔ item): 0.8356
+Front+Back mean  (user ↔ item): 0.8350
+====================================================================================================
+
+USER ID (RAW):            Sheep!
+
+USER PROFILE:            
+Based on the user's interactions and reviews, this user is likely to enjoy casual strategy games with time and resource management elements, retro-style indie games with pixel graphics, hidden object games, and arcade-style shooters with a retro feel.
+
+USER REASONING:          
+The user enjoyed 12 Labours of Hercules, a casual strategy game with time and resource management elements. They also appreciated Glorkian Warrior: The Trials Of Glork, a budget indie platformer and shoot 'em up game with a retro feel. The user positively reviewed Grim Legends: The Forsaken Bride, a hidden object game, and its good soundtracks and graphics. The user enjoyed the arcade-style shooter game Invasion, despite some flaws. Therefore, it can be concluded that the user prefers casual strategy games, retro-style indie games, hidden object games, and arcade-style shooters.
+
+----------------------------------------------------------------------------------------------------
+HISTORICAL INTERACTIONS (TRAIN): 75 items
+----------------------------------------------------------------------------------------------------
+
+Earliest 5 train items:
+
+[1] Item ID: 1 (Raw: 363490)
+    Users who enjoy action, adventure, indie, RPG, and strategy games, especially those interested in early access games, may enjoy Escape Machines. However, potential buyers should be aware of negative feedback from users regarding the abandoned state of the game, lack of updates, broken features, and unoriginal gameplay.
+
+[2] Item ID: 8 (Raw: 478010)
+    This game is suitable for children aged 5 and below who enjoy casual coloring games. It may also be enjoyable for adults who want a simple and relaxing activity to do while drunk. The game has some limitations, such as lack of control in choosing specific pictures to color and repetitive gameplay.
+
+[3] Item ID: 17 (Raw: 360650)
+    Users who enjoy casual and strategy games with a female protagonist and resource management mechanics would enjoy 12 Labours of Hercules III: Girl Power. It appeals to fans of the previous installments, who appreciate the consistent gameplay and familiar characters. Some users find it repetitive and lacking innovation, while others appreciate the nostalgia it brings from childhood memories of watching Hercules: The Legendary Journey.
+
+[4] Item ID: 59 (Raw: 49520)
+    Borderlands 2 is a first-person action RPG game with a humorous and stylized open-world setting. This game is enjoyable for users who enjoy cooperative gameplay, loot collection, and comedic elements. Users who appreciate a leveling system with rewarding encounters and visual appearance will also enjoy this game. It is best played with friends to maximize the fun. However, users who prefer realistic graphics and meaningful gameplay may not find Borderlands 2 appealing. Performance issues have been reported on Windows 10, so users with this operating system should take note.
+
+[5] Item ID: 66 (Raw: 361850)
+    Fans of hidden object games, particularly those interested in adventure and casual genres, will enjoy Portal of Evil: Stolen Runes Collector's Edition. The game offers a superior example of the HOG genre, with a well-developed story, passable voice acting, and high-quality video sequences. The artwork and music are both very good, and the minigames provide a moderate level of challenge. The game also offers hints and a map for easy navigation. While some users found the puzzles to be too easy and desired more background information, overall, the game received positive feedback and was considered worth the money.
+
+Latest 5 train items:
+
+[71] Item ID: 4853 (Raw: 495110)
+    Users who enjoy hidden object games, puzzle-solving, casual and adventure genres, and a compelling story with a female protagonist would enjoy Enigmatis 3: The Shadow of Karkhala.
+
+[72] Item ID: 4855 (Raw: 288840)
+    Users who enjoy short but interesting Hidden Object games with atmospheric ghost stories would enjoy Haunted Past: Realm of Ghosts. The game has good graphics and gameplay, although it lacks extra features found in modern Hidden Object games. It is recommended for beginners in the genre or those who are looking for a quick and enjoyable gaming experience.
+
+[73] Item ID: 4921 (Raw: 275810)
+    Users who enjoy casual strategy games with puzzle and match-3 mechanics would likely enjoy 7 Wonders of the Ancient World. It is recommended for those who are looking for a relaxing casual game with a bit of a challenge. However, users who are seeking modern match-3 games with more elaborate features might find this game sparse and boring compared to more recent offerings. The game's difficulty increases progressively, requiring players to be fast and strategic in completing timed levels. The game is considered old but still enjoyable by some users.
+
+[74] Item ID: 5152 (Raw: 344440)
+    Sacra Terra: Angelic Night is an adventure-casual game that would appeal to fans of hidden object games. It offers a great atmosphere, decent story, and easy puzzles. The game stands out with its well-designed point-and-click aspect, which is more enjoyable than the hidden object screens. The game also receives praise for its beautiful soundtrack, artwork, and scene utilization. While some players found the game a bit easy and repetitive, it still offers a respectable length and above-average art. Overall, this game is recommended for those who enjoy a mildly scary story and a relaxing gameplay experience.
+
+[75] Item ID: 5182 (Raw: 394680)
+    Fans of Hidden Object games, especially those who enjoy adventure and casual genres, would enjoy Mountain Crime: Requital. It has good graphics, a high-resolution display, and a well-written story. Additionally, the interactive hidden object scenes and unexpected ending make the game interesting. The suitable price tag and availability in bundle options also make it appealing. However, the game may not be enjoyable for those who dislike slow movement in the game's initial stages or prefer HOGs with magical/mystical elements.
+
+... showing earliest and latest 5 items only
+
+----------------------------------------------------------------------------------------------------
+PREDICTED ITEMS (TOP-5 RECOMMENDATIONS)
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 2779 (Raw: 259740) | Score: 5.2497 | ✓ HIT
+    Fans of hidden object games and casual adventure games would enjoy Nightmares from the Deep: The Cursed Heart. The game features high-quality graphics, decent soundtracks, and a compelling story. It offers a mix of hidden object scenes and other puzzles, with a helpful map to guide players. While the gameplay time is short, the game is recommended for hardcore hidden object game fans, especially when on sale or in a bundle. The game also appeals to players who prefer simpler puzzles and those who enjoy pirate themes. Overall, Nightmares from the Deep: The Cursed Heart is a solid entry in the hidden object game genre.
+
+[2] Item ID: 553 (Raw: 284790) | Score: 5.1509 | ✓ HIT
+    Fans of hidden object games with an adventurous storyline and casual gameplay will enjoy Nightmares from the Deep 2: The Siren's Call. The game offers a charming story, beautiful artwork, and memorable music. It has a good balance between puzzles and hidden object scenes, and the difficulty level is just right. The game also provides multiple playthroughs and collectibles for a longer gameplay experience. It is recommended for players who enjoy relaxing gameplay and appreciate well-designed animations.
+
+[3] Item ID: 271 (Raw: 284710) | Score: 5.1385 | ✗ MISS
+    Users who enjoy hidden object games, casual puzzle games, and point & click adventures would likely enjoy Abyss: The Wraiths of Eden. It appeals to those who appreciate well-defined characters, interesting storylines, and a variety of puzzles. The game has a mix of easy and difficult puzzles, providing a challenge for players of different skill levels. With its atmospheric underwater setting and references to BioShock, it may also attract fans of the BioShock franchise. However, some users found the hidden object games too easy and the jump scares to be lacking. Overall, the game is recommended for those seeking an enjoyable and immersive gameplay experience at an affordable price.
+
+[4] Item ID: 284 (Raw: 279800) | Score: 4.8738 | ✓ HIT
+    Fans of hidden object games, especially point & click adventure games, would enjoy Grim Legends 2: Song of the Dark Swan. The game has beautiful graphics, an interesting story, and enjoyable puzzles. It also features a fast travel map and helpful pets to aid the player. The game is suitable for casual players and can provide around 5-6 hours of gameplay. However, the voice acting can be inconsistent and the hidden object puzzles may be too easy for some players.
+
+[5] Item ID: 4152 (Raw: 284810) | Score: 4.6674 | ✓ HIT
+    Nightmares from the Deep 3: Davy Jones is a hidden object adventure game that would appeal to fans of the genre, particularly those who enjoy puzzle-solving and beautiful artwork. The game has received positive feedback for its challenging puzzles, captivating storyline, and atmospheric soundtrack. Players have praised the high-quality graphics and absence of bugs. However, some users have mentioned translation errors and a lack of difficulty in certain puzzles. Overall, this game is recommended for fans of hidden object games and pirate-themed adventures.
+
+----------------------------------------------------------------------------------------------------
+GROUND TRUTH (TEST ITEMS): 22 items
+----------------------------------------------------------------------------------------------------
+
+[1] Item ID: 139 (Raw: 360640) | ✗ NOT PREDICTED
+    Fans of casual strategy games with cute graphics and a relaxing pace would enjoy 12 Labours of Hercules II: The Cretan Bull. It offers simple gameplay with a click-fest element, making it engaging for those who enjoy quick-paced challenges. The game incorporates Greek mythology into a simplistic story, providing a cheap and entertaining experience that can be completed in a few hours. It is recommended to play the first part of the series for a better experience. The game is also suitable for those looking for a mindless and casual game to relax and kill time.
+
+[2] Item ID: 284 (Raw: 279800) | ✓ PREDICTED
+    Fans of hidden object games, especially point & click adventure games, would enjoy Grim Legends 2: Song of the Dark Swan. The game has beautiful graphics, an interesting story, and enjoyable puzzles. It also features a fast travel map and helpful pets to aid the player. The game is suitable for casual players and can provide around 5-6 hours of gameplay. However, the voice acting can be inconsistent and the hidden object puzzles may be too easy for some players.
+
+[3] Item ID: 363 (Raw: 496680) | ✗ NOT PREDICTED
+    Users who enjoy clicker games and are willing to overlook major bugs and lack of polish may enjoy SweatShop. However, those who value smooth gameplay, satisfying payoff, and a bug-free experience should avoid this game.
+
+[4] Item ID: 487 (Raw: 422250) | ✗ NOT PREDICTED
+    ShipLord would appeal to users who enjoy fast-paced, casual indie games with bullet hell elements. It may also be of interest to players who prefer achievements and enjoy upgradeable gameplay mechanics. However, those looking for exceptional graphics, a compelling story, and unique gameplay may be disappointed.
+
+[5] Item ID: 534 (Raw: 284870) | ✓ PREDICTED
+    Users who enjoy casual point-and-click adventure games with hidden object puzzles, intriguing stories, and beautiful scenery would likely enjoy 9 Clues: The Secret of Serpent Creek. It is a good choice for beginners in the genre or those looking for a short and relaxing gaming experience. However, it may not satisfy players seeking more challenging puzzles or replay value.
+
+[6] Item ID: 538 (Raw: 394280) | ✗ NOT PREDICTED
+    Fans of casual adventure games with a focus on hidden object scenes may enjoy Dark Heritage: Guardians of Hope. The game has a female protagonist and is family friendly. It offers atmospheric and story-rich gameplay with a great soundtrack. However, some users have criticized the cutscenes, which feature live actors and are not synchronized well with the dialogue. The puzzles in the game can be frustrating, and there are occasional bugs and crashes. Overall, if you can overlook these flaws, Dark Heritage: Guardians of Hope offers a decent hidden object game experience.
+
+[7] Item ID: 553 (Raw: 284790) | ✓ PREDICTED
+    Fans of hidden object games with an adventurous storyline and casual gameplay will enjoy Nightmares from the Deep 2: The Siren's Call. The game offers a charming story, beautiful artwork, and memorable music. It has a good balance between puzzles and hidden object scenes, and the difficulty level is just right. The game also provides multiple playthroughs and collectibles for a longer gameplay experience. It is recommended for players who enjoy relaxing gameplay and appreciate well-designed animations.
+
+[8] Item ID: 873 (Raw: 269490) | ✗ NOT PREDICTED
+    Bardbarian is a casual indie game with elements of action, adventure, and strategy. Users who enjoy simple and visually appealing games with good music and sound effects would appreciate this game. It offers the right level of difficulty for relaxation after a hard day's work. However, some users find it repetitive and grindy, comparing it to games found on Kongregate or Newgrounds. The game involves a twist on tower defense, with enemies coming from all directions and the player dragging towers behind them. It also includes special heroes/towers from other games. Overall, Bardbarian is recommended for those looking for a fun, casual gaming experience with a unique gameplay style.
+
+[9] Item ID: 1262 (Raw: 12360) | ✗ NOT PREDICTED
+    FlatOut: Ultimate Carnage is a racing game that would appeal to users who enjoy intense and action-packed gameplay, with a focus on destruction and physics-based mechanics. It is suitable for both singleplayer and multiplayer experiences. The game has a great soundtrack and offers a variety of cars and upgrades. While it may not have a large online community, it still provides a fun and visually appealing experience. However, some players have experienced issues with the physics engine and save file deletions. Overall, this game is recommended for racing enthusiasts who are looking for a realistic yet thrilling gameplay experience.
+
+[10] Item ID: 1721 (Raw: 403900) | ✗ NOT PREDICTED
+    This game would appeal to casual gamers looking for a simple and low-cost arcade experience. It may also attract users interested in trading cards and collectibles. However, it may not satisfy players seeking a polished and immersive gaming experience.
+
+[11] Item ID: 1966 (Raw: 91100) | ✗ NOT PREDICTED
+    SkyDrift is recommended for users who enjoy fast-paced racing games with a unique twist of aerial combat and power-ups. It is great for those who appreciate indie games and are looking for a budget-friendly option. The multiplayer aspect may be lacking due to a small player base, but the single-player experience is immersive and enjoyable. Users who are fans of games like Mario Kart and Sonic & All-Stars Racing Transformed will find similarities in gameplay and controls. Overall, SkyDrift offers a fun and exhilarating experience for users who appreciate racing with a touch of flight and intense action.
+
+[12] Item ID: 2388 (Raw: 208670) | ✗ NOT PREDICTED
+    Blades of Time is an action-adventure game with hack and slash gameplay and time manipulation mechanics, featuring a female protagonist. Users who enjoy hack and slash action games with simple gameplay mechanics and a focus on combat may enjoy this game. The time manipulation feature adds unique action sequences and puzzle solving elements. However, users who prioritize deep storytelling, diverse gameplay, and polished hack and slash titles may not find it satisfying. The game also appeals to users who appreciate anime-style visuals, challenging boss battles, and multiplayer options.
+
+[13] Item ID: 2519 (Raw: 400240) | ✗ NOT PREDICTED
+    The Deer is an indie adventure game that may appeal to casual gamers and those looking for a short, family-friendly experience. However, it may not be enjoyable for users expecting a deep or educational gameplay. The game has received mixed reviews, with some users finding it short and uninspiring, while others appreciate its relaxing and joyful atmosphere. Overall, this game is suitable for players looking for a light-hearted and relaxing gaming experience, particularly children and casual gamers.
+
+[14] Item ID: 2637 (Raw: 461560) | ✗ NOT PREDICTED
+    MANDAGON is a short, free-to-play, atmospheric adventure game with pixel graphics. It appeals to players who enjoy immersive experiences, atmospheric environments, and relaxing gameplay. The game offers beautiful scenery, tranquil music, and a captivating art style reminiscent of Fez. It is suitable for those interested in interactive art and those who appreciate symbolism and open-ended storytelling. MANDAGON can be completed in less than an hour, making it a great choice for players looking for a short and enjoyable gaming experience.
+
+[15] Item ID: 2779 (Raw: 259740) | ✓ PREDICTED
+    Fans of hidden object games and casual adventure games would enjoy Nightmares from the Deep: The Cursed Heart. The game features high-quality graphics, decent soundtracks, and a compelling story. It offers a mix of hidden object scenes and other puzzles, with a helpful map to guide players. While the gameplay time is short, the game is recommended for hardcore hidden object game fans, especially when on sale or in a bundle. The game also appeals to players who prefer simpler puzzles and those who enjoy pirate themes. Overall, Nightmares from the Deep: The Cursed Heart is a solid entry in the hidden object game genre.
+
+[16] Item ID: 2961 (Raw: 263620) | ✗ NOT PREDICTED
+    Fans of hack and slash games, especially those who enjoy fast-paced combat and combo systems, would enjoy Mitsurugi Kamui Hikae. The game offers dynamic combat with a variety of combos and skills to use. The difficulty settings are well-balanced, catering to different skill levels. While it may lack in enemy variety and stages, the gameplay experience and unlocking new moves provide replay value. The game's visuals, graphics, and character design, particularly the main female protagonist, are appealing to fans of cute and anime aesthetics. It is recommended to play the game with a controller for a better experience. However, those looking for a game with a strong storyline may find Mitsurugi Kamui Hikae lacking.
+
+[17] Item ID: 3436 (Raw: 263880) | ✗ NOT PREDICTED
+    Users who enjoy arcade-style games with cute graphics, retro aesthetics, and local co-op gameplay would enjoy Aqua Kitty - Milk Mine Defender. It appeals to those who have fond memories of classic games like Defender and enjoy the challenge of bullet hell shooters. The game's adorable pixel art and catchy chiptune soundtrack add to its charm. While it may become repetitive over time, the inclusion of local co-op extends the enjoyment. The game is suitable for players of all skill levels, as it is considered friendly and not overwhelming. Aqua Kitty - Milk Mine Defender is recommended for players who appreciate retro indie games and have a fondness for cats.
+
+[18] Item ID: 3993 (Raw: 266940) | ✓ PREDICTED
+    Fans of casual hidden object games with unique storylines and challenging puzzles would enjoy Alex Hunter - Lord of the Mind Platinum Edition. The game offers beautiful animations, well-designed hidden object scenes, and a decent story. However, some users found the puzzles to be overly difficult and the mini-games to be more guessing games than strategic challenges. Despite these criticisms, the game still provides a few hours of fun detective work and is considered a good Alawar-quality hidden object game. Overall, it is recommended for fans of the genre looking for an entertaining experience.
+
+[19] Item ID: 4106 (Raw: 21670) | ✗ NOT PREDICTED
+    Fans of the original Bionic Commando side scroller game would enjoy this modern adaptation. The game has a great soundtrack, and the swinging mechanic is fun and fast-paced. Players who appreciate unconventional mechanics and are willing to overlook physics inconsistencies would find enjoyment in this game. The story ranges from entertainingly corny to terribly corny, but the overall experience is enjoyable despite its flaws. Those who enjoy playing platformers and have a nostalgia for classic games would appreciate Bionic Commando.
+
+[20] Item ID: 4152 (Raw: 284810) | ✓ PREDICTED
+    Nightmares from the Deep 3: Davy Jones is a hidden object adventure game that would appeal to fans of the genre, particularly those who enjoy puzzle-solving and beautiful artwork. The game has received positive feedback for its challenging puzzles, captivating storyline, and atmospheric soundtrack. Players have praised the high-quality graphics and absence of bugs. However, some users have mentioned translation errors and a lack of difficulty in certain puzzles. Overall, this game is recommended for fans of hidden object games and pirate-themed adventures.
+
+[21] Item ID: 4459 (Raw: 508170) | ✗ NOT PREDICTED
+    Casual gamers who enjoy simple and repetitive gameplay, mobile gaming experiences, and multiplayer sessions with friends would enjoy BlackSmith HIT.
+
+[22] Item ID: 5059 (Raw: 315320) | ✗ NOT PREDICTED
+    Skilltree Saga is a game that would primarily appeal to casual gamers who enjoy turn-based RPGs with a fantasy theme. It may also attract indie game enthusiasts who appreciate procedural generation and dungeon crawler elements. However, players should be aware of its flaws, such as incomplete animations, low-quality designs, repetitive gameplay, and lack of balance in the end-game. It is suggested to wait for a discounted price before purchasing.
+
+====================================================================================================
+
