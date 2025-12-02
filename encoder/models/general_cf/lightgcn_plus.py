@@ -27,13 +27,13 @@ class LightGCN_plus(BaseModel):
         self.kd_temperature = self.hyper_config['kd_temperature']
 
         # semantic-embeddings
-        self.usrprf_embeds = t.tensor(configs['usrprf_embeds']).float().cuda()
+        self.usrprf_embeds = t.tensor(configs['usrprf_embeds']).float().cuda()  # precomputed embeddings
         self.itmprf_embeds = t.tensor(configs['itmprf_embeds']).float().cuda()
         self.mlp = nn.Sequential(
             nn.Linear(self.usrprf_embeds.shape[1], (self.usrprf_embeds.shape[1] + self.embedding_size) // 2),
             nn.LeakyReLU(),
             nn.Linear((self.usrprf_embeds.shape[1] + self.embedding_size) // 2, self.embedding_size)
-        )
+        )  # project text embeddings to the same dimension as id embeddings
 
         self._init_weight()
 
@@ -46,6 +46,7 @@ class LightGCN_plus(BaseModel):
         return t.spmm(adj, embeds)
     
     def forward(self, adj=None, keep_rate=1.0):
+        # Vanilla LightGCN
         if adj is None:
             adj = self.adj
         if not self.is_training and self.final_embeds is not None:
@@ -77,10 +78,14 @@ class LightGCN_plus(BaseModel):
         usrprf_embeds = self.mlp(self.usrprf_embeds)
         itmprf_embeds = self.mlp(self.itmprf_embeds)
         ancprf_embeds, posprf_embeds, negprf_embeds = self._pick_embeds(usrprf_embeds, itmprf_embeds, batch_data)
+        # ^ get projected text embeddings for anchor user, pos item, neg item
 
         bpr_loss = cal_bpr_loss(anc_embeds, pos_embeds, neg_embeds) / anc_embeds.shape[0]
         reg_loss = self.reg_weight * reg_params(self)
 
+        # KD/alignment 
+        # cal_infonce_loss(embeds1, embeds2, all_embeds2, temp)
+        # we want embeds1[i] to be close to its corresponding embeds2[i] and far from others in all_embeds2
         kd_loss = cal_infonce_loss(anc_embeds, ancprf_embeds, usrprf_embeds, self.kd_temperature) + \
                   cal_infonce_loss(pos_embeds, posprf_embeds, posprf_embeds, self.kd_temperature) + \
                   cal_infonce_loss(neg_embeds, negprf_embeds, negprf_embeds, self.kd_temperature)
