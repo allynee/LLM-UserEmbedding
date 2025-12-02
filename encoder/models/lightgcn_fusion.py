@@ -56,6 +56,14 @@ class LightGCN_Fusion(BaseModel):
         else:
             raise ValueError(f"Unknown fusion_type: {self.fusion_type}")
 
+        self._init_weight()
+
+    def _init_weight(self):
+        if self.fusion_type == 'ffn':
+            for m in self.fusion_ffn:
+                if isinstance(m, nn.Linear):
+                    init(m.weight)
+
     def _propagate(self, adj, embeds):
         return t.spmm(adj, embeds)
 
