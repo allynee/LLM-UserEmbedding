@@ -68,6 +68,8 @@ class Trainer(object):
         if 'log_loss' in configs['train'] and configs['train']['log_loss']:
             self.logger.log(loss_log_dict, save_to_log=False, print_to_console=True)
 
+        return ep_loss / len(train_dataloader), loss_log_dict
+
     @log_exceptions
     def train(self, model):
         wandb.init(
@@ -83,18 +85,33 @@ class Trainer(object):
         train_config = configs['train']
         for epoch_idx in range(train_config['epoch']):
             # train
-            # self.train_epoch(model, epoch_idx)
-            train_loss = self.train_epoch(model, epoch_idx)
+            train_loss, loss_log_dict = self.train_epoch(model, epoch_idx)
+
             # evaluate
             if epoch_idx % train_config['test_step'] == 0:
                 eval_result = self.evaluate(model, epoch_idx)
 
-                wandb.log({
+                # Prepare wandb log dict
+                wandb_log = {
                     "epoch": epoch_idx,
                     "train_loss": train_loss,
-                    "recall@k": eval_result['recall'][-1],
-                    "ndcg@k": eval_result['ndcg'][-1],
-                })
+                    "recall@5": eval_result['recall'][0],
+                    "recall@10": eval_result['recall'][1],
+                    "recall@20": eval_result['recall'][2],
+                    "ndcg@5": eval_result['ndcg'][0],
+                    "ndcg@10": eval_result['ndcg'][1],
+                    "ndcg@20": eval_result['ndcg'][2],
+                }
+
+                # Add all losses from loss_log_dict (including alpha if present)
+                for loss_name, loss_val in loss_log_dict.items():
+                    wandb_log[loss_name] = loss_val
+
+                # Print alpha if it exists (for fusion models)
+                if 'alpha' in loss_log_dict:
+                    print(f"  [Fusion alpha: {loss_log_dict['alpha']:.4f}]")
+
+                wandb.log(wandb_log)
 
 
                 if eval_result['recall'][-1] > best_recall:

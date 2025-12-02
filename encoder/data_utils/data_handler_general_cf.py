@@ -18,6 +18,7 @@ class DataHandlerGeneralCF:
         else:
             raise NotImplementedError
         self.trn_file = predir + 'trn_mat.pkl'
+        self.trn_short_file = predir + 'trn_short_mat.pkl'  # Short-term interactions
         self.val_file = predir + 'val_mat.pkl'
         self.tst_file = predir + 'tst_mat.pkl'
 
@@ -93,7 +94,18 @@ class DataHandlerGeneralCF:
         self.trn_mat = trn_mat
         configs['data']['user_num'], configs['data']['item_num'] = trn_mat.shape
         self.torch_adj = self._make_torch_adj(trn_mat)
-        
+
+        # Load short-term interactions for fusion models
+        if configs['model']['name'] in ['lightgcn_fusion']:
+            import os
+            if os.path.exists(self.trn_short_file):
+                trn_short_mat = self._load_one_mat(self.trn_short_file)
+                self.torch_adj_long = self._make_torch_adj(trn_mat)
+                self.torch_adj_short = self._make_torch_adj(trn_short_mat)
+                print(f"Loaded short-term graph with {trn_short_mat.nnz} interactions")
+            else:
+                raise FileNotFoundError(f"Short-term file not found: {self.trn_short_file}")
+
         if configs['model']['name'] == 'gccf':
             self.torch_adj = self._make_torch_adj(trn_mat, self_loop=True)
 
