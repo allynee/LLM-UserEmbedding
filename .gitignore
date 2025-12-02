@@ -6,3 +6,4 @@ encoder/checkpoint
 encoder/log
 encoder/exports
 .DS_Store
+*.pyc
