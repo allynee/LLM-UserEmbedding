@@ -192,6 +192,8 @@ class LightGCN_plus_Fusion(BaseModel):
         if self.fusion_type == "weighted_sum":
             losses["alpha"] = float(t.clamp(self.alpha, 0.0, 1.0).item())
 
+        # Invalidate cached embeddings so evaluation recomputes them
+        self.final_embeds = None
         return loss, losses
 
     def full_predict(self, batch_data):
