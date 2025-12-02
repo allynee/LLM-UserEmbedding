@@ -32,46 +32,57 @@ def load_jsonl_mapper(path):
             try:
                 obj = json.loads(line)
                 # Assuming uid/iid -> id mapping
-                # steam_user.json: {"uid": 0, "username": "..."}
-                # steam_item.json: {"iid": 0, "product_id": "..."}
                 if 'uid' in obj:
-                    mapping[obj['uid']] = obj['username']
+                    # Try 'username' (Steam) or 'reviewerID' (Amazon)
+                    val = obj.get('username', obj.get('reviewerID'))
+                    if val:
+                        mapping[obj['uid']] = val
                 elif 'iid' in obj:
-                    mapping[obj['iid']] = obj['product_id']
+                    # Try 'product_id' (Steam) or 'asin' (Amazon)
+                    val = obj.get('product_id', obj.get('asin'))
+                    if val:
+                        mapping[obj['iid']] = val
             except:
                 pass
     return mapping
 
-def load_games_info(path):
-    print(f"Loading games info from {path}...")
-    games = {}
+def load_games_info(path, dataset='steam'):
+    print(f"Loading item info from {path}...")
+    items = {}
     with open(path, 'r') as f:
         for line in f:
             try:
-                game = ast.literal_eval(line)
-                # Map id -> game info
-                if 'id' in game:
-                    games[game['id']] = game
+                if dataset == 'steam':
+                    item = ast.literal_eval(line)
+                    if 'id' in item:
+                        items[item['id']] = item
+                elif dataset == 'amazon':
+                    item = json.loads(line)
+                    if 'asin' in item:
+                        items[item['asin']] = item
             except:
                 pass
-    return games
+    return items
 
-def load_reviews_filtered(path, valid_usernames):
+def load_reviews_filtered(path, valid_usernames, dataset='steam'):
     print(f"Loading reviews from {path} (filtering for {len(valid_usernames)} users)...")
     reviews = {} # username -> {product_id -> text}
-    
-    # Get total lines for tqdm if possible (optional, but nice)
-    # Using wc -l might be slow for huge files, but let's try to just iterate with tqdm without total first
-    # or just use a large number estimate if we want a bar, but simple tqdm(f) works if we don't need percentage
     
     with open(path, 'r') as f:
         for line in tqdm(f, desc="Loading reviews"):
             try:
-                review = ast.literal_eval(line)
-                username = review.get('username')
-                if username in valid_usernames:
+                if dataset == 'steam':
+                    review = ast.literal_eval(line)
+                    username = review.get('username')
                     pid = review.get('product_id')
                     text = review.get('text')
+                elif dataset == 'amazon':
+                    review = json.loads(line)
+                    username = review.get('reviewerID')
+                    pid = review.get('asin')
+                    text = review.get('reviewText')
+
+                if username in valid_usernames:
                     if username not in reviews:
                         reviews[username] = {}
                     reviews[username][pid] = text
@@ -79,7 +90,7 @@ def load_reviews_filtered(path, valid_usernames):
                 pass
     return reviews
 
-def generate_prompt_for_user(user_idx, trn_mat, uid_to_username, iid_to_productid, games_info, user_reviews, system_prompt_template):
+def generate_prompt_for_user(user_idx, trn_mat, uid_to_username, iid_to_productid, games_info, item_profiles, user_reviews, system_prompt_template):
     # Get user interactions
     # trn_mat is COO or CSR. CSR is better for row slicing.
     if not scipy.sparse.isspmatrix_csr(trn_mat):
@@ -100,20 +111,12 @@ def generate_prompt_for_user(user_idx, trn_mat, uid_to_username, iid_to_producti
         
         game = games_info.get(pid, {})
         title = game.get('title', game.get('app_name', 'None'))
-        # Description: 'desc_snippet' or 'detailed_description' or 'short_description'?
-        # steam_games.json usually has these. Let's check keys later if needed. 
-        # For now assume 'title' is key. I'll check keys in game dict.
-        # Based on inspect output: 'publisher', 'genres', 'app_name', 'title', 'tags', 'specs', 'price', 'early_access', 'id', 'developer', 'sentiment'
-        # It doesn't show description in the head output. Maybe it's missing or named differently?
-        # I'll use 'tags' and 'genres' as description if description is missing, or just "None".
-        # Wait, the instruction says: "description": "a description of what types of users will like this game"
-        # I can construct this from genres and tags.
         
+        # Description from item profiles
         description = "None"
-        if 'genres' in game or 'tags' in game:
-            genres = game.get('genres', [])
-            tags = game.get('tags', [])
-            description = f"Genres: {', '.join(genres)}. Tags: {', '.join(tags)}."
+        if item_profiles and iid in item_profiles:
+            prof = item_profiles[iid]
+            description = prof.get('summarization', prof.get('profile', 'None'))
         
         review = "None"
         if username in user_reviews and pid in user_reviews[username]:
@@ -126,14 +129,11 @@ def generate_prompt_for_user(user_idx, trn_mat, uid_to_username, iid_to_producti
         })
     
     # Construct the final prompt
-    # The system prompt contains the instructions.
-    # The user message contains "PLAYED GAMES: ..."
-    
     user_content = f"PLAYED GAMES: {json.dumps(played_games)}"
     return user_content
 
-def process_user(user_idx, trn_mat, uid_to_username, iid_to_productid, games_info, user_reviews, system_prompt):
-    user_content = generate_prompt_for_user(user_idx, trn_mat, uid_to_username, iid_to_productid, games_info, user_reviews, system_prompt)
+def process_user(user_idx, trn_mat, uid_to_username, iid_to_productid, games_info, item_profiles, user_reviews, system_prompt):
+    user_content = generate_prompt_for_user(user_idx, trn_mat, uid_to_username, iid_to_productid, games_info, item_profiles, user_reviews, system_prompt)
     if not user_content:
         return None
 
@@ -180,21 +180,48 @@ if __name__ == "__main__":
     parser.add_argument("--input_mat", type=str, required=True, help="Path to trn_mat.pkl or trn_short_mat.pkl")
     parser.add_argument("--output_pkl", type=str, required=True, help="Path to output usr_prf.pkl")
     parser.add_argument("--test", action="store_true", help="Run test for the first user")
+    parser.add_argument("--dataset", type=str, default="steam", choices=["steam", "amazon"], help="Dataset name")
+    parser.add_argument("--raw_item_file", type=str, help="Path to raw item metadata file (for titles)")
+    parser.add_argument("--raw_review_file", type=str, help="Path to raw review file")
+    parser.add_argument("--item_prf", type=str, required=True, help="Path to itm_prf.pkl")
     args = parser.parse_args()
 
     # Paths
     base_dir = os.path.dirname(os.path.abspath(__file__))
+    # Adjust base_dir if script is in new_data
+    if os.path.basename(base_dir) == 'new_data':
+        base_dir = os.path.dirname(base_dir)
+        
     data_dir = os.path.join(base_dir, 'data')
     raw_dir = os.path.join(data_dir, 'raw')
     mapper_dir = os.path.join(data_dir, 'mapper')
-    instruction_path = os.path.join(base_dir, 'generation', 'instruction', 'steam_user.txt')
+    
+    if args.dataset == 'steam':
+        instruction_path = os.path.join(base_dir, 'generation', 'instruction', 'steam_user.txt')
+        user_map_path = os.path.join(mapper_dir, 'steam_user.json')
+        item_map_path = os.path.join(mapper_dir, 'steam_item.json')
+        raw_item_path = args.raw_item_file if args.raw_item_file else os.path.join(raw_dir, 'steam_games.json')
+        raw_review_path = args.raw_review_file if args.raw_review_file else os.path.join(raw_dir, 'steam_reviews.json')
+    elif args.dataset == 'amazon':
+        instruction_path = os.path.join(base_dir, 'generation', 'instruction', 'amazon_user.txt')
+        user_map_path = os.path.join(mapper_dir, 'amazon_user.json')
+        item_map_path = os.path.join(mapper_dir, 'amazon_item.json')
+        raw_item_path = args.raw_item_file # Must be provided or we fail/warn
+        raw_review_path = args.raw_review_file # Must be provided or we fail/warn
 
     # Load Data
     print("Loading data...")
     trn_mat = load_pickle(args.input_mat)
-    uid_to_username = load_jsonl_mapper(os.path.join(mapper_dir, 'steam_user.json'))
-    iid_to_productid = load_jsonl_mapper(os.path.join(mapper_dir, 'steam_item.json'))
-    games_info = load_games_info(os.path.join(raw_dir, 'steam_games.json'))
+    uid_to_username = load_jsonl_mapper(user_map_path)
+    iid_to_productid = load_jsonl_mapper(item_map_path)
+    
+    item_profiles = load_pickle(args.item_prf)
+    
+    games_info = {}
+    if raw_item_path and os.path.exists(raw_item_path):
+        games_info = load_games_info(raw_item_path, dataset=args.dataset)
+    else:
+        print(f"Warning: Raw item file {raw_item_path} not found. Titles will be 'None'.")
     
     # Filter users present in trn_mat
     if scipy.sparse.isspmatrix(trn_mat):
@@ -208,7 +235,11 @@ if __name__ == "__main__":
         if uname:
             valid_usernames.add(uname)
             
-    user_reviews = load_reviews_filtered(os.path.join(raw_dir, 'steam_reviews.json'), valid_usernames)
+    user_reviews = {}
+    if raw_review_path and os.path.exists(raw_review_path):
+        user_reviews = load_reviews_filtered(raw_review_path, valid_usernames, dataset=args.dataset)
+    else:
+        print(f"Warning: Raw review file {raw_review_path} not found. Reviews will be 'None'.")
 
     # Load System Prompt
     with open(instruction_path, 'r') as f:
@@ -221,7 +252,7 @@ if __name__ == "__main__":
         print("Running in TEST mode for the first user...")
         uid = 0
         print(f"Processing user {uid}...")
-        res = process_user(uid, trn_mat, uid_to_username, iid_to_productid, games_info, user_reviews, system_prompt)
+        res = process_user(uid, trn_mat, uid_to_username, iid_to_productid, games_info, item_profiles, user_reviews, system_prompt)
         print("Output:")
         print(json.dumps(res, indent=2))
         exit()
@@ -230,7 +261,7 @@ if __name__ == "__main__":
     
     with ThreadPoolExecutor(max_workers=10) as executor:
         future_to_uid = {
-            executor.submit(process_user, uid, trn_mat, uid_to_username, iid_to_productid, games_info, user_reviews, system_prompt): uid 
+            executor.submit(process_user, uid, trn_mat, uid_to_username, iid_to_productid, games_info, item_profiles, user_reviews, system_prompt): uid 
             for uid in range(trn_mat.shape[0])
         }
         
