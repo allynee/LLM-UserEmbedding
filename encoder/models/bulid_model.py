@@ -13,6 +13,3 @@ def build_model(data_handler):
             return getattr(module, attr)(data_handler)
     else:
         raise NotImplementedError('Model Class {} is not defined in {}'.format(model_name, module_path))
-
-
-

@@ -96,7 +96,7 @@ class DataHandlerGeneralCF:
         self.torch_adj = self._make_torch_adj(trn_mat)
 
         # Load short-term interactions for fusion models
-        if configs['model']['name'] in ['lightgcn_fusion']:
+        if configs['model']['name'] in ['lightgcn_fusion', 'lightgcn_plus_fusion', 'lightgcn_gene_fusion']:
             import os
             if os.path.exists(self.trn_short_file):
                 trn_short_mat = self._load_one_mat(self.trn_short_file)
