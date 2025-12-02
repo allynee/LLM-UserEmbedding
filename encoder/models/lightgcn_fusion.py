@@ -97,9 +97,9 @@ class LightGCN_Fusion(BaseModel):
             user_embeds = self.fusion_ffn(user_embeds_concat)
 
         # Average item embeddings from both graphs
-        # item_embeds = (item_embeds_long + item_embeds_short) / 2
-        # keep item embeddings the same --> our project will focus only on changing UEs
-        item_embeds = item_embeds_long 
+        item_embeds = (item_embeds_long + item_embeds_short) / 2
+        # ? keep item embeddings the same --> our project will focus only on changing UEs
+        # item_embeds = item_embeds_long 
 
         # Cache final embeddings
         self.final_embeds = t.concat([user_embeds, item_embeds], axis=0)
