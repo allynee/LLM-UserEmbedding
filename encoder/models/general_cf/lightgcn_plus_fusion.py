@@ -72,7 +72,8 @@ class LightGCN_plus_Fusion(BaseModel):
 
         if self.fusion_type == "weighted_sum":
             # Learnable alpha for weighted sum: alpha * short + (1-alpha) * long
-            self.alpha = nn.Parameter(t.tensor([0.5], dtype=t.float32, device=device))
+            # self.alpha = nn.Parameter(t.tensor([0.5], dtype=t.float32, device=device))
+            pass
         elif self.fusion_type == "ffn":
             # FFN to project concatenated embeddings from 2d -> d
             self.fusion_ffn = nn.Sequential(
@@ -110,12 +111,13 @@ class LightGCN_plus_Fusion(BaseModel):
         return embeds[:self.user_num], embeds[self.user_num:]
 
     def _fuse_users(self, user_long, user_short):
-        if self.fusion_type == "weighted_sum":
-            alpha = t.clamp(self.alpha, 0.0, 1.0)
-            return alpha * user_short + (1.0 - alpha) * user_long
-        else:
-            user_cat = t.cat([user_long, user_short], dim=-1)
-            return self.fusion_ffn(user_cat)
+        return 0.5 * user_short + 0.5 * user_long
+        # if self.fusion_type == "weighted_sum":
+        #     alpha = t.clamp(self.alpha, 0.0, 1.0)
+        #     return alpha * user_short + (1.0 - alpha) * user_long
+        # else:
+        #     user_cat = t.cat([user_long, user_short], dim=-1)
+        #     return self.fusion_ffn(user_cat)
 
     def _pick_embeds(self, user_embeds, item_embeds, batch_data):
         ancs, poss, negs = batch_data
@@ -189,8 +191,8 @@ class LightGCN_plus_Fusion(BaseModel):
         loss = bpr_loss + reg_loss + kd_loss
         losses = {'bpr_loss': bpr_loss, 'reg_loss': reg_loss, 'kd_loss': kd_loss}
 
-        if self.fusion_type == "weighted_sum":
-            losses["alpha"] = float(t.clamp(self.alpha, 0.0, 1.0).item())
+        # if self.fusion_type == "weighted_sum":
+        #     losses["alpha"] = float(t.clamp(self.alpha, 0.0, 1.0).item())
 
         # Invalidate cached embeddings so evaluation recomputes them
         self.final_embeds = None
