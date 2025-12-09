@@ -68,7 +68,7 @@ class LightGCN_plus_Fusion(BaseModel):
         )
 
         # New: Fusion between long & short user embeddings (same idea as LightGCN_Fusion)
-        self.fusion_type = self.hyper_config.get("fusion_type", "weighted_sum")
+        self.fusion_type = self.hyper_config.get("fusion_type", configs['model'].get("fusion_type", "weighted_sum"))
 
         if self.fusion_type == "weighted_sum":
             # Learnable alpha for weighted sum: alpha * short + (1-alpha) * long
@@ -80,6 +80,8 @@ class LightGCN_plus_Fusion(BaseModel):
                 nn.ReLU(),
                 nn.Linear(self.embedding_size, self.embedding_size)
             )
+        elif self.fusion_type == "average":
+            pass
         else:
             raise ValueError(f"Unknown fusion_type: {self.fusion_type}")
 
@@ -113,6 +115,8 @@ class LightGCN_plus_Fusion(BaseModel):
         if self.fusion_type == "weighted_sum":
             alpha = t.clamp(self.alpha, 0.0, 1.0)
             return alpha * user_short + (1.0 - alpha) * user_long
+        elif self.fusion_type == "average":
+            return (user_short + user_long) / 2.0
         else:
             user_cat = t.cat([user_long, user_short], dim=-1)
             return self.fusion_ffn(user_cat)

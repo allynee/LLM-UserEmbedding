@@ -7,3 +7,4 @@ encoder/log
 encoder/exports
 .DS_Store
 *.pyc
+/wandb/

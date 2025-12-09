@@ -27,10 +27,11 @@ model:
   # general parameters here
   keep_rate: 0.8
   embedding_size: 32
-  # NEW: fusion type, same style as lightgcn_fusion
+  # NEW: fusion type, same style as lightgcn_fusion'
   # 'weighted_sum': user_emb = alpha * short + (1-alpha) * long
   # 'ffn': FFN projection from 2d -> d
-  fusion_type: weighted_sum
+  # 'average': simple average of short and long embeddings
+  fusion_type: average
 
   # dataset-specific parameters here
   layer_num: 3

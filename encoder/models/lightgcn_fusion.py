@@ -41,7 +41,7 @@ class LightGCN_Fusion(BaseModel):
         self.reg_weight = self.hyper_config['reg_weight']
 
         # Fusion parameters
-        self.fusion_type = self.hyper_config.get('fusion_type', 'weighted_sum')  # 'weighted_sum' or 'ffn'
+        self.fusion_type = self.hyper_config.get('fusion_type', 'weighted_sum')  # 'weighted_sum', 'ffn', 'average'
 
         if self.fusion_type == 'weighted_sum':
             # Learnable alpha for weighted sum: alpha * short + (1-alpha) * long
@@ -53,6 +53,8 @@ class LightGCN_Fusion(BaseModel):
                 nn.ReLU(),
                 nn.Linear(self.embedding_size, self.embedding_size)
             )
+        elif self.fusion_type == 'average':
+            pass
         else:
             raise ValueError(f"Unknown fusion_type: {self.fusion_type}")
 
@@ -103,6 +105,8 @@ class LightGCN_Fusion(BaseModel):
             # FFN: project from 2d -> d
             user_embeds_concat = t.cat([user_embeds_long, user_embeds_short], dim=-1)
             user_embeds = self.fusion_ffn(user_embeds_concat)
+        elif self.fusion_type == 'average':
+            user_embeds = (user_embeds_short + user_embeds_long) / 2
 
         # Average item embeddings from both graphs
         item_embeds = (item_embeds_long + item_embeds_short) / 2
