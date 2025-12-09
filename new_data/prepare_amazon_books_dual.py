@@ -5,9 +5,13 @@ Prepare Amazon-Books for:
 
 Outputs (under --data-dir, default ./data/amazon):
 
-  - trn_short_mat.pkl
+  - trn_short_mat_k{K}.pkl
       sparse matrix: (num_users x num_items), only last K training
       interactions per user, by timestamp.
+      e.g., trn_short_mat_k10.pkl, trn_short_mat_k20.pkl, ...
+
+  - trn_short_mat.pkl  (only if a single K is provided)
+      Backwards-compatible name for the first / only K.
 
   - user_windows.jsonl
       one JSON per user:
@@ -106,11 +110,12 @@ def build_short_train_mat(events_by_user, num_users, num_items, k):
             cols.append(i)
             data.append(1.0)
 
-    mat = coo_matrix(
+    coo = coo_matrix(
         (np.array(data, dtype=np.float32), (np.array(rows), np.array(cols))),
         shape=(num_users, num_items),
         dtype=np.float32,
     )
+    mat = coo.tocsr()
     return mat
 
 
@@ -187,8 +192,9 @@ def main():
     ap.add_argument(
         "--short-k",
         type=int,
-        default=10,
-        help="K for last-K short-term graph per user",
+        nargs="+",             # <-- allow multiple Ks
+        default=[10],
+        help="One or more K values for last-K short-term graphs per user, e.g. --short-k 10 20 50 100",
     )
     ap.add_argument(
         "--window-size",
@@ -203,7 +209,7 @@ def main():
     user_map_path = Path(args.user_map)
     item_map_path = Path(args.item_map)
 
-    # 1) load train/val/test matrices
+    # 1) load train matrix
     trn_pkl = data_dir / "trn_mat.pkl"
     if not trn_pkl.exists():
         raise FileNotFoundError(f"Missing {trn_pkl}")
@@ -221,7 +227,7 @@ def main():
     orig2user = load_and_invert_mapping(user_map_path, id_field="uid", orig_field="reviewerID")
     orig2item = load_and_invert_mapping(item_map_path, id_field="iid", orig_field="asin")
 
-    # 3) stream raw data
+    # 3) stream raw data once
     print(f"Streaming raw Amazon file from {raw_path} ...")
     short_events_by_user = defaultdict(list)   # for last-K graph
     window_events_by_user = defaultdict(list)  # for windows
@@ -271,20 +277,33 @@ def main():
     print(f"Mapped to processed IDs: {n_mapped}")
     print(f"Train edges with timestamps: {n_train_edges}")
 
-    # 4) build last-K short-term matrix
-    print(f"Building last-K train matrix (K={args.short_k}) ...")
-    short_mat = build_short_train_mat(
-        short_events_by_user,
-        num_users=num_users,
-        num_items=num_items,
-        k=args.short_k,
-    )
-    short_pkl = data_dir / "trn_short_mat.pkl"
-    with open(short_pkl, "wb") as f:
-        pickle.dump(short_mat, f)
-    print(f"Saved short-term matrix to {short_pkl} (shape={short_mat.shape})")
+    # 4) build last-K short-term matrices for each K
+    print(f"Building last-K train matrices for K values: {args.short_k} ...")
+    ks = sorted(set(args.short_k))
+    for k in ks:
+        print(f"  - Building K={k} ...")
+        short_mat = build_short_train_mat(
+            short_events_by_user,
+            num_users=num_users,
+            num_items=num_items,
+            k=k,
+        )
+        short_pkl = data_dir / f"trn_short_mat_k{k}.pkl"
+        with open(short_pkl, "wb") as f:
+            pickle.dump(short_mat, f)
+        print(f"    Saved short-term matrix to {short_pkl} (shape={short_mat.shape})")
 
-    # 5) build per-user windows for LLM
+    # Backwards compatibility: if exactly one K, also write trn_short_mat.pkl
+    if len(ks) == 1:
+        k = ks[0]
+        src = data_dir / f"trn_short_mat_k{k}.pkl"
+        dst = data_dir / "trn_short_mat.pkl"
+        if src.exists():
+            with open(src, "rb") as f_in, open(dst, "wb") as f_out:
+                f_out.write(f_in.read())
+            print(f"Also wrote legacy short-term matrix name {dst} for K={k}")
+
+    # 5) build per-user windows for LLM (unchanged)
     print(f"Building windows of size {args.window_size} for LLM profiles ...")
     user_windows = build_windows(window_events_by_user, window_size=args.window_size)
 

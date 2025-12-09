@@ -86,6 +86,8 @@ class LightGCN_plus(BaseModel):
         # KD/alignment 
         # cal_infonce_loss(embeds1, embeds2, all_embeds2, temp)
         # we want embeds1[i] to be close to its corresponding embeds2[i] and far from others in all_embeds2
+        # Text embeddings as teachers
+        # > Basically fixed semantic targets to pull graph embeddings towards in loss
         kd_loss = cal_infonce_loss(anc_embeds, ancprf_embeds, usrprf_embeds, self.kd_temperature) + \
                   cal_infonce_loss(pos_embeds, posprf_embeds, posprf_embeds, self.kd_temperature) + \
                   cal_infonce_loss(neg_embeds, negprf_embeds, negprf_embeds, self.kd_temperature)

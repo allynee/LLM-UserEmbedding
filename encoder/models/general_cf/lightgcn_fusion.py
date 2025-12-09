@@ -29,8 +29,11 @@ class LightGCN_Fusion(BaseModel):
         self.item_embeds = nn.Parameter(init(t.empty(self.item_num, self.embedding_size)))
 
         # Separate user embeddings for long-term and short-term
-        self.user_embeds_long = nn.Parameter(init(t.empty(self.user_num, self.embedding_size)))
-        self.user_embeds_short = nn.Parameter(init(t.empty(self.user_num, self.embedding_size)))
+        # TEMP
+        self.user_embeds = nn.Parameter(init(t.empty(self.user_num, self.embedding_size)))
+        # self.user_embeds_long = nn.Parameter(init(t.empty(self.user_num, self.embedding_size)))
+        # self.user_embeds_short = nn.Parameter(init(t.empty(self.user_num, self.embedding_size)))
+        # END TEMP
 
         self.edge_dropper = SpAdjEdgeDrop()
         self.final_embeds = None
@@ -78,41 +81,51 @@ class LightGCN_Fusion(BaseModel):
             embeds_list.append(embeds)
         embeds = sum(embeds_list)
         return embeds[:self.user_num], embeds[self.user_num:]
-
+    
+    # TEMP
     def forward(self, keep_rate=1.0):
         if not self.is_training and self.final_embeds is not None:
             return self.final_embeds[:self.user_num], self.final_embeds[self.user_num:]
 
-        # Forward pass through long-term graph
-        user_embeds_long, item_embeds_long = self._gcn_forward(
-            self.adj_long, self.user_embeds_long, keep_rate
-        )
-
-        # Forward pass through short-term graph
-        user_embeds_short, item_embeds_short = self._gcn_forward(
-            self.adj_short, self.user_embeds_short, keep_rate
-        )
-
-        # Fuse user embeddings
-        if self.fusion_type == 'weighted_sum':
-            # Weighted sum: alpha * short + (1-alpha) * long
-            # Clamp alpha to [0, 1]
-            alpha = t.clamp(self.alpha, 0, 1)
-            user_embeds = alpha * user_embeds_short + (1 - alpha) * user_embeds_long
-        elif self.fusion_type == 'ffn':
-            # FFN: project from 2d -> d
-            user_embeds_concat = t.cat([user_embeds_long, user_embeds_short], dim=-1)
-            user_embeds = self.fusion_ffn(user_embeds_concat)
-
-        # Average item embeddings from both graphs
-        item_embeds = (item_embeds_long + item_embeds_short) / 2
-        # ? keep item embeddings the same --> our project will focus only on changing UEs
-        # item_embeds = item_embeds_long 
-
-        # Cache final embeddings
+        user_embeds, item_embeds = self._gcn_forward(self.adj_long, keep_rate)
         self.final_embeds = t.concat([user_embeds, item_embeds], axis=0)
-
         return user_embeds, item_embeds
+    # END TEMP
+
+    # def forward(self, keep_rate=1.0):
+    #     if not self.is_training and self.final_embeds is not None:
+    #         return self.final_embeds[:self.user_num], self.final_embeds[self.user_num:]
+
+    #     # Forward pass through long-term graph
+    #     user_embeds_long, item_embeds_long = self._gcn_forward(
+    #         self.adj_long, self.user_embeds_long, keep_rate
+    #     )
+
+    #     # Forward pass through short-term graph
+    #     user_embeds_short, item_embeds_short = self._gcn_forward(
+    #         self.adj_short, self.user_embeds_short, keep_rate
+    #     )
+
+    #     # Fuse user embeddings
+    #     if self.fusion_type == 'weighted_sum':
+    #         # Weighted sum: alpha * short + (1-alpha) * long
+    #         # Clamp alpha to [0, 1]
+    #         alpha = t.clamp(self.alpha, 0, 1)
+    #         user_embeds = alpha * user_embeds_short + (1 - alpha) * user_embeds_long
+    #     elif self.fusion_type == 'ffn':
+    #         # FFN: project from 2d -> d
+    #         user_embeds_concat = t.cat([user_embeds_long, user_embeds_short], dim=-1)
+    #         user_embeds = self.fusion_ffn(user_embeds_concat)
+
+    #     # Average item embeddings from both graphs
+    #     item_embeds = (item_embeds_long + item_embeds_short) / 2
+    #     # ? keep item embeddings the same --> our project will focus only on changing UEs
+    #     # item_embeds = item_embeds_long 
+
+    #     # Cache final embeddings
+    #     self.final_embeds = t.concat([user_embeds, item_embeds], axis=0)
+
+    #     return user_embeds, item_embeds
 
     def cal_loss(self, batch_data):
         self.is_training = True
