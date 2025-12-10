@@ -1,6 +1,7 @@
 data/amazon
 data/steam
 data/yelp
+data/raw
 data/exports
 encoder/checkpoint
 encoder/log

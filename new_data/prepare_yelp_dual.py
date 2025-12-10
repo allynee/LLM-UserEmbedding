@@ -1,17 +1,13 @@
 """
-Prepare Amazon-Books for:
+Prepare Yelp for:
   - short-term vs long-term interaction graph
   - windowed user histories for LLM profiles
 
-Outputs (under --data-dir, default ./data/amazon):
+Outputs (under --data-dir, default ./data/yelp):
 
-  - trn_short_mat_k{K}.pkl
+  - trn_short_mat.pkl
       sparse matrix: (num_users x num_items), only last K training
       interactions per user, by timestamp.
-      e.g., trn_short_mat_k10.pkl, trn_short_mat_k20.pkl, ...
-
-  - trn_short_mat.pkl  (only if a single K is provided)
-      Backwards-compatible name for the first / only K.
 
   - user_windows.jsonl
       one JSON per user:
@@ -40,6 +36,7 @@ import gzip
 import json
 import pickle
 from collections import defaultdict
+from datetime import datetime
 from pathlib import Path
 
 import numpy as np
@@ -55,12 +52,8 @@ def smart_open(path: Path):
 def load_and_invert_mapping(path: Path, id_field: str, orig_field: str):
     """
     For files like:
-
-      {"uid": 0, "reviewerID": "A2PDSDPBAO255U"}
-      {"uid": 1, "reviewerID": "A1MPQWXSTD511G"}
-
-      {"iid": 0, "asin": "0373730489"}
-      {"iid": 1, "asin": "0985334541"}
+      {"uid": 0, "user_id": "..."}
+      {"iid": 0, "business_id": "..."}
 
     Returns a dict:
         original_id (str) -> internal_id (int)
@@ -71,10 +64,13 @@ def load_and_invert_mapping(path: Path, id_field: str, orig_field: str):
             line = line.strip()
             if not line:
                 continue
-            obj = json.loads(line)
-            internal = int(obj[id_field])
-            orig = str(obj[orig_field])
-            mapping[orig] = internal
+            try:
+                obj = json.loads(line)
+                internal = int(obj[id_field])
+                orig = str(obj[orig_field])
+                mapping[orig] = internal
+            except json.JSONDecodeError:
+                continue
     if not mapping:
         raise ValueError(f"No mappings loaded from {path}")
     return mapping
@@ -110,12 +106,11 @@ def build_short_train_mat(events_by_user, num_users, num_items, k):
             cols.append(i)
             data.append(1.0)
 
-    coo = coo_matrix(
+    mat = coo_matrix(
         (np.array(data, dtype=np.float32), (np.array(rows), np.array(cols))),
         shape=(num_users, num_items),
         dtype=np.float32,
     )
-    mat = coo.tocsr()
     return mat
 
 
@@ -167,34 +162,45 @@ def build_windows(events_by_user, window_size):
     return user_windows
 
 
+def parse_yelp_date(date_str):
+    """
+    Parses date string like '2018-07-07 22:09:11' to unix timestamp.
+    Returns 0 if parsing fails.
+    """
+    try:
+        dt = datetime.strptime(date_str, "%Y-%m-%d %H:%M:%S")
+        return int(dt.timestamp())
+    except (ValueError, TypeError):
+        return 0
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument(
         "--raw",
-        default="./data/raw/reviews_Books_5.json",
-        help="Path to Amazon Books 5-core raw file (reviews_Books_5.json or .json.gz)",
+        default="./Yelp JSON/yelp_dataset/yelp_academic_dataset_review.json",
+        help="Path to Yelp reviews raw file (yelp_academic_dataset_review.json or .json.gz)",
     )
     ap.add_argument(
         "--data-dir",
-        default="./data/amazon",
+        default="./data/yelp",
         help="Dir containing trn_mat.pkl",
     )
     ap.add_argument(
         "--user-map",
-        default="./data/mapper/amazon_user.json",
-        help="JSON mapping internal_user_id -> original reviewerID",
+        default="./data/mapper/yelp_user.json",
+        help="JSON mapping internal_user_id -> original user_id",
     )
     ap.add_argument(
         "--item-map",
-        default="./data/mapper/amazon_item.json",
-        help="JSON mapping internal_item_id -> original asin",
+        default="./data/mapper/yelp_item.json",
+        help="JSON mapping internal_item_id -> original business_id",
     )
     ap.add_argument(
         "--short-k",
         type=int,
-        nargs="+",             # <-- allow multiple Ks
-        default=[10],
-        help="One or more K values for last-K short-term graphs per user, e.g. --short-k 10 20 50 100",
+        default=10,
+        help="K for last-K short-term graph per user",
     )
     ap.add_argument(
         "--window-size",
@@ -209,7 +215,7 @@ def main():
     user_map_path = Path(args.user_map)
     item_map_path = Path(args.item_map)
 
-    # 1) load train matrix
+    # 1) load train/val/test matrices
     trn_pkl = data_dir / "trn_mat.pkl"
     if not trn_pkl.exists():
         raise FileNotFoundError(f"Missing {trn_pkl}")
@@ -224,11 +230,11 @@ def main():
 
     # 2) invert mappings
     print("Loading ID mappings ...")
-    orig2user = load_and_invert_mapping(user_map_path, id_field="uid", orig_field="reviewerID")
-    orig2item = load_and_invert_mapping(item_map_path, id_field="iid", orig_field="asin")
+    orig2user = load_and_invert_mapping(user_map_path, id_field="uid", orig_field="user_id")
+    orig2item = load_and_invert_mapping(item_map_path, id_field="iid", orig_field="business_id")
 
-    # 3) stream raw data once
-    print(f"Streaming raw Amazon file from {raw_path} ...")
+    # 3) stream raw data
+    print(f"Streaming raw Yelp file from {raw_path} ...")
     short_events_by_user = defaultdict(list)   # for last-K graph
     window_events_by_user = defaultdict(list)  # for windows
 
@@ -240,13 +246,15 @@ def main():
             line = line.strip()
             if not line:
                 continue
+
             try:
                 obj = json.loads(line)
             except json.JSONDecodeError:
                 continue
 
-            u_orig = obj.get("reviewerID")
-            i_orig = obj.get("asin")
+            u_orig = obj.get("user_id")
+            i_orig = obj.get("business_id")
+
             if u_orig is None or i_orig is None:
                 continue
 
@@ -259,13 +267,10 @@ def main():
 
             n_mapped += 1
 
-            ts_raw = obj.get("unixReviewTime", obj.get("timestamp", 0))
-            try:
-                ts = int(ts_raw)
-            except Exception:
-                ts = 0
+            date_str = obj.get("date")
+            ts = parse_yelp_date(date_str)
 
-            review = obj.get("reviewText", "")
+            review = obj.get("text", "")
 
             # only TRAIN edges should affect short-term graph + windows
             if trn_csr[u, i] != 0:
@@ -277,33 +282,20 @@ def main():
     print(f"Mapped to processed IDs: {n_mapped}")
     print(f"Train edges with timestamps: {n_train_edges}")
 
-    # 4) build last-K short-term matrices for each K
-    print(f"Building last-K train matrices for K values: {args.short_k} ...")
-    ks = sorted(set(args.short_k))
-    for k in ks:
-        print(f"  - Building K={k} ...")
-        short_mat = build_short_train_mat(
-            short_events_by_user,
-            num_users=num_users,
-            num_items=num_items,
-            k=k,
-        )
-        short_pkl = data_dir / f"trn_short_mat_k{k}.pkl"
-        with open(short_pkl, "wb") as f:
-            pickle.dump(short_mat, f)
-        print(f"    Saved short-term matrix to {short_pkl} (shape={short_mat.shape})")
+    # 4) build last-K short-term matrix
+    print(f"Building last-K train matrix (K={args.short_k}) ...")
+    short_mat = build_short_train_mat(
+        short_events_by_user,
+        num_users=num_users,
+        num_items=num_items,
+        k=args.short_k,
+    )
+    short_pkl = data_dir / "trn_short_mat.pkl"
+    with open(short_pkl, "wb") as f:
+        pickle.dump(short_mat, f)
+    print(f"Saved short-term matrix to {short_pkl} (shape={short_mat.shape})")
 
-    # Backwards compatibility: if exactly one K, also write trn_short_mat.pkl
-    if len(ks) == 1:
-        k = ks[0]
-        src = data_dir / f"trn_short_mat_k{k}.pkl"
-        dst = data_dir / "trn_short_mat.pkl"
-        if src.exists():
-            with open(src, "rb") as f_in, open(dst, "wb") as f_out:
-                f_out.write(f_in.read())
-            print(f"Also wrote legacy short-term matrix name {dst} for K={k}")
-
-    # 5) build per-user windows for LLM (unchanged)
+    # 5) build per-user windows for LLM
     print(f"Building windows of size {args.window_size} for LLM profiles ...")
     user_windows = build_windows(window_events_by_user, window_size=args.window_size)
 
