@@ -44,6 +44,9 @@ model:
     mask_ratio: 0.15
     recon_weight: 0.1
     re_temperature: 0.5
+    fusion_type: weighted_sum
+    alpha_mode: interaction   # per-user α(u) from interaction counts
+    norm_before_fusion: false
 
   # for yelp
   yelp:
@@ -52,6 +55,9 @@ model:
     mask_ratio: 0.05
     recon_weight: 0.01
     re_temperature: 0.1
+    fusion_type: weighted_sum
+    alpha_mode: interaction   # per-user α(u) from interaction counts
+    norm_before_fusion: false
 
   # for steam:
   steam:
@@ -60,3 +66,6 @@ model:
     mask_ratio: 0.15
     recon_weight: 0.1
     re_temperature: 0.5
+    fusion_type: weighted_sum
+    alpha_mode: interaction   # per-user α(u) from interaction counts
+    norm_before_fusion: false

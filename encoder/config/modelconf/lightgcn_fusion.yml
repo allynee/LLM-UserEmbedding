@@ -22,31 +22,34 @@ data:
   type: general_cf
   name: amazon
 
-
 model:
   name: lightgcn_fusion
-  # general parameters here
   keep_rate: 0.8
   embedding_size: 32
 
-  # Fusion type: 'weighted_sum' or 'ffn'
-  # weighted_sum: user_emb = alpha * short + (1-alpha) * long
-  # ffn: FFN projection from 2d -> d
-  fusion_type: weighted_sum
-
-  # dataset-specific parameters here
   layer_num: 3
   reg_weight: 1.0e-6
 
-  # for amazon
   amazon:
     layer_num: 3
     reg_weight: 1.0e-6
+
+    fusion_type: weighted_sum
+    alpha_mode: interaction
+    norm_before_fusion: false
+
   # for yelp
   yelp:
     layer_num: 3
     reg_weight: 1.0e-6
+    fusion_type: weighted_sum
+    alpha_mode: interaction
+    norm_before_fusion: false
+
   # for steam
   steam:
     layer_num: 2
     reg_weight: 1.0e-6
+    fusion_type: weighted_sum
+    alpha_mode: interaction
+    norm_before_fusion: false

@@ -25,33 +25,42 @@ data:
 model:
   name: lightgcn_plus_fusion 
   # general parameters here
+
   keep_rate: 0.8
   embedding_size: 32
-  # NEW: fusion type, same style as lightgcn_fusion
-  # 'weighted_sum': user_emb = alpha * short + (1-alpha) * long
-  # 'ffn': FFN projection from 2d -> d
-  fusion_type: weighted_sum
 
   # dataset-specific parameters here
   layer_num: 3
   reg_weight: 1.0e-7
   kd_weight: 1.0e-2
   kd_temperature: 0.2
+
   # for amazon
   amazon:
-    layer_num: 3
-    reg_weight: 1.0e-7
-    kd_weight: 1.0e-2
+    layer_num: 4
+    reg_weight: 1.0e-8
+    kd_weight: 5.0e-3
     kd_temperature: 0.2
+    fusion_type: weighted_sum
+    alpha_mode: interaction   # use per-user α(u) from interaction counts
+    # alpha_mode: global
+    # alpha: 0.75
+    norm_before_fusion: false  # enable normalization fusion
   # for yelp
   yelp:
     layer_num: 3
     reg_weight: 1.0e-7
     kd_weight: 1.0e-2
     kd_temperature: 0.2
+    fusion_type: weighted_sum
+    alpha_mode: interaction 
+    norm_before_fusion: false 
   # for steam:
   steam:
     layer_num: 3
     reg_weight: 1.0e-8
     kd_weight: 1.0e-3
     kd_temperature: 0.1
+    fusion_type: weighted_sum
+    alpha_mode: interaction
+    norm_before_fusion: false 

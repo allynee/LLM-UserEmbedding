@@ -1,5 +1,7 @@
 import torch as t
 from torch import nn
+import torch.nn.functional as F
+
 from config.configurator import configs
 from models.aug_utils import NodeMask
 from models.base_model import BaseModel
@@ -16,12 +18,15 @@ class LightGCN_gene_Fusion(BaseModel):
       - two graphs (long-term & short-term),
       - one set of ID embeddings (users/items),
       - GCN propagation on both graphs,
-      - 0.5–0.5 fusion of long/short outputs,
+      - interaction-aware fusion of long/short user embeddings,
+      - fixed 0.5–0.5 fusion of long/short item embeddings,
       - generative reconstruction loss (as in original gene) on fused node embeddings.
     """
 
     def __init__(self, data_handler):
         super(LightGCN_gene_Fusion, self).__init__(data_handler)
+
+        device = configs['device']
 
         # Two graphs
         self.adj_long = data_handler.torch_adj_long
@@ -29,21 +34,56 @@ class LightGCN_gene_Fusion(BaseModel):
         self.keep_rate = configs['model']['keep_rate']
 
         # User & item ID embeddings (shared across both graphs)
-        self.user_embeds = nn.Parameter(init(t.empty(self.user_num, self.embedding_size)))
-        self.item_embeds = nn.Parameter(init(t.empty(self.item_num, self.embedding_size)))
+        self.user_embeds = nn.Parameter(
+            init(t.empty(self.user_num, self.embedding_size))
+        )
+        self.item_embeds = nn.Parameter(
+            init(t.empty(self.item_num, self.embedding_size))
+        )
 
         self.edge_dropper = SpAdjEdgeDrop()
         self.final_embeds = None
         self.is_training = False
 
-        # Hyper-parameters
+        # Hyper-parameters (GCN & generative)
         self.layer_num = self.hyper_config['layer_num']
         self.reg_weight = self.hyper_config['reg_weight']
         self.mask_ratio = self.hyper_config['mask_ratio']
         self.recon_weight = self.hyper_config['recon_weight']
         self.re_temperature = self.hyper_config['re_temperature']
 
-        device = configs['device']
+        # ----- fusion hyperparameters (match plus model) -----
+        self.fusion_type = self.hyper_config.get("fusion_type", "weighted_sum")
+        self.alpha_mode = self.hyper_config.get("alpha_mode", "global")  # "global" or "interaction"
+        self.norm_before_fusion = self.hyper_config.get("norm_before_fusion", False)
+        self.alpha_vec = None  # for interaction-aware α(u)
+
+        if self.fusion_type == "weighted_sum":
+            if self.alpha_mode == "global":
+                # Fixed scalar α: alpha * u_ST + (1 - alpha) * u_LT
+                self.alpha = float(self.hyper_config.get("alpha", 0.5))
+            elif self.alpha_mode == "interaction":
+                # Per-user α(u) from interaction counts (same as plus)
+                user_inter_num_np = data_handler.user_inter_num  # numpy [num_users]
+                user_inter_num = t.from_numpy(user_inter_num_np).to(device).float()  # [U]
+
+                # α(u) = 1 - normalized log(#interactions)
+                log_inter = t.log1p(user_inter_num)        # [U]
+                min_v = log_inter.min()
+                max_v = log_inter.max()
+                if max_v > min_v:
+                    base = (log_inter - min_v) / (max_v - min_v + 1e-8)  # in [0,1]
+                else:
+                    base = t.zeros_like(log_inter)
+
+                alpha_vec = 1.0 - base          # [U], more recent / fewer interactions -> larger α
+                alpha_vec = t.clamp(alpha_vec, 0.0, 1.0)
+                self.alpha_vec = alpha_vec.unsqueeze(-1)  # [U, 1] for broadcasting
+                self.alpha = None  # no global scalar
+            else:
+                raise ValueError(f"Unknown alpha_mode: {self.alpha_mode}")
+        else:
+            raise ValueError(f"Unknown fusion_type: {self.fusion_type}")
 
         # ----- semantic text embeddings (same as original gene) -----
         usrprf_embeds = t.tensor(configs['usrprf_embeds'], dtype=t.float32, device=device)
@@ -62,6 +102,13 @@ class LightGCN_gene_Fusion(BaseModel):
         )
 
         self._init_weight()
+
+        print("Gene Fusion hyper-config:", self.hyper_config)
+        print(
+            "fusion_type:", self.fusion_type,
+            "alpha_mode:", self.alpha_mode,
+            "norm_before_fusion:", self.norm_before_fusion,
+        )
 
     def _init_weight(self):
         for m in self.mlp:
@@ -93,11 +140,35 @@ class LightGCN_gene_Fusion(BaseModel):
         embeds = sum(embeds_list)
         return embeds[:self.user_num], embeds[self.user_num:]
 
+    def _fuse_users(self, user_long, user_short):
+        """
+        Fuse long- and short-term user embeddings, using the same logic as LightGCN_plus_Fusion:
+          - optional L2-normalization (norm_before_fusion)
+          - global α or interaction-aware α(u)
+        """
+        # Optional L2 normalization of each branch to fix norm imbalance
+        if self.norm_before_fusion:
+            user_long = F.normalize(user_long, p=2, dim=-1)
+            user_short = F.normalize(user_short, p=2, dim=-1)
+
+        if self.fusion_type == "weighted_sum":
+            if self.alpha_mode == "global":
+                alpha = max(0.0, min(1.0, float(self.alpha)))
+                return alpha * user_short + (1.0 - alpha) * user_long
+            elif self.alpha_mode == "interaction":
+                # alpha_vec: [num_users, 1]
+                alpha = self.alpha_vec  # already in [0,1]
+                return alpha * user_short + (1.0 - alpha) * user_long
+            else:
+                raise ValueError(f"Unknown alpha_mode in _fuse_users: {self.alpha_mode}")
+        else:
+            raise ValueError(f"Unknown fusion_type in _fuse_users: {self.fusion_type}")
+
     def _fuse_nodes(self, user_long, item_long, user_short, item_short):
         """
-        Fixed 0.5–0.5 fusion for both users and items.
+        Fuse users with α(u) as above; fuse items with fixed 0.5–0.5 (to mirror plus model).
         """
-        user_fused = 0.5 * user_long + 0.5 * user_short
+        user_fused = self._fuse_users(user_long, user_short)
         item_fused = 0.5 * item_long + 0.5 * item_short
         return user_fused, item_fused
 
@@ -172,6 +243,14 @@ class LightGCN_gene_Fusion(BaseModel):
             'reg_loss': reg_loss,
             'recon_loss': recon_loss
         }
+
+        # Log α for sanity
+        if self.fusion_type == "weighted_sum":
+            if self.alpha_mode == "global" and self.alpha is not None:
+                losses["alpha"] = max(0.0, min(1.0, float(self.alpha)))
+            elif self.alpha_mode == "interaction" and self.alpha_vec is not None:
+                alpha_u = self.alpha_vec.squeeze(-1)
+                losses["alpha_mean"] = float(alpha_u.mean().item())
 
         # Invalidate cache so eval recomputes fresh embeddings
         self.final_embeds = None

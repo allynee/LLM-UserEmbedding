@@ -95,6 +95,8 @@ class DataHandlerGeneralCF:
         configs['data']['user_num'], configs['data']['item_num'] = trn_mat.shape
         self.torch_adj = self._make_torch_adj(trn_mat)
 
+        self.user_inter_num = np.array(trn_mat.getnnz(axis=1), dtype=np.int32)  # shape [num_users]
+
         # Load short-term interactions for fusion models
         if configs['model']['name'] in ['lightgcn_fusion', 'lightgcn_plus_fusion', 'lightgcn_gene_fusion']:
             import os
