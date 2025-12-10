@@ -11,6 +11,16 @@ train:
   test_step: 3
   reproducible: true
   seed: 2023
+  # 2023
+  # 3407
+  # 5412
+  # 7231
+  # 8894
+  # 10427
+  # 15788
+  # 19021
+  # 22456
+  # 30011
   patience: 5
 
 test:

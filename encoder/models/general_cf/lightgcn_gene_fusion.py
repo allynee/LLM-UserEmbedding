@@ -1,6 +1,6 @@
 import torch as t
 from torch import nn
-import torch.nn.functional as F
+import torch.nn.functional as F  # NEW
 
 from config.configurator import configs
 from models.aug_utils import NodeMask
@@ -20,7 +20,10 @@ class LightGCN_gene_Fusion(BaseModel):
       - GCN propagation on both graphs,
       - interaction-aware fusion of long/short user embeddings,
       - fixed 0.5–0.5 fusion of long/short item embeddings,
-      - generative reconstruction loss (as in original gene) on fused node embeddings.
+      - generative reconstruction loss on fused node embeddings:
+          * user -> long-term text
+          * user -> short-term text
+          * item -> item text.
     """
 
     def __init__(self, data_handler):
@@ -85,20 +88,43 @@ class LightGCN_gene_Fusion(BaseModel):
         else:
             raise ValueError(f"Unknown fusion_type: {self.fusion_type}")
 
-        # ----- semantic text embeddings (same as original gene) -----
-        usrprf_embeds = t.tensor(configs['usrprf_embeds'], dtype=t.float32, device=device)
-        itmprf_embeds = t.tensor(configs['itmprf_embeds'], dtype=t.float32, device=device)
-        # prf_embeds is stacked [all users; all items] in the same order as ID embeddings
-        self.prf_embeds = t.concat([usrprf_embeds, itmprf_embeds], dim=0)
+        # ----- semantic text embeddings (NOW LT + ST for users) -----  # NEW
+        self.usrprf_long_embeds = t.tensor(
+            configs['usrprf_embeds'], dtype=t.float32, device=device
+        )   # [U, text_dim]
+        self.usrprf_short_embeds = t.tensor(
+            configs['usrprf_short_embeds'], dtype=t.float32, device=device
+        )   # [U, text_dim]
+        self.itmprf_embeds = t.tensor(
+            configs['itmprf_embeds'], dtype=t.float32, device=device
+        )   # [I, text_dim]
 
-        text_dim = self.prf_embeds.shape[1]
+        # Sanity: require LT and ST text dims to match
+        text_dim = self.usrprf_long_embeds.shape[1]
+        assert self.usrprf_short_embeds.shape[1] == text_dim, \
+            "Long-term and short-term user text dims must match"
 
-        # Generative MLP: ID-space (d) -> text-space (text_dim)
+        # Masker still operates in ID-embedding space
         self.masker = NodeMask(self.mask_ratio, self.embedding_size)
-        self.mlp = nn.Sequential(
+
+        # Separate decoders:
+        #   - user -> long-term text
+        #   - user -> short-term text
+        #   - item -> item text
+        self.mlp_user_long = nn.Sequential(
             nn.Linear(self.embedding_size, (text_dim + self.embedding_size) // 2),
             nn.LeakyReLU(),
-            nn.Linear((text_dim + self.embedding_size) // 2, text_dim)
+            nn.Linear((text_dim + self.embedding_size) // 2, text_dim),
+        )
+        self.mlp_user_short = nn.Sequential(
+            nn.Linear(self.embedding_size, (text_dim + self.embedding_size) // 2),
+            nn.LeakyReLU(),
+            nn.Linear((text_dim + self.embedding_size) // 2, text_dim),
+        )
+        self.mlp_item = nn.Sequential(
+            nn.Linear(self.embedding_size, (text_dim + self.embedding_size) // 2),
+            nn.LeakyReLU(),
+            nn.Linear((text_dim + self.embedding_size) // 2, text_dim),
         )
 
         self._init_weight()
@@ -111,7 +137,7 @@ class LightGCN_gene_Fusion(BaseModel):
         )
 
     def _init_weight(self):
-        for m in self.mlp:
+        for m in list(self.mlp_user_long) + list(self.mlp_user_short) + list(self.mlp_item):
             if isinstance(m, nn.Linear):
                 init(m.weight)
 
@@ -166,7 +192,7 @@ class LightGCN_gene_Fusion(BaseModel):
 
     def _fuse_nodes(self, user_long, item_long, user_short, item_short):
         """
-        Fuse users with α(u) as above; fuse items with fixed 0.5–0.5 (to mirror plus model).
+        Fuse users with α(u) as above; fuse items with fixed 0.5–0.5.
         """
         user_fused = self._fuse_users(user_long, user_short)
         item_fused = 0.5 * item_long + 0.5 * item_short
@@ -181,14 +207,65 @@ class LightGCN_gene_Fusion(BaseModel):
 
     def _reconstruction(self, fused_all_embeds, seeds):
         """
-        Generative reconstruction loss: project fused node embeddings to text space
-        and align them with prf_embeds at the masked positions.
+        Generative reconstruction loss:
+
+          - if seed is a user node:
+              use fused user embedding to reconstruct BOTH
+                * long-term user text
+                * short-term user text
+          - if seed is an item node:
+              reconstruct item text
+
+        fused_all_embeds: [num_users + num_items, d]
+        seeds: LongTensor [num_masked_nodes], indices in that concatenation.
         """
-        enc_embeds = fused_all_embeds[seeds]      # [num_masked, d]
-        prf_embeds = self.prf_embeds[seeds]       # [num_masked, text_dim]
-        enc_embeds = self.mlp(enc_embeds)         # [num_masked, text_dim]
-        recon_loss = ssl_con_loss(enc_embeds, prf_embeds, self.re_temperature)
-        return recon_loss
+        if seeds.numel() == 0:
+            # No masked nodes; return zero with correct device & dtype
+            return fused_all_embeds.sum() * 0.0
+
+        num_users = self.user_num
+        # Boolean masks
+        is_user = seeds < num_users
+        is_item = ~is_user
+
+        total_loss = 0.0
+        parts = 0
+
+        # ----- user reconstruction: LT + ST -----
+        if is_user.any():
+            user_seeds = seeds[is_user]                      # indices in [0, num_users)
+            enc_user = fused_all_embeds[user_seeds]          # [Nu, d]
+
+            # Long-term target
+            tgt_long = self.usrprf_long_embeds[user_seeds]   # [Nu, text_dim]
+            pred_long = self.mlp_user_long(enc_user)         # [Nu, text_dim]
+            loss_long = ssl_con_loss(pred_long, tgt_long, self.re_temperature)
+
+            # Short-term target
+            tgt_short = self.usrprf_short_embeds[user_seeds] # [Nu, text_dim]
+            pred_short = self.mlp_user_short(enc_user)       # [Nu, text_dim]
+            loss_short = ssl_con_loss(pred_short, tgt_short, self.re_temperature)
+
+            total_loss += (loss_long + loss_short)
+            parts += 2
+
+        # ----- item reconstruction -----
+        if is_item.any():
+            item_seeds = seeds[is_item]                      # indices in [num_users, num_users+num_items)
+            item_idx = item_seeds - num_users                # [Ni]
+            enc_item = fused_all_embeds[item_seeds]          # [Ni, d]
+            tgt_item = self.itmprf_embeds[item_idx]          # [Ni, text_dim]
+            pred_item = self.mlp_item(enc_item)              # [Ni, text_dim]
+            loss_item = ssl_con_loss(pred_item, tgt_item, self.re_temperature)
+
+            total_loss += loss_item
+            parts += 1
+
+        # Average over the number of distinct reconstruction “heads” we used
+        if parts > 0:
+            total_loss = total_loss / parts
+
+        return total_loss
 
     # -------- forward: inference / eval (no masking) --------
     def forward(self, keep_rate=1.0):
@@ -230,7 +307,7 @@ class LightGCN_gene_Fusion(BaseModel):
         anc_embeds, pos_embeds, neg_embeds = self._pick_embeds(user_fused, item_fused, batch_data)
         bpr_loss = cal_bpr_loss(anc_embeds, pos_embeds, neg_embeds) / anc_embeds.shape[0]
 
-        # 5) Reconstruction loss on fused node embeddings
+        # 5) Reconstruction loss on fused node embeddings (LT user + ST user + items)
         fused_all = t.concat([user_fused, item_fused], dim=0)
         recon_loss = self.recon_weight * self._reconstruction(fused_all, seeds)
 
