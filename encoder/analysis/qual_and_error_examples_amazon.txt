@@ -1,0 +1,658 @@
+User comparison: RLMRec-Plus vs SegRLMRec-Plus on amazon
+========================================================================================================================
+
+
+########################################################################################################################
+TOP 3 USERS WHERE NEW MODEL >> OLD MODEL (by ΔNDCG@10)
+########################################################################################################################
+
+
+>>> [NEW BETTER] Example 1/3 (ΔNDCG@10 = +1.0000) <<<
+
+========================================================================================================================
+USER ID (int): 7028
+Number of train interactions: 11
+------------------------------------------------------------------------------------------------------------------------
+RLMRec-Plus: R@5=0.0000, R@10=0.0000, R@20=0.0000, N@5=0.0000, N@10=0.0000, N@20=0.0000
+SegRLMRec-Plus: R@5=1.0000, R@10=1.0000, R@20=1.0000, N@5=1.0000, N@10=1.0000, N@20=1.0000
+ΔNDCG@10 (new - old): +1.0000
+========================================================================================================================
+
+USER PROFILE:            
+Based on the purchased books and their descriptions and reviews, the user is likely to enjoy gritty crime novels with a focus on detective work, psychological suspense, and multiple unexpected twists and turns. The user enjoys well-crafted characters but may find predictable plots a bit contrived at times. They also enjoy stories that take place in different settings, whether it's New York City or a cruise ship on the open seas. Overall, the user prefers suspenseful fiction with self-discovery themes and a touch of contemporary issues.
+
+USER REASONING:          
+The user has exclusively purchased books in the crime/mystery/suspense genre, which heavily influence the type of books they prefer. They enjoy reading books that offer a different take on the crime genre, like a focus on psychological suspense in The Dead Room or Jack Daniels Mysteries. They have also enjoyed reading books in different settings and have shown an interest in Julie O'Hara's profession as a body language expert in Mystral Murder. Finally, the user seems drawn to stories of self-discovery, which is evident in their liking for The Girl From Long Guyland and its underlying theme.
+
+------------------------------------------------------------------------------------------------------------------------
+HISTORICAL INTERACTIONS (TRAIN): 11 items
+------------------------------------------------------------------------------------------------------------------------
+
+Earliest 5 train items:
+
+[1] Item ID: 931 (Raw: item_931)
+    Readers who enjoy crime novels set in Los Angeles and appreciate a combination of psychological suspense and gritty, tight writing will enjoy The Dead Room. Fans of Michael Connelly and Dean Koontz will certainly appreciate this novel as it contains elements of both their writing styles. The protagonist Lena Gamble is a realistic and tough detective navigating through the dangerous LA hills.
+
+[2] Item ID: 1421 (Raw: item_1421)
+    Fans of suspenseful thrillers would enjoy Fifth Avenue by Christopher Smith. The book is gripping with several unexpected twists and turns which keeps readers on the edge of their seats. Those who enjoy Stephen King's writing style would particularly like this book as the author has received positive feedback from King. It is also recommended for readers who love fast-paced plot-driven stories with an element of mystery.
+
+[3] Item ID: 2212 (Raw: item_2212)
+    Fans of mystery and fiction novels may enjoy 'Daddy's Home' by A.K. Alexander, which is written by the bestselling author Michele Scott. Those who enjoy reading about suspenseful stories should also find this book interesting. However, readers who dislike mysteries or prefer other genres may not enjoy this book as much.
+
+[4] Item ID: 2495 (Raw: item_2495)
+    Readers who enjoy murder mysteries and thrillers and are interested in the workings of multiple law enforcement entities would enjoy Blueblood: Marty Singer Mystery #2.
+
+[5] Item ID: 3448 (Raw: item_3448)
+    Fans of thrillers with dark and intense themes involving crime and the psychological impact on survivors would enjoy 'What Doesn't Kill Her.' This book explores the story of a survivor who has to confront the trauma of her past and seeks revenge against her attacker. The book is quite graphic and violent in parts, so it may not be suitable for readers who are sensitive to such themes.
+
+Latest 5 train items:
+
+[7] Item ID: 4660 (Raw: item_4660)
+    Fans of crime thrillers and mystery novels, especially those that involve police investigations, would enjoy 'The List' by JA Konrath.
+
+[8] Item ID: 5507 (Raw: item_5507)
+    Fans of mystery novels with well-crafted character development will enjoy Mystral Murder, Volume 3 The Julie O'Hara Mystery Series. The book's focus on the protagonist's profession as a body language expert adds an intriguing element to an already suspenseful plot.
+
+[9] Item ID: 5700 (Raw: item_5700)
+    Fans of mystery and thriller novels who enjoy plot twists and suspense will enjoy reading Sleeping Roses: #1 Dead Roses Series.
+
+[10] Item ID: 5869 (Raw: item_5869)
+    Readers who enjoy suspenseful fiction and stories of self-discovery would find 'The Girl From Long Guyland' to be a captivating read. The novel explores the human desire to bury painful memories, while also dealing with contemporary issues such as marriage and work-life balance. The book also appeals to those with an interest in stories set in the late 1960s.
+
+[11] Item ID: 6614 (Raw: item_6614)
+    This book will appeal to adult children who are in a caregiving role for their aging parents. The author shares her own experience of living with and caring for her mother during her final years, combining humor and insight into the difficulties and rewards of the situation. This book may also be helpful for those dealing with grief or those in the 'sandwich generation' who are balancing caring for both their aging parents and their own families. It can provide comfort and encouragement to those who are in a similar situation.
+
+... showing earliest and latest items only
+
+------------------------------------------------------------------------------------------------------------------------
+RLMREC-PLUS PREDICTED ITEMS (TOP-5)
+------------------------------------------------------------------------------------------------------------------------
+
+[1] Item ID: 1131 (Raw: item_1131) | Score: 13.8015 | ✗ MISS
+    Abducted is a fast-paced and intense thriller that would be enjoyed by fans of the genre. Readers who enjoy complex plots with unexpected twists will find this book particularly engaging. However, individuals who are sensitive to violence or easily scared may want to avoid this title.
+
+[2] Item ID: 902 (Raw: item_902) | Score: 13.0525 | ✗ MISS
+    Fans of crime novels with a touch of dark humor would enjoy 'Plain Jane: Brunettes Beware.' The story follows a writer who catches a serial killer, and is interspersed with comedic elements. However, the book may not be suitable for those who are sensitive to graphic violence.
+
+[3] Item ID: 4656 (Raw: item_4656) | Score: 12.7821 | ✗ MISS
+    Rusty Nail (A Jacqueline \"Jack\" Daniels mystery) would be enjoyed by readers who are fans of dark thrillers with a good amount of gore and humor. Though the excessive gore in the book may not appeal to all readers, those who appreciate tightly woven subplots and an engaging set of characters will appreciate this book.
+
+[4] Item ID: 3113 (Raw: item_3113) | Score: 12.7419 | ✗ MISS
+    Fans of thriller and crime novels would enjoy Dead Weight (The Lizzy Gardner Series #2) by T. R. Ragan. This book is recommended for those who are interested in reading a gripping mystery with a strong female protagonist. The story revolves around the disappearance of a teenage girl and the hunt for her abductor by Lizzy, a private investigator. It involves great attention to detail, with well-planned plot twists that would keep readers on the edge of their seats. The novel has a dark, mysterious, and suspenseful atmosphere that is perfect for thriller lovers.
+
+[5] Item ID: 2493 (Raw: item_2493) | Score: 12.4586 | ✗ MISS
+    Fans of horror and thriller novels would enjoy Haunted House, written by JA Konrath under the name Jack Kilborn. The author has a successful track record and has sold over a million ebooks. Readers who enjoy Jack Daniels series would also enjoy this book
+
+------------------------------------------------------------------------------------------------------------------------
+SEGRLMREC-PLUS PREDICTED ITEMS (TOP-5)
+------------------------------------------------------------------------------------------------------------------------
+
+[1] Item ID: 4961 (Raw: item_4961) | Score: 19.6394 | ✓ HIT
+    Fans of legal thrillers and crime mystery novels, especially those interested in rural Tennessee law and politics, will enjoy AN Innocent Client. The book's vivid and believable characters, especially strong Southern women, and intricate plot make it a page-turner. Additionally, readers who enjoy stories that involve personal troubles and professional demands that threaten the protagonist's resolve will find this book interesting, as it portrays the turmoil of the main character's personal life while defending an innocent person, giving readers a glimpse into his complicated life. 
+
+[2] Item ID: 4230 (Raw: item_4230) | Score: 18.8734 | ✗ MISS
+    Fans of crime novels and police procedurals would enjoy Blood Orchids, a fast-paced thriller featuring a tough, female homicide detective in Hawaii.
+
+[3] Item ID: 4088 (Raw: item_4088) | Score: 17.5054 | ✗ MISS
+    Never Smile at Strangers is a psychological thriller that will appeal to readers who enjoy dark, suspenseful and twisted stories. This book is not recommended for those who are faint-hearted. The novel follows the story of a small town in America where people start dying under mysterious circumstances. It is a slow-building, character-driven story with a complex plot and a lot of surprises. The book is written in a descriptive and emotionally charged way, and the characters are well-developed and intriguing which will keep readers' attention throughout the book.
+
+[4] Item ID: 2213 (Raw: item_2213) | Score: 17.1955 | ✗ MISS
+    Fans of mystery novels and suspenseful thrillers would enjoy The Enemy We Know: A Letty Whittaker 12 Step Mystery, especially those who appreciate stories featuring flawed yet relatable characters. This book may also appeal to those interested in addiction and recovery themes.
+
+[5] Item ID: 1131 (Raw: item_1131) | Score: 16.9202 | ✗ MISS
+    Abducted is a fast-paced and intense thriller that would be enjoyed by fans of the genre. Readers who enjoy complex plots with unexpected twists will find this book particularly engaging. However, individuals who are sensitive to violence or easily scared may want to avoid this title.
+
+------------------------------------------------------------------------------------------------------------------------
+GROUND TRUTH (TEST ITEMS): 1 items
+------------------------------------------------------------------------------------------------------------------------
+
+[1] Item ID: 4961 (Raw: item_4961) | ✗ OLD | ✓ NEW
+    Fans of legal thrillers and crime mystery novels, especially those interested in rural Tennessee law and politics, will enjoy AN Innocent Client. The book's vivid and believable characters, especially strong Southern women, and intricate plot make it a page-turner. Additionally, readers who enjoy stories that involve personal troubles and professional demands that threaten the protagonist's resolve will find this book interesting, as it portrays the turmoil of the main character's personal life while defending an innocent person, giving readers a glimpse into his complicated life. 
+
+========================================================================================================================
+
+
+>>> [NEW BETTER] Example 2/3 (ΔNDCG@10 = +0.5693) <<<
+
+========================================================================================================================
+USER ID (int): 8973
+Number of train interactions: 20
+------------------------------------------------------------------------------------------------------------------------
+RLMRec-Plus: R@5=1.0000, R@10=1.0000, R@20=1.0000, N@5=0.4307, N@10=0.4307, N@20=0.4307
+SegRLMRec-Plus: R@5=1.0000, R@10=1.0000, R@20=1.0000, N@5=1.0000, N@10=1.0000, N@20=1.0000
+ΔNDCG@10 (new - old): +0.5693
+========================================================================================================================
+
+USER PROFILE:            
+Based on the purchased books and reviews, it seems that this user enjoys a mix of suspenseful thrillers, faith-based romance novels, and slow-paced, character-driven tales that explore themes of personal challenges and group dynamics in small towns. The user appreciates books with relatable and inspiring characters and has a liking for stories that involve overcoming obstacles, finding hope, and seeking emotional and spiritual wholeness.
+
+USER REASONING:          
+The user has purchased several books that highlight different genres - Blood and Bone being an action-packed thriller, The Crossing exploring emotions and faith, The Search Committee being a character-driven novel, The Dawn of Christmas being a heartwarming romance, and Death Comes to Pemberley being a classic murder mystery. All the reviews imply that the user appreciates when books focus on character development, overcoming obstacles, and finding hope. The themes of forgiveness and healing are explored in each book, suggesting those recurring themes might be something that the user resonates with.
+
+------------------------------------------------------------------------------------------------------------------------
+HISTORICAL INTERACTIONS (TRAIN): 20 items
+------------------------------------------------------------------------------------------------------------------------
+
+Earliest 5 train items:
+
+[1] Item ID: 2056 (Raw: item_2056)
+    The Casual Vacancy is perfect for readers who enjoy exploring the complexity of human relationships, social inequality and class system. It is also suitable for fans of Rowling’s character development and strong plot building abilities.
+
+[2] Item ID: 2308 (Raw: item_2308)
+    Fans of classic literature and mystery novels would enjoy Death Comes to Pemberley. P.D. James expertly blends the works of Jane Austen with a traditional murder mystery plot, resulting in a book that is captivating and entertaining. While James' attempt to pay homage to Austen's style may not resonate with devoted Austen fans, readers who appreciate a good mystery will find plenty to enjoy in Pemberley's plot twists and turns.
+
+[3] Item ID: 2355 (Raw: item_2355)
+    Fans of mystery and suspense novels, especially those who enjoy crime thrillers and police procedural stories, would enjoy Last to Die, a Rizzoli and Isles novel by author Tess Gerritsen.
+
+[4] Item ID: 3925 (Raw: item_3925)
+    Fans of historical Christian romance novels with a focus on family values and complex relationships would enjoy this book.
+
+[5] Item ID: 7161 (Raw: item_7161)
+    Fans of contemporary Christian romance novels would enjoy 'My Stubborn Heart'. This book is perfect for readers who love heartwarming tales with charming characters and a touch of humor. The story follows Kate Donovan who sets her stubborn heart on bringing Matt Jarreau out of the dark past and into the light of God. It's a story about falling in love, faith, and the power of God's love. The book is also suitable for readers who enjoy Lisa Wingate and Deeanne Gist's novels.
+
+Latest 5 train items:
+
+[16] Item ID: 8838 (Raw: item_8838)
+    Fans of historical fiction and coming-of-age stories may enjoy 'At Every Turn'. The book has a strong focus on religion and missionary work, and it also explores themes of passion and trust. Additionally, readers who have an interest in early car racing may find the book appealing.
+
+[17] Item ID: 8882 (Raw: item_8882)
+    The Crossing: A Novel by Serita Jakes is a book that would appeal to Christian women who have dealt with suffering, loss and trauma in their lives. The book explores themes of forgiveness, healing, and finding hope at a crossroads, through relatable and inspiring characters. The author's experiences and insights bring credibility and depth to the story, making it a powerful tool for anyone seeking to find emotional and spiritual wholeness.
+
+[18] Item ID: 8975 (Raw: item_8975)
+    The Search Committee: A Novel by Tim Owens is suitable for readers who enjoy books that tell tales of distinct group dynamics and individual struggles. It is for readers who enjoy slow-paced novels that mainly focus on character development rather than a fast-moving plot. The book would be enjoyed by readers interested in religious themes and the struggles of pastors, small southern towns, and individuals experiencing personal challenges.
+
+[19] Item ID: 9282 (Raw: item_9282)
+    Readers who enjoy clean and wholesome romance novels, and appreciate the use of technology and online forums in bringing two people together will enjoy Echoes (Glenbrooke, Book 3). It is also likely to resonate with Christians who prioritize their faith in their lives and relationships. Due to its straightforward prose and easy-to-read nature, it may appeal more to young adult audiences and those interested in exploring the different types of relationships that are possible in a digitally connected world.
+
+[20] Item ID: 9293 (Raw: item_9293)
+    Readers who enjoy charming romantic comedies with a touch of faith-based messages will appreciate Restless in Carolina by Tamara Leigh. The story follows Bridget and her journey to save her family’s estate from environmental destruction and her hesitant romance with J.C. Dirk. Fans of Leigh’s previous Pickwick novels will enjoy returning to the charming town and its quirky characters. This novel would be ideal for readers looking for light and heartwarming fiction with faith elements.
+
+... showing earliest and latest items only
+
+------------------------------------------------------------------------------------------------------------------------
+RLMREC-PLUS PREDICTED ITEMS (TOP-5)
+------------------------------------------------------------------------------------------------------------------------
+
+[1] Item ID: 3949 (Raw: item_3949) | Score: 13.3784 | ✗ MISS
+    Fans of Amish fiction would enjoy 'The Fiddler (Home to Hickory Hollow)' as it explores the struggles of a young Amish man's journey of self-discovery and finding his place in his community. The book's themes of faith, obedience, and family will resonate with readers who appreciate the simplicity and values of Amish culture.
+
+[2] Item ID: 2574 (Raw: item_2574) | Score: 13.2199 | ✗ MISS
+    Fans of heartwarming, cozy Christmas novellas with strong Christian themes would enjoy 'A Wreath of Snow: A Victorian Christmas Novella.' It is a delightful story of redemption, forgiveness, joy, and belonging, set in bonny Scotland during the Victorian era. The story is perfect for anyone who yearns to read sweet tales of love, faith, and hope during the holiday season or any other time of the year.
+
+[3] Item ID: 8547 (Raw: item_8547) | Score: 12.9918 | ✗ MISS
+    Fans of Christian historical romance with themes of forgiveness and second chances will enjoy 'A Noble Groom.' The story follows Annalisa, a young widow, and Carl, a wrongly-convicted aristocrat, as they navigate their unpredictable paths, discover their true selves, and find love in a small Michigan settlement in the 19th century.
+
+[4] Item ID: 8265 (Raw: item_8265) | Score: 12.9736 | ✓ HIT
+    Fans of Amish fiction looking for a heartwarming story of friendship, love, and redemption will enjoy 'For Every Season.' The book is the third installment in the popular 'Amish Vines and Orchards' series and provides a satisfying conclusion to the ongoing storylines of the characters. The novel's themes of forgiveness, faith, and community are also likely to resonate with readers who enjoy inspirational fiction.
+
+[5] Item ID: 8040 (Raw: item_8040) | Score: 12.7193 | ✗ MISS
+    Readers who enjoy historical romance novels with a touch of the supernatural will likely appreciate A Sound Among the Trees. The novel is set in an antebellum mansion in the American South and has a strong sense of place that history buffs and fans of descriptive writing will appreciate. Additionally, those who enjoy stories that explore themes of love, loss, forgiveness, and redemption, as well as the long-lasting impact of the Civil War, are likely to find this novel engaging. However, those looking for a fast-paced read or a plot-driven narrative may find A Sound Among the Trees too slow-moving, as its focus is on the relationships and inner lives of the characters rather than high-stakes action.
+
+------------------------------------------------------------------------------------------------------------------------
+SEGRLMREC-PLUS PREDICTED ITEMS (TOP-5)
+------------------------------------------------------------------------------------------------------------------------
+
+[1] Item ID: 8265 (Raw: item_8265) | Score: 17.5887 | ✓ HIT
+    Fans of Amish fiction looking for a heartwarming story of friendship, love, and redemption will enjoy 'For Every Season.' The book is the third installment in the popular 'Amish Vines and Orchards' series and provides a satisfying conclusion to the ongoing storylines of the characters. The novel's themes of forgiveness, faith, and community are also likely to resonate with readers who enjoy inspirational fiction.
+
+[2] Item ID: 8774 (Raw: item_8774) | Score: 17.2416 | ✗ MISS
+    Readers who enjoy historical fiction set in the American West may enjoy this book. Additionally, those interested in women's roles in historical contexts, particularly Indigenous women, may find this book intriguing.
+
+[3] Item ID: 3914 (Raw: item_3914) | Score: 16.6002 | ✗ MISS
+    Fans of gothic romance and historical fiction would enjoy The Tutor's Daughter by Julie Klassen. Set in the atmospheric backdrop of Cornwall, England, the book offers a plot filled with secrets and intrigue, creating a sense of mystery that will keep readers engaged. With its gripping storyline and the masterful representation of the gothic genre, this book will appeal to anyone who is a fan of classic suspense novels and historical romances.
+
+[4] Item ID: 2574 (Raw: item_2574) | Score: 16.4905 | ✗ MISS
+    Fans of heartwarming, cozy Christmas novellas with strong Christian themes would enjoy 'A Wreath of Snow: A Victorian Christmas Novella.' It is a delightful story of redemption, forgiveness, joy, and belonging, set in bonny Scotland during the Victorian era. The story is perfect for anyone who yearns to read sweet tales of love, faith, and hope during the holiday season or any other time of the year.
+
+[5] Item ID: 8571 (Raw: item_8571) | Score: 16.4327 | ✗ MISS
+    The Harvest of Grace, the third book in the Ada's House Amish Romance series, would be enjoyable for fans of the first two novels and those who appreciate uplifting, heart-warming love stories with a strong spiritual element. Readers who enjoy authors such as Amy Clipston, Marta Perry, Julie Lessman, Rachel Hauck, and Karen Kingsbury may also find this book to be a worthwhile read.
+
+------------------------------------------------------------------------------------------------------------------------
+GROUND TRUTH (TEST ITEMS): 1 items
+------------------------------------------------------------------------------------------------------------------------
+
+[1] Item ID: 8265 (Raw: item_8265) | ✓ OLD | ✓ NEW
+    Fans of Amish fiction looking for a heartwarming story of friendship, love, and redemption will enjoy 'For Every Season.' The book is the third installment in the popular 'Amish Vines and Orchards' series and provides a satisfying conclusion to the ongoing storylines of the characters. The novel's themes of forgiveness, faith, and community are also likely to resonate with readers who enjoy inspirational fiction.
+
+========================================================================================================================
+
+
+>>> [NEW BETTER] Example 3/3 (ΔNDCG@10 = +0.5585) <<<
+
+========================================================================================================================
+USER ID (int): 3115
+Number of train interactions: 19
+------------------------------------------------------------------------------------------------------------------------
+RLMRec-Plus: R@5=0.0000, R@10=0.0000, R@20=0.5000, N@5=0.0000, N@10=0.0000, N@20=0.2065
+SegRLMRec-Plus: R@5=0.5000, R@10=0.5000, R@20=0.5000, N@5=0.5585, N@10=0.5585, N@20=0.5585
+ΔNDCG@10 (new - old): +0.5585
+========================================================================================================================
+
+USER PROFILE:            
+Based on the purchased items and reviews, the user is likely to enjoy romance novels, particularly those with small-town settings and engaging characters. The user also enjoys paranormal romance, young adult fiction, and fantasy novels. Additionally, heartwarming stories about friendship and starting over, horror, mystery, and suspense genres may also be of interest.
+
+USER REASONING:          
+The user has purchased and reviewed several romance and paranormal romance novels, including works by Susan Mallery and Lizzy Ford. They also reviewed a heartwarming book about friendship. Moreover, they enjoy horror, mystery, and suspense genres. Therefore, it can be inferred that the user has a broad interest in various genres but prefers books with an engaging storyline and well-developed characters.
+
+------------------------------------------------------------------------------------------------------------------------
+HISTORICAL INTERACTIONS (TRAIN): 19 items
+------------------------------------------------------------------------------------------------------------------------
+
+Earliest 5 train items:
+
+[1] Item ID: 893 (Raw: item_893)
+    Fans of paranormal romance, young adult fiction, and fantasy novels would enjoy Zoey Rogue (Incubatti Series) (Volume 1) by Lizzy Ford.
+
+[2] Item ID: 2569 (Raw: item_2569)
+    This book is likely to be enjoyed by those who are fans of horror, mystery, and suspense genres. Professionals who are enthusiastic about the genres mentioned may have a greater inclination towards the book.
+
+[3] Item ID: 2571 (Raw: item_2571)
+    Readers who enjoy suspenseful crime fiction set in small towns with complex characters would enjoy Tin God (Delta Crossroads).", "reasoning": "Tin God (Delta Crossroads) is a crime fiction book that takes place in a small town in Mississippi and follows the investigation of the death of a prominent businessman. The protagonist, while trying to solve the case, uncovers dark secrets about the town and its residents. The book is filled with suspense and twists, and the characters are complex and well-written. It would appeal to readers who enjoy the genre and are interested in stories that delve into the complex nature of small towns and its residents."}
+
+[4] Item ID: 2828 (Raw: item_2828)
+    Fans of paranormal romance and urban fantasy would enjoy Katie's Hellion: Rhyn Trilogy, Book One. The book features a unique story of a half-demon hero and a strong-willed heroine. It combines action, romance, and fantasy elements to create an engaging and exciting read.
+
+[5] Item ID: 2872 (Raw: item_2872)
+    Fans of erotic romance novels with a focus on intense, all-consuming passion and a brooding narrative would enjoy 'Complete Me' by J. Kenner. The novel is the finale of the Stark trilogy and promises roller coaster events and revelations that heighten the emotions of the series' conclusion.
+
+Latest 5 train items:
+
+[15] Item ID: 6537 (Raw: item_6537)
+    Readers who enjoy a mix of mystery, romance, adventure, sci-fi, and plot twists would enjoy More by T.M. Franklin. The book is great for those who are looking for a fresh take on the usual young adult fantasy novel. Furthermore, those who are seeking a cliffhanger ending will not be disappointed.
+
+[16] Item ID: 6545 (Raw: item_6545)
+    Fans of young adult and adult paranormal romance novels would enjoy Dark Summer, Book I of the Witchling Trilogy. The book features brilliant, gritty romances that highlight the trials and tribulations of true love, and is written by prolific author Lizzy Ford in her signature style. Additionally, those who enjoy fast-paced novels will appreciate Ford's ability to write and release commercial quality books in under a month.
+
+[17] Item ID: 7123 (Raw: item_7123)
+    Readers who enjoy Horror, Thrillers, Action, and Humor would likely enjoy J.H. Glaze's books. His stories are packed with punch, wit, and unique plot twists that will keep readers engaged until the very end.
+
+[18] Item ID: 7733 (Raw: item_7733)
+    Fans of fantasy adventure books with vivid world-building and thrilling plot twists would enjoy Treason: Book Two of the Grimoire Trilogy (Volume 2).
+
+[19] Item ID: 8752 (Raw: item_8752)
+    The book 'God Loves You. - Chester Blue' would be enjoyed by readers who are seeking hope and inspiration. It is likely to appeal to those who are looking for a heartwarming and uplifting story that reinforces faith in God and human goodness.
+
+... showing earliest and latest items only
+
+------------------------------------------------------------------------------------------------------------------------
+RLMREC-PLUS PREDICTED ITEMS (TOP-5)
+------------------------------------------------------------------------------------------------------------------------
+
+[1] Item ID: 37 (Raw: item_37) | Score: 12.1646 | ✗ MISS
+    Waking Up Married would likely appeal to readers who enjoy lighthearted and romantic stories. This book seems suitable for readers who are interested in quick, easy reads with a happy ending.
+
+[2] Item ID: 1035 (Raw: item_1035) | Score: 11.9387 | ✗ MISS
+    Fans of romantic suspense novels will enjoy Shattered Promises. The book is likely to appeal to readers who enjoy thrilling--yet emotional--plots, and who appreciate character-driven narratives.
+
+[3] Item ID: 79 (Raw: item_79) | Score: 11.8484 | ✗ MISS
+    Fans of dark fantasy and fairy tales would enjoy reading Ever Shade: A Dark Faerie Tale by Alexia Purdy. The story is filled with mystery, suspense, and intrigue that will keep readers hooked until the end. It is recommended for readers who enjoy Keegan Chronicles by Julia Crane and similar stories.
+
+[4] Item ID: 3263 (Raw: item_3263) | Score: 11.4544 | ✗ MISS
+    The book 'Hear No (Hidden Evil) (Volume 1)' would be enjoyed by individuals who are fans of paranormal romance novels. Lizzy Ford, the author, is an accomplished writer with over twenty published novels in the young adult and adult genres. Her style is known to be brilliant and gritty, which provides a unique spin on the typical romance novel. Fans of fast-paced writing and fantasy elements will appreciate this book. The themes and tone of the book cater to an audience who likes a love story coupled with darker, supernatural elements.
+
+[5] Item ID: 2829 (Raw: item_2829) | Score: 11.1085 | ✗ MISS
+    Readers who enjoy paranormal/fantasy books may enjoy 'Forever Fae (Forever Fae Series) (Volume 1)'. It is likely suitable for young adult readers as well. The author's personal background in the dental field and experience as a stay-at-home mother may also appeal to readers who share these experiences or interests.
+
+------------------------------------------------------------------------------------------------------------------------
+SEGRLMREC-PLUS PREDICTED ITEMS (TOP-5)
+------------------------------------------------------------------------------------------------------------------------
+
+[1] Item ID: 3910 (Raw: item_3910) | Score: 15.9126 | ✓ HIT
+    Fans of modern romance novels with engaging, humorous and family-centered stories will enjoy reading Three Little Words (Fool's Gold, Book 12) by Susan Mallery.
+
+[2] Item ID: 266 (Raw: item_266) | Score: 15.0812 | ✗ MISS
+    Fans of contemporary romance novels would enjoy reading “When We Met” by Susan Mallery. The book has an engaging storyline filled with humor, small-town shenanigans, and family-centered themes, and is likely to appeal to those who enjoy stories about modern-day relationships. The book features eccentric characters, witty dialogue, and intense romantic connections, making it an enjoyable read for those who appreciate the genre. 
+
+[3] Item ID: 4580 (Raw: item_4580) | Score: 14.4476 | ✗ MISS
+    Fans of young adult fantasy and paranormal romance novels would enjoy Just One Drop (Grey Wolves) by Quinn Loftis. The book follows the story of a teenage girl, her werewolf boyfriend, and their pack, navigating through action-packed adventures, supernatural powers, and heart-warming romance.
+
+[4] Item ID: 6475 (Raw: item_6475) | Score: 14.1335 | ✓ HIT
+    Readers who enjoy YA fantasy novels with a focus on mythical creatures and teenage drama would enjoy 'Coexist: Keegan's Chronicles' by Julia Crane
+
+[5] Item ID: 7115 (Raw: item_7115) | Score: 13.8246 | ✗ MISS
+    Fans of young adult dystopian novels with a focus on societal hierarchy and rebellion will enjoy The Moon Dwellers. It will also appeal to readers who appreciate themes of love, family, and friendship in their YA novels.
+
+------------------------------------------------------------------------------------------------------------------------
+GROUND TRUTH (TEST ITEMS): 4 items
+------------------------------------------------------------------------------------------------------------------------
+
+[1] Item ID: 2825 (Raw: item_2825) | ✓ OLD | ✗ NEW
+    Readers who enjoy light-hearted paranormal romance novellas would enjoy Haunted Moon by K.B. Miller, and those who are fans of the Moon Coven Series would also appreciate this addition. The author's playful and humorous writing style would be appealing to those who are looking for a quick and easy read.
+
+[2] Item ID: 3910 (Raw: item_3910) | ✓ OLD | ✓ NEW
+    Fans of modern romance novels with engaging, humorous and family-centered stories will enjoy reading Three Little Words (Fool's Gold, Book 12) by Susan Mallery.
+
+[3] Item ID: 6475 (Raw: item_6475) | ✗ OLD | ✓ NEW
+    Readers who enjoy YA fantasy novels with a focus on mythical creatures and teenage drama would enjoy 'Coexist: Keegan's Chronicles' by Julia Crane
+
+[4] Item ID: 6478 (Raw: item_6478) | ✗ OLD | ✗ NEW
+    Readers who enjoy romance novels with a touch of suspense would enjoy Fearless: The King Series Book One, as the book revolves around two characters facing their own personal demons, while trying to navigate a new romantic relationship. Additionally, fans of the author's other works may also appreciate this book.
+
+========================================================================================================================
+
+
+########################################################################################################################
+TOP 3 USERS WHERE OLD MODEL >> NEW MODEL (by ΔNDCG@10)
+########################################################################################################################
+
+
+>>> [OLD BETTER] Example 1/3 (ΔNDCG@10 = -0.6309) <<<
+
+========================================================================================================================
+USER ID (int): 6540
+Number of train interactions: 13
+------------------------------------------------------------------------------------------------------------------------
+RLMRec-Plus: R@5=1.0000, R@10=1.0000, R@20=1.0000, N@5=0.6309, N@10=0.6309, N@20=0.6309
+SegRLMRec-Plus: R@5=0.0000, R@10=0.0000, R@20=0.0000, N@5=0.0000, N@10=0.0000, N@20=0.0000
+ΔNDCG@10 (new - old): -0.6309
+========================================================================================================================
+
+USER PROFILE:            
+This user is likely to enjoy books that delve into culture, history, international relations, and personal growth. The common thread among the books this user has read is the exploration of human psychology and how society and culture can shape it. The user seems to prefer slow-paced narratives with intricate plots that dive deeply into the complexities of human relationships.
+
+USER REASONING:          
+The Marriage Bureau for Rich People and Eat, Pray, Love both explore personal growth and the search for identity, while Orwell's Animal Farm and Paris 1919 have political elements. The Dinner and The Prometheus Deception have complex and engaging plots that delve into human psychology and relationships. The review of each book suggests that the user enjoys slow-paced, intricate stories that provide insights into culture, tradition, and societal issues.
+
+------------------------------------------------------------------------------------------------------------------------
+HISTORICAL INTERACTIONS (TRAIN): 13 items
+------------------------------------------------------------------------------------------------------------------------
+
+Earliest 5 train items:
+
+[1] Item ID: 1853 (Raw: item_1853)
+    Travel enthusiasts, spiritual seekers and those looking for a relatable story that tackles topics of self-discovery, healing and love would enjoy 'Eat, Pray, Love: One Woman's Search for Everything Across Italy, India and Indonesia'.
+
+[2] Item ID: 1879 (Raw: item_1879)
+    Thriller and drama fans would enjoy this book. The Dinner is not only a who-done-it story but it also explores family dynamics and the lengths parents will go to protect their children. The unreliable narrator adds to the suspense as readers are trying to piece together the truth along with the characters. This book also touches on societal and moral issues that will leave readers pondering long after they finish it.
+
+[3] Item ID: 1907 (Raw: item_1907)
+    Fans of technology and innovation would enjoy the book \"Steve Jobs\" by Walter Isaacson. It is a timely and complete portrait of Jobs that gives insight into a man whose contradictions were in many ways his greatest strength. This book portrays Jobs' creativity and pursuit of perfection that led to the transformation of seven industries. It's a biography that reads like a novel and offers a lot of details and personal stories from Jobs' life to inspire readers in their own work and life.
+
+[4] Item ID: 1926 (Raw: item_1926)
+    Historical fiction aficionados and readers who enjoy an intricate plot woven with rich, immersive language will enjoy The Thousand Autumns of Jacob de Zoet: A Novel.
+
+[5] Item ID: 1988 (Raw: item_1988)
+    Readers who are interested in exploring religious faith, friendship, and family dynamics against the backdrop of 1940s Brooklyn would enjoy The Chosen. Although the story features Jewish characters, the struggles it addresses are relatable to families of all faiths and backgrounds. The novel will appeal to readers who appreciate a well-written, character-driven story that explores themes such as love, loyalty, and the journey to adulthood.
+
+Latest 5 train items:
+
+[9] Item ID: 5346 (Raw: item_5346)
+    The Marriage Bureau for Rich People is a heartwarming tale of love and matchmaking in contemporary India. The book will appeal to those who enjoy stories of arranged marriages, inter-religious relationships, and life in India. It should also interest readers who appreciate slow-paced narratives that delve into the complexities of family dynamics, personal struggles, and cultural traditions.
+
+[10] Item ID: 6039 (Raw: item_6039)
+    History buffs, political enthusiasts, and those interested in the aftermath of WWI would enjoy 'Paris 1919: Six Months That Changed the World.' The book provides an in-depth analysis of the political maneuverings and negotiations that occurred during the Paris Peace Conference, which attempted to address the aftermath of World War I and shape a new world order. The book details the players involved, motivations, and the emergence of national self-interest. Along with analyzing the Council of Four's decisions, it explores the impact of these decisions and aftermath of the Conference. 
+
+[11] Item ID: 6346 (Raw: item_6346)
+    Fans of espionage and thriller novels will enjoy The Prometheus Deception. The book features a former spy who must navigate a complex web of lies and deceit to bring down a Soviet intelligence front group. The plot is full of twists and turns, and Ludlum's writing style keeps the reader constantly engaged.
+
+[12] Item ID: 7143 (Raw: item_7143)
+    Fans of historical fiction and those interested in the Tudor period would enjoy 'Wolf Hall' by Hilary Mantel. The novel is masterfully written and offers a fresh perspective on Thomas Cromwell's rise to power and his relationship with Henry VIII and Anne Boleyn. However, readers who dislike complex plots and extensive cast of characters may find this book challenging to get into.
+
+[13] Item ID: 8994 (Raw: item_8994)
+    Fans of George Takei, social media enthusiasts, and those interested in activism for civil rights and representation would enjoy this book.
+
+... showing earliest and latest items only
+
+------------------------------------------------------------------------------------------------------------------------
+RLMREC-PLUS PREDICTED ITEMS (TOP-5)
+------------------------------------------------------------------------------------------------------------------------
+
+[1] Item ID: 3337 (Raw: item_3337) | Score: 13.0837 | ✗ MISS
+    The Tipping Point by Malcolm Gladwell would be enjoyed by readers interested in understanding how ideas and products spread like epidemics or how changes occur in everyday life. The book is highly informative, using simple and clear explanations accompanied by fascinating anecdotes to illustrate Gladwell's theories. The author describes how people known as Connectors and Mavens play pivotal roles in the spread of ideas and how information disperses across populations of different sizes. Additionally, readers who enjoy understanding the science behind everyday phenomena should find this book informative and captivating.
+
+[2] Item ID: 4821 (Raw: item_4821) | Score: 12.5731 | ✓ HIT
+    Freakonomics is a fascinating book for readers who want to explore the hidden side of everything. This book is for people who engage in critical thinking and enjoy connecting seemingly unrelated dots to reveal a bigger picture. It is for those who want to understand how economics can be applied in our everyday lives and how data analysis can provide a different perspective on social phenomena. People who are interested in criminology, parenting, and business structures will find this book particularly interesting. Freakonomics takes a fresh look at conventional wisdom and challenges readers to question their assumptions and rethink their understanding of the world.
+
+[3] Item ID: 5273 (Raw: item_5273) | Score: 11.8105 | ✗ MISS
+    Readers who enjoy thought-provoking and challenging works that critique established paradigms and offer new perspectives on unexpected turning points in life, will enjoy 'The Black Swan: The Impact of the Highly Improbable.' Nassim Nicholas Taleb, through examples from history and economics, encourages readers to be mindful of the flaws of oversimplified narratives and be prepared for the random events that may shape our lives in ways we cannot anticipate.
+
+[4] Item ID: 2029 (Raw: item_2029) | Score: 11.7642 | ✗ MISS
+    The Immortal Life of Henrietta Lacks is a fascinating and moving story of the impact of human cells that survive in labs and the ethics surrounding the use of people's bodies without their consent. The book would appeal to readers interested in medical history, scientific discoveries, and discussions on bioethics. Moreover, the story offers a historical and sociological perspective of African American lives and how they have been treated in the healthcare industry. Readers grappling with family relationships, grief, and legacy will also find it amusing as the author skillfully presents the perspective of Henrietta's children in learning the truth about their mother's cells. 
+
+[5] Item ID: 2534 (Raw: item_2534) | Score: 11.3267 | ✗ MISS
+    Readers interested in complex, multi-generational family sagas with intricate character development and themes of identity, history, and transformation will enjoy Middlesex: A Novel.
+
+------------------------------------------------------------------------------------------------------------------------
+SEGRLMREC-PLUS PREDICTED ITEMS (TOP-5)
+------------------------------------------------------------------------------------------------------------------------
+
+[1] Item ID: 4692 (Raw: item_4692) | Score: 17.8866 | ✗ MISS
+    The Devil in White City: Murder, Magic, and Madness at the Fair That Changed America is a gripping non-fiction book that would be enjoyed by true crime enthusiasts, history buffs, and those interested in architecture and the World's Fair. With its vivid and descriptive storytelling, the book takes readers on a thrilling journey of the scandalous events surrounding the 1893 Chicago World's Fair and the lives of two men: a charming serial killer and the architect who built the fair. 
+
+[2] Item ID: 2029 (Raw: item_2029) | Score: 15.6811 | ✗ MISS
+    The Immortal Life of Henrietta Lacks is a fascinating and moving story of the impact of human cells that survive in labs and the ethics surrounding the use of people's bodies without their consent. The book would appeal to readers interested in medical history, scientific discoveries, and discussions on bioethics. Moreover, the story offers a historical and sociological perspective of African American lives and how they have been treated in the healthcare industry. Readers grappling with family relationships, grief, and legacy will also find it amusing as the author skillfully presents the perspective of Henrietta's children in learning the truth about their mother's cells. 
+
+[3] Item ID: 1806 (Raw: item_1806) | Score: 15.6801 | ✗ MISS
+    History enthusiasts, fans of political thrillers, and those interested in personal stories within a historical context would enjoy In the Garden of Beasts: Love, Terror, and an American Family in Hitler's Berlin. The book provides a vivid and intimate portrait of Berlin during the first years of Hitler's reign through the perspectives of William E. Dodd, America's first ambassador to Hitler's regime, and his daughter Martha who is captivated by the extravagance of Nazi elite society. The book offers a nuanced depiction of the rise of Nazi Germany, in a page-turning and suspenseful read.
+
+[4] Item ID: 2052 (Raw: item_2052) | Score: 15.6446 | ✗ MISS
+    Fans of crime and mystery novels will thoroughly enjoy The Girl with the Dragon Tattoo. This book is for those who seek a riveting plot line that is full of twists and turns, difficult to put down, and that will leave them satisfied. In addition, those interested in Swedish culture and customs will find the book insightful.
+
+[5] Item ID: 2534 (Raw: item_2534) | Score: 15.4173 | ✗ MISS
+    Readers interested in complex, multi-generational family sagas with intricate character development and themes of identity, history, and transformation will enjoy Middlesex: A Novel.
+
+------------------------------------------------------------------------------------------------------------------------
+GROUND TRUTH (TEST ITEMS): 1 items
+------------------------------------------------------------------------------------------------------------------------
+
+[1] Item ID: 4821 (Raw: item_4821) | ✓ OLD | ✗ NEW
+    Freakonomics is a fascinating book for readers who want to explore the hidden side of everything. This book is for people who engage in critical thinking and enjoy connecting seemingly unrelated dots to reveal a bigger picture. It is for those who want to understand how economics can be applied in our everyday lives and how data analysis can provide a different perspective on social phenomena. People who are interested in criminology, parenting, and business structures will find this book particularly interesting. Freakonomics takes a fresh look at conventional wisdom and challenges readers to question their assumptions and rethink their understanding of the world.
+
+========================================================================================================================
+
+
+>>> [OLD BETTER] Example 2/3 (ΔNDCG@10 = -0.5693) <<<
+
+========================================================================================================================
+USER ID (int): 5008
+Number of train interactions: 15
+------------------------------------------------------------------------------------------------------------------------
+RLMRec-Plus: R@5=1.0000, R@10=1.0000, R@20=1.0000, N@5=1.0000, N@10=1.0000, N@20=1.0000
+SegRLMRec-Plus: R@5=1.0000, R@10=1.0000, R@20=1.0000, N@5=0.4307, N@10=0.4307, N@20=0.4307
+ΔNDCG@10 (new - old): -0.5693
+========================================================================================================================
+
+USER PROFILE:            
+The user enjoys reading science fiction and fantasy novels that feature intricate world-building, complex characters, and well-crafted stories. They seem to prefer dystopian or post-apocalyptic settings, as well as paranormal mysteries and crime novels. The user also appears to enjoy fast-paced storytelling, with attention given to character development and emotional storytelling.
+
+USER REASONING:          
+Looking at the user's purchased books and their corresponding reviews, we can see that there is a clear preference for science fiction and fantasy novels, particularly those that feature complex world-building and well-crafted stories. The user is also drawn to stories that explore themes such as power, control, and survival. Additionally, they seem to enjoy paranormal mysteries and crime novels that feature strong, flawed female protagonists. Overall, the user seems to enjoy fast-paced storytelling that balances character development with emotional storytelling.
+
+------------------------------------------------------------------------------------------------------------------------
+HISTORICAL INTERACTIONS (TRAIN): 15 items
+------------------------------------------------------------------------------------------------------------------------
+
+Earliest 5 train items:
+
+[1] Item ID: 1346 (Raw: item_1346)
+    High Moor is a horror novel that would appeal to readers who enjoy graphic descriptions of violence and gore. It is not recommended for younger readers or those with a weak stomach. The story centers around a pack of werewolves and their battle against a group of humans who threaten their existence.
+
+[2] Item ID: 2492 (Raw: item_2492)
+    Fans of horror and thriller genres, especially those interested in stories about child kidnapping, murder, and supernatural experiences, will enjoy Children of the Fog.
+
+[3] Item ID: 2494 (Raw: item_2494)
+    Fans of suspenseful and chilling thrillers will enjoy The Legend of Devil's Creek. The book promises to keep readers engaged in the story and leave them on the edge of their seat until the very end.
+
+[4] Item ID: 2932 (Raw: item_2932)
+    Fans of paranormal romance genre who enjoy reading about werewolves, steamy romance, and a bit of action will likely enjoy Feral Sins (The Phoenix Pack Series) by Suzanne Wright.
+
+[5] Item ID: 3789 (Raw: item_3789)
+    Fans of historical fiction and fantasy will enjoy Jonathan Strange and Mr. Norrell. The novel takes place in an alternate history of England during the 19th century, which is carefully researched and highly detailed. The story contains elements of magic and sorcery, which are integral to the plot. However, the prose is often slow-paced and the novel is quite long, so readers who enjoy faster-moving plots may struggle to engage with it.
+
+Latest 5 train items:
+
+[11] Item ID: 7404 (Raw: item_7404)
+    Readers interested in environmental issues and thriller settings will enjoy Freezing Point. However, those who are looking for realistic characters and a believable plot may not enjoy it as much.
+
+[12] Item ID: 8087 (Raw: item_8087)
+    The book 'Spinward Fringe Broadcast 0: Origins' would be enjoyed by science fiction fans who like space operas, particularly those who enjoy stories about exploration, politics, and military operations in a futuristic universe.
+
+[13] Item ID: 8256 (Raw: item_8256)
+    The Shine On series by Allison Jewell is a lighthearted and heartwarming collection of books that are perfect for readers who enjoy romance novels with a touch of family drama. Fans of the author's previous work or for those who appreciate stories that focus on the challenges of balancing family life and personal passions will be especially drawn to this series.
+
+[14] Item ID: 8280 (Raw: item_8280)
+    Fans of urban fantasy and paranormal romance would enjoy 'Here Be Sexist Vampires'. The book follows the story of vampires and werewolves and the tension between them, with a romantic subplot. The narration is fast-paced and witty, it has plenty of action scenes, and the romantic scenes are steamy. The book would appeal to readers who enjoy a good supernatural story with a strong male lead and a kick-ass female protagonist.
+
+[15] Item ID: 8529 (Raw: item_8529)
+    Science fiction fans who enjoy stories about space battles, aliens, and intergalactic empires would enjoy In Her Name: Empire
+
+... showing earliest and latest items only
+
+------------------------------------------------------------------------------------------------------------------------
+RLMREC-PLUS PREDICTED ITEMS (TOP-5)
+------------------------------------------------------------------------------------------------------------------------
+
+[1] Item ID: 5896 (Raw: item_5896) | Score: 13.7783 | ✓ HIT
+    Readers who enjoy dystopian fiction with a strong female protagonist and an intricate world-building would enjoy Wool by Hugh Howey.
+
+[2] Item ID: 5314 (Raw: item_5314) | Score: 12.6312 | ✗ MISS
+    Readers who enjoy thriller novels with action-packed scenes and fast-paced plots would enjoy 'Run'. This novel will especially appeal to those who are fans of Blake Crouch's previous works.
+
+[3] Item ID: 4902 (Raw: item_4902) | Score: 12.3494 | ✗ MISS
+    Science fiction fans, especially those interested in military strategy, would enjoy Ender's Game. It is also suitable for young adult readers due to its relatable protagonist. ", "reasoning": "Ender's Game is a classic sci-fi novel that explores complex themes like leadership, war, and the morality of violence through the eyes of a relatable young protagonist. The military strategy elements are well-researched and presented in a way that would appeal to readers interested in those topics. The book has also been marketed towards young adult audiences, making it a suitable choice for younger readers looking to explore the genre."}
+
+[4] Item ID: 5260 (Raw: item_5260) | Score: 12.3363 | ✗ MISS
+    Fans of horror, post-apocalyptic fiction, and oral history-style storytelling would enjoy World War Z: An Oral History of the Zombie War. The individual accounts offer readers a unique perspective on global events and the zombie outbreak. Political commentary is woven throughout the story, appealing to those interested in satire and social commentary. The fast-paced nature of the novel makes it a quick and compelling read, despite its unrealistic premise. However, those who prefer a linear, plot-driven narrative and a more grounded, realistic approach may not find this book to their liking.
+
+[5] Item ID: 4960 (Raw: item_4960) | Score: 11.6540 | ✗ MISS
+    Fans of dystopian fiction and those who enjoyed The Hunger Games series may like Dust (Silo Saga). The book is the final installment of the Wool trilogy, which has received critical acclaim as a modern masterpiece. The story is thought-provoking and well-written, with a focus on survival, power, and secrets. Readers who enjoy complex characters and intricate world-building will find this book engaging. Additionally, those who enjoyed the previous books in the trilogy will likely want to see how the story wraps up in Dust.
+
+------------------------------------------------------------------------------------------------------------------------
+SEGRLMREC-PLUS PREDICTED ITEMS (TOP-5)
+------------------------------------------------------------------------------------------------------------------------
+
+[1] Item ID: 2615 (Raw: item_2615) | Score: 18.0006 | ✗ MISS
+    Fans of horror and suspense novels will enjoy The Shining, as it is a chilling and terrifying masterpiece that will keep readers on edge. Readers who enjoy Stephen King's writing style and storytelling will also appreciate this novel. Furthermore, those who appreciate atmospheric horror, psychological thrillers, and supernatural elements will find The Shining both terrifying and intriguing.
+
+[2] Item ID: 7711 (Raw: item_7711) | Score: 16.6329 | ✗ MISS
+    Readers who enjoy thrillers with strong female protagonists may enjoy J.A. Konrath's 'Origin,' as it follows Jacqueline 'Jack' Daniels as she investigates a string of gruesome murders. Fans of Konrath's other works may also enjoy this standalone novel.
+
+[3] Item ID: 6451 (Raw: item_6451) | Score: 16.1233 | ✗ MISS
+    Fans of horror genre who enjoy reading about demonic possession and eerie atmospheres would enjoy Seed. This book is a classic horror novel that narrates the struggles of a family after their daughter appears to take on a new and terrifying personality following a car accident. This book is also recommended for readers who appreciate stories that stay with them over time, as the moments of genuine terror in this book will leave them with haunting impressions.
+
+[4] Item ID: 5896 (Raw: item_5896) | Score: 15.5292 | ✓ HIT
+    Readers who enjoy dystopian fiction with a strong female protagonist and an intricate world-building would enjoy Wool by Hugh Howey.
+
+[5] Item ID: 5260 (Raw: item_5260) | Score: 15.2472 | ✗ MISS
+    Fans of horror, post-apocalyptic fiction, and oral history-style storytelling would enjoy World War Z: An Oral History of the Zombie War. The individual accounts offer readers a unique perspective on global events and the zombie outbreak. Political commentary is woven throughout the story, appealing to those interested in satire and social commentary. The fast-paced nature of the novel makes it a quick and compelling read, despite its unrealistic premise. However, those who prefer a linear, plot-driven narrative and a more grounded, realistic approach may not find this book to their liking.
+
+------------------------------------------------------------------------------------------------------------------------
+GROUND TRUTH (TEST ITEMS): 1 items
+------------------------------------------------------------------------------------------------------------------------
+
+[1] Item ID: 5896 (Raw: item_5896) | ✓ OLD | ✓ NEW
+    Readers who enjoy dystopian fiction with a strong female protagonist and an intricate world-building would enjoy Wool by Hugh Howey.
+
+========================================================================================================================
+
+
+>>> [OLD BETTER] Example 3/3 (ΔNDCG@10 = -0.4693) <<<
+
+========================================================================================================================
+USER ID (int): 1894
+Number of train interactions: 14
+------------------------------------------------------------------------------------------------------------------------
+RLMRec-Plus: R@5=0.3333, R@10=0.3333, R@20=0.6667, N@5=0.4693, N@10=0.4693, N@20=0.5761
+SegRLMRec-Plus: R@5=0.0000, R@10=0.0000, R@20=0.3333, N@5=0.0000, N@10=0.0000, N@20=0.1148
+ΔNDCG@10 (new - old): -0.4693
+========================================================================================================================
+
+USER PROFILE:            
+The user is likely to enjoy heartwarming and relatable stories that deal with the bond between humans and their canine companions, as well as books that explore coming-of-age themes and familial relations with a touch of humor and emotion.
+
+USER REASONING:          
+The user has purchased several books on dogs and their unique relationships with humans, all of which have been positively reviewed. This suggests that the user is a dog lover and enjoys heartwarming stories that explore this bond. Additionally, the user has purchased books that deal with coming-of-age themes and familial relations, two themes that are present in The Liars' Club: A Memoir and The Secret Life of Bees, books which the user also enjoyed. The user's reviews also indicate that they appreciate humor and emotion in the books they read, making these themes important factors to consider.
+
+------------------------------------------------------------------------------------------------------------------------
+HISTORICAL INTERACTIONS (TRAIN): 14 items
+------------------------------------------------------------------------------------------------------------------------
+
+Earliest 5 train items:
+
+[1] Item ID: 1670 (Raw: item_1670)
+    Harry Potter fans of all ages who enjoy deluxe editions and exclusive artwork will appreciate this deluxe edition of Harry Potter and the Half-Blood Prince, complete with never-before-seen full-color art, early chapter titles, and an exclusive foil-stamped slipcase. Additionally, those who enjoy the whimsical and witty moments of the Harry Potter series will take pleasure in reading the author's favorite moments from the series and discovering new novels to keep them busy.
+
+[2] Item ID: 1993 (Raw: item_1993)
+    Dog lovers of all ages would enjoy 'A Dog's Purpose' as it explores the different reincarnations of a dog and their purpose in each life. The book highlights the unique bond between humans and their canine companions and showcases the capacity of a dog for love and protection.
+
+[3] Item ID: 2037 (Raw: item_2037)
+    A Thousand Splendid Suns would appeal to readers who appreciate stories that explore interpersonal relationships while also delving into broader societal issues. The novel depicts the lives of two women in Afghanistan over three decades who form a deep bond while enduring oppressive conditions in the country. The author's skillful writing style and vivid descriptions help readers empathize with the challenges the women face, both personally and due to political upheaval. This book may appeal to those who enjoyed Hosseini's previous work The Kite Runner, and to readers interested in gaining a deeper understanding of Afghan culture and history.
+
+[4] Item ID: 2051 (Raw: item_2051)
+    Fans of gothic, suspenseful literary works, particularly those set in historically rich cities, would enjoy The Shadow of the Wind. Additionally, those interested in mystery, hidden identities, and the consequences of human choices will find the novel enthralling.
+
+[5] Item ID: 2324 (Raw: item_2324)
+    Fans of Richard Russo's other works and those interested in small town family dramas will enjoy Bridge of Sighs.
+
+Latest 5 train items:
+
+[10] Item ID: 4129 (Raw: item_4129)
+    Readers who enjoy psychological thrillers would be interested in Notes on a Scandal. The novel follows the obsession and scandalous affair between a high school teacher and her 15-year-old student. The story is narrated by an older colleague, Barbara Covett, who harbors her own secret passion for Sheba. The novel explores the dark side of human nature and the consequences of desire and obsession. The characters are intricately portrayed with vivid detail, adding to the gripping nature of the story. Those interested in complex characterizations and exploring the twisted nature of human relationships would find Notes on a Scandal captivating.
+
+[11] Item ID: 4932 (Raw: item_4932)
+    Marley & Me: Life and Love with the World’s Worst Dog is a heartwarming and humorous memoir filled with love, life, and lessons. This book would be perfect for dog lovers of all ages and for anyone who wants a glimpse into the joys and challenges of owning a furry best friend.
+
+[12] Item ID: 4938 (Raw: item_4938)
+    The Tender Bar: A Memoir would appeal to readers who enjoy coming of age stories, particularly those who feel a sense of longing for a father figure and can relate to the protagonist's search for one. Readers who have an interest in the culture surrounding bars would also enjoy this book.
+
+[13] Item ID: 5093 (Raw: item_5093)
+    Readers interested in candid and poignant memoirs, family dynamics, and/or complicated upbringings would enjoy The Liars' Club: A Memoir. Mary Karr's writing style is uniquely humorous, transparent, and gritty, making her memoir accessible to a wide audience.
+
+[14] Item ID: 7514 (Raw: item_7514)
+    Users who are fans of Stephen King's work and enjoy character-focused stories with elements of horror, fantasy, and mystery would enjoy Lisey's Story (Large Print Edition).
+
+... showing earliest and latest items only
+
+------------------------------------------------------------------------------------------------------------------------
+RLMREC-PLUS PREDICTED ITEMS (TOP-5)
+------------------------------------------------------------------------------------------------------------------------
+
+[1] Item ID: 1900 (Raw: item_1900) | Score: 15.2907 | ✓ HIT
+    Dog lovers will enjoy The Art of Racing in the Rain, as the book offers a unique perspective into the mind of a dog and how he views human life. Additionally, fans of stories about human-animal relationships and those who enjoy emotional dramas will appreciate this book.
+
+[2] Item ID: 3112 (Raw: item_3112) | Score: 14.7532 | ✗ MISS
+    Life of Pi is recommended for adventure seekers with an interest in spirituality who appreciate rich storytelling. The book combines intense action with deep meditations on the nature of faith and philosophical concepts of survival in an incredibly imaginative way.
+
+[3] Item ID: 1869 (Raw: item_1869) | Score: 14.2779 | ✗ MISS
+    Readers who enjoy emotionally intense and character-driven stories would enjoy 'The Kite Runner'. This book would also appeal to those interested in exploring complex relationships and the impact of political turmoil on personal lives.
+
+[4] Item ID: 5480 (Raw: item_5480) | Score: 13.2800 | ✗ MISS
+    Readers who enjoy post-apocalyptic and dystopian novels, as well as those who appreciate spare, searing prose and themes of love and hope amidst despair, would enjoy The Road by Cormac McCarthy. The novel is not recommended for those who are unnerved by graphic descriptions of gore, cannibalism, and death.
+
+[5] Item ID: 1890 (Raw: item_1890) | Score: 13.0001 | ✗ MISS
+    The Glass Castle would appeal to readers who enjoy memoirs about dysfunctional families and a coming-of-age story set in poverty-stricken America.
+
+------------------------------------------------------------------------------------------------------------------------
+SEGRLMREC-PLUS PREDICTED ITEMS (TOP-5)
+------------------------------------------------------------------------------------------------------------------------
+
+[1] Item ID: 567 (Raw: item_567) | Score: 20.7032 | ✗ MISS
+    Fans of psychological thrillers and mysteries will enjoy reading 'Gone Girl.' The novel is a gripping tale of a married couple's tumultuous relationship and the events that unfold after the wife disappears. It is a page-turner that will keep readers on the edge of their seats, trying to uncover the truth behind the couple's twisted personalities and motives.
+
+[2] Item ID: 2052 (Raw: item_2052) | Score: 20.3665 | ✗ MISS
+    Fans of crime and mystery novels will thoroughly enjoy The Girl with the Dragon Tattoo. This book is for those who seek a riveting plot line that is full of twists and turns, difficult to put down, and that will leave them satisfied. In addition, those interested in Swedish culture and customs will find the book insightful.
+
+[3] Item ID: 1869 (Raw: item_1869) | Score: 19.7189 | ✗ MISS
+    Readers who enjoy emotionally intense and character-driven stories would enjoy 'The Kite Runner'. This book would also appeal to those interested in exploring complex relationships and the impact of political turmoil on personal lives.
+
+[4] Item ID: 1628 (Raw: item_1628) | Score: 19.0296 | ✗ MISS
+    Water For Elephants would be enjoyed by anyone who enjoys historical fiction, romantic drama, or stories about circus life.
+
+[5] Item ID: 5480 (Raw: item_5480) | Score: 18.9801 | ✗ MISS
+    Readers who enjoy post-apocalyptic and dystopian novels, as well as those who appreciate spare, searing prose and themes of love and hope amidst despair, would enjoy The Road by Cormac McCarthy. The novel is not recommended for those who are unnerved by graphic descriptions of gore, cannibalism, and death.
+
+------------------------------------------------------------------------------------------------------------------------
+GROUND TRUTH (TEST ITEMS): 3 items
+------------------------------------------------------------------------------------------------------------------------
+
+[1] Item ID: 1631 (Raw: item_1631) | ✓ OLD | ✗ NEW
+    Fans of historical novels set in the American South and readers who enjoy multiple narrators will appreciate The Help. The book explores themes of race and class and is ideal for those interested in historical fiction.
+
+[2] Item ID: 1900 (Raw: item_1900) | ✓ OLD | ✓ NEW
+    Dog lovers will enjoy The Art of Racing in the Rain, as the book offers a unique perspective into the mind of a dog and how he views human life. Additionally, fans of stories about human-animal relationships and those who enjoy emotional dramas will appreciate this book.
+
+[3] Item ID: 6348 (Raw: item_6348) | ✗ OLD | ✗ NEW
+    Fans of character-driven stories filled with dry humor set in small-town America will enjoy Nobody's Fool by Richard Russo.
+
+========================================================================================================================
+
